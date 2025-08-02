@@ -1,6 +1,7 @@
 "use client"
 
 import { skillCategories } from '@/data/content'
+import { AnimatedContainer, AnimatedCard, AnimatedProgressBar, AnimatedList, AnimatedListItem } from '@/components/ui/animated-components'
 
 export function Skills() {
   return (
@@ -15,44 +16,37 @@ export function Skills() {
           </p>
         </div>
 
-        <div className="bento-grid">
+        <AnimatedList className="bento-grid" staggerDelay={0.15}>
           {skillCategories.map((category, index) => (
-            <div
+            <AnimatedListItem
               key={category.name}
-              className={`card-glass ${
+              className={`${
                 index === 0 || index === 6 ? 'bento-item-wide' : 'bento-item-small'
               }`}
             >
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                {category.name}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                {category.experience}
-              </p>
+              <AnimatedCard variant="glass" hover={true}>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {category.name}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  {category.experience}
+                </p>
 
-              <div className="space-y-4">
-                {category.skills.slice(0, 3).map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">
-                        {skill.name}
-                      </span>
-                      <span className="text-sm text-muted-foreground">
-                        {skill.percentage}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-muted rounded-full h-2">
-                      <div
-                        className="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full transition-all duration-1000"
-                        style={{ width: `${skill.percentage}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <div className="space-y-4">
+                  {category.skills.slice(0, 3).map((skill, skillIndex) => (
+                    <AnimatedProgressBar
+                      key={skill.name}
+                      percentage={skill.percentage}
+                      label={skill.name}
+                      showPercentage={true}
+                      className="delay-300"
+                    />
+                  ))}
+                </div>
+              </AnimatedCard>
+            </AnimatedListItem>
           ))}
-        </div>
+        </AnimatedList>
       </div>
     </section>
   )

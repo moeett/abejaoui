@@ -1,6 +1,7 @@
 "use client"
 
 import { aboutDescription, statistics } from '@/data/content'
+import { AnimatedContainer, AnimatedCard, AnimatedButton, AnimatedCounter } from '@/components/ui/animated-components'
 
 export function About() {
   return (
@@ -17,47 +18,47 @@ export function About() {
 
         <div className="grid lg:grid-cols-3 gap-12 items-center">
           {/* Description */}
-          <div className="lg:col-span-2">
-            <div className="card-glass">
+          <AnimatedContainer variant="slideLeft" className="lg:col-span-2">
+            <AnimatedCard variant="glass">
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 {aboutDescription}
               </p>
-              
-              <button className="btn-primary">
+
+              <AnimatedButton variant="primary">
                 Download CV
-              </button>
-            </div>
-          </div>
+              </AnimatedButton>
+            </AnimatedCard>
+          </AnimatedContainer>
 
           {/* Statistics */}
-          <div className="space-y-6">
-            <div className="card-neo text-center">
+          <AnimatedContainer variant="slideRight" delay={0.2} className="space-y-6">
+            <AnimatedCard variant="neo" className="text-center">
               <div className="text-3xl font-bold text-primary-500 mb-2">
-                {statistics.years}
+                <AnimatedCounter to={12} />+
               </div>
               <div className="text-sm text-muted-foreground">
                 Years<br />Experience
               </div>
-            </div>
+            </AnimatedCard>
 
-            <div className="card-neo text-center">
+            <AnimatedCard variant="neo" className="text-center">
               <div className="text-3xl font-bold text-primary-500 mb-2">
-                {statistics.projects}
+                <AnimatedCounter to={20} />+
               </div>
               <div className="text-sm text-muted-foreground">
                 Projects<br />Done
               </div>
-            </div>
+            </AnimatedCard>
 
-            <div className="card-neo text-center">
+            <AnimatedCard variant="neo" className="text-center">
               <div className="text-3xl font-bold text-primary-500 mb-2">
-                {statistics.companies}
+                <AnimatedCounter to={5} />+
               </div>
               <div className="text-sm text-muted-foreground">
                 Companies<br />Worked
               </div>
-            </div>
-          </div>
+            </AnimatedCard>
+          </AnimatedContainer>
         </div>
       </div>
     </section>

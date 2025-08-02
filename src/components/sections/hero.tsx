@@ -2,6 +2,7 @@
 
 import { personalInfo, socialLinks } from '@/data/content'
 import { smoothScrollTo } from '@/lib/utils'
+import { AnimatedContainer, AnimatedText, AnimatedButton, Floating, Pulse } from '@/components/ui/animated-components'
 
 export function Hero() {
   const handleContactClick = () => {
@@ -19,65 +20,96 @@ export function Hero() {
       
       {/* Floating particles background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary-500 rounded-full animate-pulse delay-1000" />
-        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-primary-300 rounded-full animate-pulse delay-2000" />
-        <div className="absolute top-2/3 right-1/4 w-1.5 h-1.5 bg-primary-600 rounded-full animate-pulse delay-3000" />
+        <Floating intensity="low" className="absolute top-1/4 left-1/4">
+          <Pulse>
+            <div className="w-2 h-2 bg-primary-400 rounded-full" />
+          </Pulse>
+        </Floating>
+        <Floating intensity="medium" className="absolute top-1/3 right-1/3">
+          <Pulse>
+            <div className="w-1 h-1 bg-primary-500 rounded-full" />
+          </Pulse>
+        </Floating>
+        <Floating intensity="high" className="absolute bottom-1/4 left-1/3">
+          <Pulse>
+            <div className="w-3 h-3 bg-primary-300 rounded-full" />
+          </Pulse>
+        </Floating>
+        <Floating intensity="low" className="absolute top-2/3 right-1/4">
+          <Pulse>
+            <div className="w-1.5 h-1.5 bg-primary-600 rounded-full" />
+          </Pulse>
+        </Floating>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Content */}
-          <div className="flex-1 text-center lg:text-left">
+          <AnimatedContainer variant="slideUp" className="flex-1 text-center lg:text-left">
             <div className="space-y-6">
-              <div className="space-y-2">
-                <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                  Hi, I'm{' '}
-                  <span className="bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
-                    Ahmed
-                  </span>
-                </h1>
-                <h2 className="text-2xl md:text-4xl font-semibold text-muted-foreground">
-                  {personalInfo.title}
-                </h2>
-              </div>
-              
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                {personalInfo.description}
-              </p>
+              <AnimatedContainer variant="slideUp" delay={0.2}>
+                <div className="space-y-2">
+                  <AnimatedText
+                    text="Hi, I'm Ahmed"
+                    as="h1"
+                    variant="slideUp"
+                    delay={0.3}
+                    className="text-4xl md:text-6xl font-bold text-foreground"
+                  />
+                  <AnimatedText
+                    text={personalInfo.title}
+                    as="h2"
+                    variant="slideUp"
+                    delay={0.4}
+                    className="text-2xl md:text-4xl font-semibold text-muted-foreground"
+                  />
+                </div>
+              </AnimatedContainer>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button
+              <AnimatedText
+                text={personalInfo.description}
+                as="p"
+                variant="slideUp"
+                delay={0.5}
+                className="text-lg md:text-xl text-muted-foreground max-w-2xl"
+              />
+
+              <AnimatedContainer variant="slideUp" delay={0.6} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <AnimatedButton
                   onClick={handleContactClick}
-                  className="btn-primary"
+                  variant="primary"
                 >
                   Contact Me
-                </button>
-                <button
+                </AnimatedButton>
+                <AnimatedButton
                   onClick={handlePortfolioClick}
-                  className="btn-glass"
+                  variant="glass"
                 >
                   View Portfolio
-                </button>
-              </div>
+                </AnimatedButton>
+              </AnimatedContainer>
             </div>
-          </div>
+          </AnimatedContainer>
 
           {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <div className="relative">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 p-1">
-                <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                  <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-r from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 flex items-center justify-center text-6xl md:text-8xl">
-                    👨‍💻
+          <AnimatedContainer variant="scale" delay={0.7} className="flex-shrink-0">
+            <Floating intensity="low">
+              <div className="relative">
+                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 p-1">
+                  <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
+                    <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-gradient-to-r from-primary-100 to-primary-200 dark:from-primary-900 dark:to-primary-800 flex items-center justify-center text-6xl md:text-8xl">
+                      👨‍💻
+                    </div>
                   </div>
                 </div>
+
+                {/* Glow effect */}
+                <Pulse>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 opacity-20 blur-xl" />
+                </Pulse>
               </div>
-              
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-primary-600 opacity-20 blur-xl animate-pulse" />
-            </div>
-          </div>
+            </Floating>
+          </AnimatedContainer>
         </div>
 
         {/* Social Links */}
