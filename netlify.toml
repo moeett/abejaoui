@@ -1,14 +1,14 @@
 [build]
   # Build command for Next.js
   command = "npm run build"
-  
+
   # Output directory for Next.js static export
   publish = "out"
-  
-  # Node.js version
-  environment = { NODE_VERSION = "18" }
 
 [build.environment]
+  # Node.js version
+  NODE_VERSION = "18"
+
   # Next.js environment variables
   NEXT_TELEMETRY_DISABLED = "1"
   NODE_ENV = "production"
