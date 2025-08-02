@@ -15,9 +15,6 @@ const nextConfig = {
   trailingSlash: true,
   
   // Disable server-side features for static export
-  experimental: {
-    appDir: true,
-  },
   
   // Optimize for production
   swcMinify: true,
