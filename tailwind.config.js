@@ -86,11 +86,11 @@ module.exports = {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {
-        'xs': ['clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)', { lineHeight: '1.25' }],
-        'sm': ['clamp(0.875rem, 0.8rem + 0.375vw, 1rem)', { lineHeight: '1.375' }],
-        'base': ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)', { lineHeight: '1.5' }],
-        'lg': ['clamp(1.125rem, 1rem + 0.625vw, 1.25rem)', { lineHeight: '1.5' }],
-        'xl': ['clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)', { lineHeight: '1.5' }],
+        xs: ['clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)', { lineHeight: '1.25' }],
+        sm: ['clamp(0.875rem, 0.8rem + 0.375vw, 1rem)', { lineHeight: '1.375' }],
+        base: ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)', { lineHeight: '1.5' }],
+        lg: ['clamp(1.125rem, 1rem + 0.625vw, 1.25rem)', { lineHeight: '1.5' }],
+        xl: ['clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)', { lineHeight: '1.5' }],
         '2xl': ['clamp(1.5rem, 1.3rem + 1vw, 1.875rem)', { lineHeight: '1.375' }],
         '3xl': ['clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem)', { lineHeight: '1.25' }],
         '4xl': ['clamp(2.25rem, 1.9rem + 1.75vw, 3rem)', { lineHeight: '1.25' }],
@@ -98,10 +98,10 @@ module.exports = {
         '6xl': ['clamp(4rem, 3rem + 5vw, 6rem)', { lineHeight: '1.25' }],
       },
       spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '128': '32rem',
-        '144': '36rem',
+        18: '4.5rem',
+        88: '22rem',
+        128: '32rem',
+        144: '36rem',
       },
       maxWidth: {
         '8xl': '88rem',
@@ -116,14 +116,14 @@ module.exports = {
         '3xl': '64px',
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'fade-in-up': 'fadeInUp 0.6s ease-out',
         'fade-in-down': 'fadeInDown 0.6s ease-out',
         'fade-in-left': 'fadeInLeft 0.6s ease-out',
         'fade-in-right': 'fadeInRight 0.6s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'slide-up': 'slideUp 0.3s ease-out',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        glow: 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
         float: {
@@ -160,10 +160,11 @@ module.exports = {
         },
       },
       boxShadow: {
-        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
+        glass: '0 8px 32px rgba(0, 0, 0, 0.1)',
         'glass-dark': '0 8px 32px rgba(255, 255, 255, 0.05)',
-        'neo': '8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8)',
-        'neo-inset': 'inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8)',
+        neo: '8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8)',
+        'neo-inset':
+          'inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8)',
         'glow-primary': '0 0 20px rgba(14, 165, 233, 0.3)',
         'glow-accent': '0 0 20px rgba(139, 92, 246, 0.3)',
         'glow-pink': '0 0 20px rgba(236, 72, 153, 0.3)',
@@ -179,20 +180,20 @@ module.exports = {
         `,
       },
       transitionTimingFunction: {
-        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        bounce: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
       },
       transitionDuration: {
-        '400': '400ms',
-        '600': '600ms',
-        '800': '800ms',
-        '1200': '1200ms',
+        400: '400ms',
+        600: '600ms',
+        800: '800ms',
+        1200: '1200ms',
       },
       zIndex: {
-        '60': '60',
-        '70': '70',
-        '80': '80',
-        '90': '90',
-        '100': '100',
+        60: '60',
+        70: '70',
+        80: '80',
+        90: '90',
+        100: '100',
       },
     },
   },
@@ -200,7 +201,7 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
-    function({ addUtilities, addComponents, theme }) {
+    function ({ addUtilities, addComponents, theme }) {
       // Glass morphism utilities
       addUtilities({
         '.glass': {
@@ -218,7 +219,7 @@ module.exports = {
           backdropFilter: 'blur(20px)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
         },
-      });
+      })
 
       // Neomorphism utilities
       addUtilities({
@@ -228,9 +229,10 @@ module.exports = {
         },
         '.neo-inset': {
           background: theme('colors.neutral.100'),
-          boxShadow: 'inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8)',
+          boxShadow:
+            'inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8)',
         },
-      });
+      })
 
       // Bento grid utilities
       addUtilities({
@@ -255,7 +257,7 @@ module.exports = {
           gridColumn: 'span 2',
           gridRow: 'span 2',
         },
-      });
+      })
 
       // Hover effects
       addUtilities({
@@ -277,12 +279,17 @@ module.exports = {
             boxShadow: '0 0 20px rgba(14, 165, 233, 0.4)',
           },
         },
-      });
+      })
 
       // Component classes
       addComponents({
         '.btn-primary': {
-          background: 'linear-gradient(135deg, ' + theme('colors.primary.500') + ', ' + theme('colors.primary.600') + ')',
+          background:
+            'linear-gradient(135deg, ' +
+            theme('colors.primary.500') +
+            ', ' +
+            theme('colors.primary.600') +
+            ')',
           color: 'white',
           padding: theme('spacing.3') + ' ' + theme('spacing.6'),
           borderRadius: theme('borderRadius.lg'),
@@ -316,7 +323,7 @@ module.exports = {
           padding: theme('spacing.8'),
           boxShadow: '12px 12px 24px rgba(0, 0, 0, 0.1), -12px -12px 24px rgba(255, 255, 255, 0.8)',
         },
-      });
+      })
     },
   ],
 }

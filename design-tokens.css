@@ -3,7 +3,7 @@
 
 :root {
   /* ===== COLOR PALETTE ===== */
-  
+
   /* Primary Colors */
   --primary-50: #f0f9ff;
   --primary-100: #e0f2fe;
@@ -56,7 +56,7 @@
   --glass-blur: blur(16px);
 
   /* ===== TYPOGRAPHY ===== */
-  
+
   /* Font Families */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Clash Display', 'Inter', sans-serif;
@@ -90,7 +90,7 @@
   --leading-loose: 2;
 
   /* ===== SPACING ===== */
-  
+
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -106,7 +106,7 @@
   --space-32: 8rem;
 
   /* ===== LAYOUT ===== */
-  
+
   /* Container Sizes */
   --container-sm: 640px;
   --container-md: 768px;
@@ -125,7 +125,7 @@
   --radius-full: 9999px;
 
   /* ===== ANIMATIONS ===== */
-  
+
   /* Durations */
   --duration-fast: 150ms;
   --duration-normal: 300ms;
@@ -139,7 +139,7 @@
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   /* ===== SHADOWS ===== */
-  
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -150,7 +150,7 @@
   --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.3);
 
   /* ===== Z-INDEX ===== */
-  
+
   --z-dropdown: 1000;
   --z-sticky: 1020;
   --z-fixed: 1030;
@@ -162,7 +162,7 @@
 }
 
 /* ===== LIGHT THEME ===== */
-[data-theme="light"] {
+[data-theme='light'] {
   --bg-primary: var(--neutral-50);
   --bg-secondary: var(--neutral-100);
   --bg-tertiary: var(--neutral-200);
@@ -177,7 +177,7 @@
 }
 
 /* ===== DARK THEME ===== */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-primary: var(--dark-50);
   --bg-secondary: var(--dark-100);
   --bg-tertiary: var(--dark-200);
@@ -194,7 +194,7 @@
 /* ===== GLOBAL STYLES ===== */
 
 * {
-  transition: 
+  transition:
     background-color var(--duration-normal) var(--ease-out),
     color var(--duration-normal) var(--ease-out),
     border-color var(--duration-normal) var(--ease-out),
@@ -223,7 +223,9 @@ body {
 
 .neo-inset {
   background: var(--bg-secondary);
-  box-shadow: inset 4px 4px 8px var(--shadow-color), inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-color),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
 }
 
 .hover-lift {
@@ -253,47 +255,100 @@ body {
 /* ===== ANIMATIONS ===== */
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInLeft {
-  0% { opacity: 0; transform: translateX(-30px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(30px); }
-  100% { opacity: 1; transform: translateX(0); }
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes scaleIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 0 20px rgba(14, 165, 233, 0.3); }
-  100% { box-shadow: 0 0 30px rgba(14, 165, 233, 0.6); }
+  0% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+  }
 }
 
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
-.animate-fade-in-down { animation: fadeInDown 0.6s ease-out; }
-.animate-fade-in-left { animation: fadeInLeft 0.6s ease-out; }
-.animate-fade-in-right { animation: fadeInRight 0.6s ease-out; }
-.animate-scale-in { animation: scaleIn 0.3s ease-out; }
-.animate-glow { animation: glow 2s ease-in-out infinite alternate; }
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
@@ -359,16 +414,28 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.bento-item-small { grid-column: span 1; grid-row: span 1; }
-.bento-item-wide { grid-column: span 2; grid-row: span 1; }
-.bento-item-tall { grid-column: span 1; grid-row: span 2; }
-.bento-item-large { grid-column: span 2; grid-row: span 2; }
+.bento-item-small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.bento-item-wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.bento-item-tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.bento-item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
 
 @media (max-width: 768px) {
   .bento-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .bento-item-wide,
   .bento-item-tall,
   .bento-item-large {

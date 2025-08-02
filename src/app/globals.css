@@ -27,7 +27,7 @@
     --radius: 0.75rem;
   }
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     /* Dark theme colors */
     --background: 24 24 27; /* dark-50 */
     --foreground: 250 250 250; /* dark-900 */
@@ -56,7 +56,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 
   /* Smooth scrolling */
@@ -129,7 +131,7 @@
     --radius: 0.75rem;
   }
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     /* Dark theme colors */
     --background: 24 24 27; /* dark-50 */
     --foreground: 250 250 250; /* dark-900 */
@@ -158,7 +160,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 
   /* Smooth scrolling */
@@ -220,11 +224,11 @@
     @apply bg-white/80 backdrop-blur-xl border-b border-white/20;
   }
 
-  [data-theme="dark"] .glass {
+  [data-theme='dark'] .glass {
     @apply bg-black/10 border-black/20;
   }
 
-  [data-theme="dark"] .glass-nav {
+  [data-theme='dark'] .glass-nav {
     @apply bg-black/80 border-black/20;
   }
 
@@ -237,11 +241,11 @@
     @apply bg-neutral-100 shadow-[inset_4px_4px_8px_rgba(0,0,0,0.1),inset_-4px_-4px_8px_rgba(255,255,255,0.8)];
   }
 
-  [data-theme="dark"] .neo {
+  [data-theme='dark'] .neo {
     @apply bg-dark-100 shadow-[8px_8px_16px_rgba(0,0,0,0.3),-8px_-8px_16px_rgba(255,255,255,0.1)];
   }
 
-  [data-theme="dark"] .neo-inset {
+  [data-theme='dark'] .neo-inset {
     @apply bg-dark-100 shadow-[inset_4px_4px_8px_rgba(0,0,0,0.3),inset_-4px_-4px_8px_rgba(255,255,255,0.1)];
   }
 
@@ -305,12 +309,24 @@
     @apply transition-all duration-700 ease-out;
   }
 
-  .animate-stagger:nth-child(1) { @apply delay-0; }
-  .animate-stagger:nth-child(2) { @apply delay-100; }
-  .animate-stagger:nth-child(3) { @apply delay-200; }
-  .animate-stagger:nth-child(4) { @apply delay-300; }
-  .animate-stagger:nth-child(5) { @apply delay-500; }
-  .animate-stagger:nth-child(6) { @apply delay-700; }
+  .animate-stagger:nth-child(1) {
+    @apply delay-0;
+  }
+  .animate-stagger:nth-child(2) {
+    @apply delay-100;
+  }
+  .animate-stagger:nth-child(3) {
+    @apply delay-200;
+  }
+  .animate-stagger:nth-child(4) {
+    @apply delay-300;
+  }
+  .animate-stagger:nth-child(5) {
+    @apply delay-500;
+  }
+  .animate-stagger:nth-child(6) {
+    @apply delay-700;
+  }
 
   /* Hover effects */
   .hover-lift {

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { personalInfo, footerNavigation, socialLinks } from '@/data/content'
 import { smoothScrollTo } from '@/lib/utils'
@@ -23,21 +23,17 @@ export function Footer() {
                 <span className="text-white font-bold">A</span>
               </div>
               <div>
-                <div className="font-semibold text-foreground">
-                  {personalInfo.title}
-                </div>
+                <div className="font-semibold text-foreground">{personalInfo.title}</div>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground max-w-sm">
-              {personalInfo.description}
-            </p>
+            <p className="text-sm text-muted-foreground max-w-sm">{personalInfo.description}</p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <div className="space-y-2">
-              {footerNavigation.map((item) => (
+              {footerNavigation.map(item => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
@@ -53,7 +49,7 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Connect</h3>
             <div className="flex space-x-3">
-              {socialLinks.slice(0, 4).map((social) => (
+              {socialLinks.slice(0, 4).map(social => (
                 <a
                   key={social.name}
                   href={social.url}
@@ -70,14 +66,9 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © abejaoui.com 2025 All rights reserved
-          </p>
-          
-          <button
-            onClick={handleBackToTop}
-            className="mt-4 md:mt-0 btn-glass text-sm px-4 py-2"
-          >
+          <p className="text-sm text-muted-foreground">© abejaoui.com 2025 All rights reserved</p>
+
+          <button onClick={handleBackToTop} className="mt-4 md:mt-0 btn-glass text-sm px-4 py-2">
             ↑ Back to Top
           </button>
         </div>
@@ -93,7 +84,7 @@ function getSocialIcon(icon: string): string {
     youtube: '📺',
     instagram: '📸',
     spotify: '🎵',
-    medium: '📝'
+    medium: '📝',
   }
   return icons[icon] || '🔗'
 }

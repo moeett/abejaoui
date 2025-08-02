@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { socialLinks } from '@/data/content'
 
@@ -31,7 +31,7 @@ function getSocialIcon(icon: string): string {
     youtube: '📺',
     instagram: '📸',
     spotify: '🎵',
-    medium: '📝'
+    medium: '📝',
   }
   return icons[icon] || '🔗'
 }

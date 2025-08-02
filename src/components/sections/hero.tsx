@@ -1,8 +1,14 @@
-"use client"
+'use client'
 
 import { personalInfo, socialLinks } from '@/data/content'
 import { smoothScrollTo } from '@/lib/utils'
-import { AnimatedContainer, AnimatedText, AnimatedButton, Floating, Pulse } from '@/components/ui/animated-components'
+import {
+  AnimatedContainer,
+  AnimatedText,
+  AnimatedButton,
+  Floating,
+  Pulse,
+} from '@/components/ui/animated-components'
 
 export function Hero() {
   const handleContactClick = () => {
@@ -14,10 +20,13 @@ export function Hero() {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-dark-50 dark:via-dark-100 dark:to-dark-200" />
-      
+
       {/* Floating particles background */}
       <div className="absolute inset-0 overflow-hidden">
         <Floating intensity="low" className="absolute top-1/4 left-1/4">
@@ -74,17 +83,15 @@ export function Hero() {
                 className="text-lg md:text-xl text-muted-foreground max-w-2xl"
               />
 
-              <AnimatedContainer variant="slideUp" delay={0.6} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <AnimatedButton
-                  onClick={handleContactClick}
-                  variant="primary"
-                >
+              <AnimatedContainer
+                variant="slideUp"
+                delay={0.6}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <AnimatedButton onClick={handleContactClick} variant="primary">
                   Contact Me
                 </AnimatedButton>
-                <AnimatedButton
-                  onClick={handlePortfolioClick}
-                  variant="glass"
-                >
+                <AnimatedButton onClick={handlePortfolioClick} variant="glass">
                   View Portfolio
                 </AnimatedButton>
               </AnimatedContainer>
@@ -114,7 +121,7 @@ export function Hero() {
 
         {/* Social Links */}
         <div className="flex justify-center lg:justify-start mt-12 space-x-6">
-          {socialLinks.slice(0, 4).map((social) => (
+          {socialLinks.slice(0, 4).map(social => (
             <a
               key={social.name}
               href={social.url}
@@ -149,7 +156,7 @@ function getSocialIcon(icon: string): string {
     youtube: '📺',
     instagram: '📸',
     spotify: '🎵',
-    medium: '📝'
+    medium: '📝',
   }
   return icons[icon] || '🔗'
 }

@@ -1,5 +1,5 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -26,7 +26,7 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null
-  
+
   return (...args: Parameters<T>) => {
     if (timeout) clearTimeout(timeout)
     timeout = setTimeout(() => func(...args), wait)
@@ -38,7 +38,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean
-  
+
   return (...args: Parameters<T>) => {
     if (!inThrottle) {
       func(...args)
@@ -64,7 +64,10 @@ export function getInitials(name: string): string {
 
 export function copyToClipboard(text: string): Promise<boolean> {
   if (navigator.clipboard && window.isSecureContext) {
-    return navigator.clipboard.writeText(text).then(() => true).catch(() => false)
+    return navigator.clipboard
+      .writeText(text)
+      .then(() => true)
+      .catch(() => false)
   } else {
     // Fallback for older browsers
     const textArea = document.createElement('textarea')
@@ -73,7 +76,7 @@ export function copyToClipboard(text: string): Promise<boolean> {
     textArea.style.left = '-999999px'
     document.body.prepend(textArea)
     textArea.select()
-    
+
     try {
       document.execCommand('copy')
       return Promise.resolve(true)
@@ -90,10 +93,10 @@ export function smoothScrollTo(elementId: string, offset: number = 80): void {
   if (element) {
     const elementPosition = element.getBoundingClientRect().top
     const offsetPosition = elementPosition + window.pageYOffset - offset
-    
+
     window.scrollTo({
       top: offsetPosition,
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 }
@@ -108,10 +111,12 @@ export function isInViewport(element: Element, threshold: number = 0.1): boolean
   const rect = element.getBoundingClientRect()
   const windowHeight = window.innerHeight || document.documentElement.clientHeight
   const windowWidth = window.innerWidth || document.documentElement.clientWidth
-  
-  const vertInView = (rect.top <= windowHeight * (1 - threshold)) && ((rect.top + rect.height) >= windowHeight * threshold)
-  const horInView = (rect.left <= windowWidth * (1 - threshold)) && ((rect.left + rect.width) >= windowWidth * threshold)
-  
+
+  const vertInView =
+    rect.top <= windowHeight * (1 - threshold) && rect.top + rect.height >= windowHeight * threshold
+  const horInView =
+    rect.left <= windowWidth * (1 - threshold) && rect.left + rect.width >= windowWidth * threshold
+
   return vertInView && horInView
 }
 

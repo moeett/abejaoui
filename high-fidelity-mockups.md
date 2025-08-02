@@ -1,4 +1,5 @@
 # 🎨 HIGH-FIDELITY MOCKUPS 2025
+
 ## Visual Design Specifications for Modern Portfolio
 
 ---
@@ -6,6 +7,7 @@
 ## 🖼️ MOCKUP OVERVIEW
 
 ### Design System Implementation
+
 - **Color Palette:** Primary blues with glassmorphism transparency
 - **Typography:** Inter (body) + Clash Display (headings)
 - **Effects:** Glassmorphism, neomorphism, and 3D elements
@@ -17,6 +19,7 @@
 ## 🏠 HEADER MOCKUP
 
 ### Desktop Header (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │ [🏠 LOGO]    Home  About  Skills  Experience  Portfolio  Contact │
@@ -27,6 +30,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Background:** Glassmorphism with rgba(255,255,255,0.1)
 - **Backdrop Filter:** blur(20px) for frosted glass effect
 - **Border:** 1px solid rgba(255,255,255,0.2)
@@ -36,6 +40,7 @@
 - **Theme Toggle:** 32px icon with morphing animation
 
 ### Mobile Header (375px width)
+
 ```
 ┌─────────────────────────────────┐
 │ [🏠 LOGO]           [☰] [🌙☀️] │
@@ -49,6 +54,7 @@
 ## 🌟 HERO SECTION MOCKUP
 
 ### Desktop Hero (1200px width, 100vh height)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                    [Floating Particles Background]              │
@@ -75,9 +81,10 @@
 ```
 
 **Visual Specifications:**
+
 - **Background:** Gradient mesh with floating particles
 - **Profile Image:** 300px diameter with subtle glow effect
-- **Typography:** 
+- **Typography:**
   - Greeting: text-6xl Clash Display (clamp(4rem, 3rem + 5vw, 6rem))
   - Title: text-4xl Inter Medium
   - Description: text-lg Inter Regular
@@ -91,6 +98,7 @@
 ## 👤 ABOUT SECTION MOCKUP
 
 ### Desktop About (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                          About Me                               │
@@ -119,6 +127,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Text Container:** Glassmorphism card, 60% width
 - **Stats Cards:** Neomorphism style, 120px width each
 - **Typography:** text-2xl for numbers, text-sm for labels
@@ -130,6 +139,7 @@
 ## 🛠️ SKILLS SECTION MOCKUP (Bento Grid)
 
 ### Desktop Skills (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                           Skills                                │
@@ -171,6 +181,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Bento Grid:** 4 columns, responsive gaps (1.5rem)
 - **Cards:** Glassmorphism background with hover lift
 - **Progress Bars:** Gradient fills with glow effects
@@ -183,6 +194,7 @@
 ## 📚 EXPERIENCE SECTION MOCKUP (Timeline)
 
 ### Desktop Experience (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Experience                               │
@@ -229,6 +241,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Timeline Cards:** Glassmorphism with subtle borders
 - **Connecting Lines:** rgba(255,255,255,0.2) with glow
 - **Typography:** Institution text-lg, degree text-sm
@@ -240,6 +253,7 @@
 ## 💼 PORTFOLIO SECTION MOCKUP (Bento Grid)
 
 ### Desktop Portfolio (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Portfolio                               │
@@ -306,6 +320,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Bento Grid:** Variable card sizes based on project importance
 - **Project Cards:** Glassmorphism with project images
 - **Technology Tags:** Colored badges with glassmorphism
@@ -318,6 +333,7 @@
 ## 💬 TESTIMONIALS SECTION MOCKUP
 
 ### Desktop Testimonials (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Recommendations                            │
@@ -354,6 +370,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Testimonial Cards:** Large glassmorphism cards
 - **Avatar Images:** 48px circular with subtle border
 - **Typography:** Quote text-lg italic, name text-base bold
@@ -366,6 +383,7 @@
 ## 📞 CONTACT SECTION MOCKUP
 
 ### Desktop Contact (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Contact Me                               │
@@ -410,6 +428,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Split Layout:** 50/50 form and information
 - **Form Inputs:** Glassmorphism with floating labels
 - **Validation:** Real-time with error states (red glow)
@@ -422,6 +441,7 @@
 ## 🦶 FOOTER MOCKUP
 
 ### Desktop Footer (1200px width)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │ ┌─────────┐ Team lead - Software Engineer                       │
@@ -446,6 +466,7 @@
 ```
 
 **Visual Specifications:**
+
 - **Background:** Subtle glassmorphism rgba(255,255,255,0.05)
 - **Logo:** 32px height with brand colors
 - **Navigation:** text-sm with hover underlines
@@ -460,6 +481,7 @@
 ### Mobile Responsive Adaptations (375px width)
 
 #### Mobile Hero
+
 ```
 ┌─────────────────────────────────┐
 │        [Profile Image]          │
@@ -494,6 +516,7 @@
 ```
 
 #### Mobile Skills (Single Column)
+
 ```
 ┌─────────────────────────────────┐
 │           Skills                │
@@ -531,6 +554,7 @@
 ## 🎨 VISUAL EFFECTS SPECIFICATIONS
 
 ### Glassmorphism Implementation
+
 ```css
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
@@ -548,23 +572,25 @@
 ```
 
 ### Neomorphism Implementation
+
 ```css
 .neo-card {
   background: #f5f5f5;
   border-radius: 1.5rem;
-  box-shadow: 
+  box-shadow:
     8px 8px 16px rgba(0, 0, 0, 0.1),
     -8px -8px 16px rgba(255, 255, 255, 0.8);
 }
 
 .neo-button:hover {
-  box-shadow: 
+  box-shadow:
     4px 4px 8px rgba(0, 0, 0, 0.15),
     -4px -4px 8px rgba(255, 255, 255, 0.9);
 }
 ```
 
 ### Animation Specifications
+
 ```css
 .hover-lift {
   transition: transform 300ms ease-out;
@@ -577,7 +603,9 @@
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in-up.in-view {
@@ -591,6 +619,7 @@
 ## 🎯 INTERACTIVE PROTOTYPES
 
 ### Hover State Specifications
+
 ```
 Card Hover Effects:
 - Transform: translateY(-8px)
@@ -611,6 +640,7 @@ Navigation Hover:
 ```
 
 ### Click/Tap Feedback
+
 ```
 Button Click:
 - Scale: 0.95x briefly then back to 1.0x
@@ -625,6 +655,7 @@ Card Tap (Mobile):
 ```
 
 ### Loading States
+
 ```
 Skeleton Loaders:
 - Shimmer animation across placeholder content
@@ -643,8 +674,9 @@ Form Submission:
 ## 🎨 DARK MODE MOCKUPS
 
 ### Dark Theme Specifications
+
 ```css
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-primary: #18181b;
   --bg-secondary: #27272a;
   --text-primary: #fafafa;
@@ -655,6 +687,7 @@ Form Submission:
 ```
 
 ### Dark Mode Visual Changes
+
 - **Background:** Deep dark (#18181b) with subtle gradients
 - **Glassmorphism:** Dark glass with rgba(0, 0, 0, 0.1)
 - **Text:** High contrast white (#fafafa) for readability
@@ -666,12 +699,14 @@ Form Submission:
 ## 📊 PERFORMANCE CONSIDERATIONS
 
 ### Optimized Assets
+
 - **Images:** WebP format with AVIF fallbacks
 - **Icons:** SVG sprites for scalability
 - **Fonts:** Subset fonts for faster loading
 - **Animations:** GPU-accelerated properties only
 
 ### Loading Strategy
+
 - **Critical CSS:** Inline above-the-fold styles
 - **Lazy Loading:** Images and components below fold
 - **Progressive Enhancement:** Core functionality without JS

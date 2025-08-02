@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Header />
-      
+
       <div className="relative">
         <Hero />
         <About />
@@ -24,9 +24,9 @@ export default function HomePage() {
         <Testimonials />
         <Contact />
       </div>
-      
+
       <Footer />
-      
+
       {/* Floating elements */}
       <FloatingSocial />
       <BackToTop />

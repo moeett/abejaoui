@@ -1,4 +1,5 @@
 # 📐 WIREFRAMES 2025
+
 ## Visual Layout Specifications for Modern Portfolio
 
 ---
@@ -6,13 +7,16 @@
 ## 🖥️ DESKTOP WIREFRAMES (1024px+)
 
 ### HEADER COMPONENT
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │ [LOGO]    Home  About  Skills  Experience  Portfolio  Contact   │
 │                                                        [🌙/☀️]  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Height: 80px
 - Glassmorphism background with backdrop blur
 - Sticky positioning with scroll detection
@@ -21,6 +25,7 @@
 - Theme toggle: 32px icon with morphing animation
 
 ### HERO SECTION
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        [Particle Background]                    │
@@ -39,7 +44,9 @@
 │                        ↓ Scroll down                          │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Height: 100vh (full screen)
 - Profile image: 300px diameter with glow effect
 - Social sidebar: Fixed left position
@@ -48,6 +55,7 @@
 - CTAs: Primary and secondary button styles
 
 ### ABOUT SECTION
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                          About Me                               │
@@ -66,13 +74,16 @@
 │  └─────────────────────────────┘                               │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Section padding: 6rem vertical
 - Text column: 60% width, glassmorphism background
 - Stats cards: 120px width, neomorphism style
 - CV button: Primary style with download icon
 
 ### SKILLS SECTION (Bento Grid)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                           Skills                                │
@@ -99,7 +110,9 @@
 │  └─────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Bento grid: 4 columns on desktop
 - Card heights: Variable based on content
 - Glassmorphism cards with hover lift
@@ -107,6 +120,7 @@
 - Expandable cards: Click to show/hide details
 
 ### EXPERIENCE SECTION (Timeline)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Experience                               │
@@ -131,7 +145,9 @@
 │  └─────────────┘                     └─────────────┘           │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Two-column timeline layout
 - Glassmorphism cards with hover effects
 - Connecting lines between related items
@@ -139,6 +155,7 @@
 - Interactive hover states with additional details
 
 ### PORTFOLIO SECTION (Bento Grid)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                         Portfolio                               │
@@ -170,7 +187,9 @@
 │                        [View All Projects]                     │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Bento grid with varying card sizes
 - Featured projects get larger cards
 - Hover effects reveal additional information
@@ -178,6 +197,7 @@
 - CTA buttons for demos and code repositories
 
 ### TESTIMONIALS SECTION
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                      Recommendations                            │
@@ -195,7 +215,9 @@
 │                    [View All on LinkedIn]                      │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Glassmorphism carousel cards
 - Auto-play with pause on hover
 - Dot indicators for navigation
@@ -203,6 +225,7 @@
 - Fade transitions between testimonials
 
 ### CONTACT SECTION
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        Contact Me                               │
@@ -222,7 +245,9 @@
 │  └─────────────────────────────┘ └─────────────────────────────┘ │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Split layout: 50/50 form and info
 - Glassmorphism form with floating labels
 - Real-time validation with error states
@@ -230,6 +255,7 @@
 - Success/error feedback animations
 
 ### FOOTER
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │ [LOGO] Team lead - Software Engineer                           │
@@ -241,7 +267,9 @@
 │ © abejaoui.com 2025 All right reserved        [Back to Top ↑] │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Minimal glassmorphism background
 - Quick navigation links
 - Social media icons
@@ -252,18 +280,22 @@
 ## 📱 MOBILE WIREFRAMES (< 768px)
 
 ### MOBILE HEADER
+
 ```
 ┌─────────────────────────────────┐
 │ [LOGO]              [☰] [🌙/☀️] │
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Height: 60px
 - Hamburger menu slides in from right
 - Theme toggle remains visible
 - Logo scales to fit mobile
 
 ### MOBILE NAVIGATION OVERLAY
+
 ```
 ┌─────────────────────────────────┐
 │                            [✕] │
@@ -279,13 +311,16 @@
 │                                 │
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Full-screen overlay with glassmorphism
 - Large touch targets (44px minimum)
 - Slide-in animation from right
 - Social links at bottom
 
 ### MOBILE HERO
+
 ```
 ┌─────────────────────────────────┐
 │        [Profile Image]          │
@@ -305,13 +340,16 @@
 │         ↓ Scroll down           │
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Single column stacked layout
 - Profile image: 200px diameter
 - Social links in horizontal row
 - Reduced particle effects for performance
 
 ### MOBILE ABOUT
+
 ```
 ┌─────────────────────────────────┐
 │          About Me               │
@@ -331,13 +369,16 @@
 │      [Download CV]              │
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Single column layout
 - Stats cards in row of 3
 - Full-width CV button
 - Reduced padding for mobile
 
 ### MOBILE SKILLS (Single Column)
+
 ```
 ┌─────────────────────────────────┐
 │           Skills                │
@@ -364,13 +405,16 @@
 │  [Continue for all 8 categories]│
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Single column stack
 - Full-width cards
 - Expandable/collapsible sections
 - Touch-friendly interaction areas
 
 ### MOBILE PORTFOLIO (Single Column)
+
 ```
 ┌─────────────────────────────────┐
 │         Portfolio               │
@@ -394,13 +438,16 @@
 │      [View All Projects]        │
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Single column stack
 - Equal-height cards
 - Swipe gestures for navigation
 - Simplified hover states (tap-based)
 
 ### MOBILE CONTACT
+
 ```
 ┌─────────────────────────────────┐
 │        Contact Me               │
@@ -422,7 +469,9 @@
 │  └─────────────────────────────┘ │
 └─────────────────────────────────┘
 ```
+
 **Specifications:**
+
 - Stacked layout: info then form
 - Large touch targets for form inputs
 - Floating labels for better UX
@@ -433,6 +482,7 @@
 ## 🎯 INTERACTION SPECIFICATIONS
 
 ### Hover States (Desktop)
+
 ```
 Card Hover:
 - Lift: translateY(-8px)
@@ -453,6 +503,7 @@ Navigation Hover:
 ```
 
 ### Click/Tap States
+
 ```
 Button Click:
 - Scale: 0.95x briefly then back
@@ -466,6 +517,7 @@ Card Tap:
 ```
 
 ### Scroll Animations
+
 ```
 Fade In Up:
 - Initial: opacity 0, translateY(30px)
@@ -484,6 +536,7 @@ Stagger Animation:
 ## 📐 SPACING SPECIFICATIONS
 
 ### Desktop Spacing
+
 ```
 Section Padding: 6rem (96px) vertical
 Container Max-Width: 1200px
@@ -493,6 +546,7 @@ Text Margins: 1rem (16px)
 ```
 
 ### Mobile Spacing
+
 ```
 Section Padding: 3rem (48px) vertical
 Container Padding: 1rem (16px) horizontal
@@ -502,6 +556,7 @@ Text Margins: 0.75rem (12px)
 ```
 
 ### Component Sizing
+
 ```
 Header Height: 80px desktop, 60px mobile
 Button Height: 48px desktop, 44px mobile
@@ -515,6 +570,7 @@ Icon Size: 24px desktop, 20px mobile
 ## 🎨 VISUAL SPECIFICATIONS
 
 ### Glassmorphism Effects
+
 ```
 Background: rgba(255, 255, 255, 0.1)
 Backdrop Filter: blur(16px)
@@ -523,15 +579,17 @@ Box Shadow: 0 8px 32px rgba(0, 0, 0, 0.1)
 ```
 
 ### Neomorphism Effects
+
 ```
 Background: Neutral background color
-Box Shadow: 
+Box Shadow:
   8px 8px 16px rgba(0, 0, 0, 0.1),
   -8px -8px 16px rgba(255, 255, 255, 0.8)
 Border Radius: 1rem (16px)
 ```
 
 ### Animation Timing
+
 ```
 Fast: 150ms (micro-interactions)
 Normal: 300ms (hover states)

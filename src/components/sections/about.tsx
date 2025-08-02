@@ -1,19 +1,20 @@
-"use client"
+'use client'
 
 import { aboutDescription, statistics } from '@/data/content'
-import { AnimatedContainer, AnimatedCard, AnimatedButton, AnimatedCounter } from '@/components/ui/animated-components'
+import {
+  AnimatedContainer,
+  AnimatedCard,
+  AnimatedButton,
+  AnimatedCounter,
+} from '@/components/ui/animated-components'
 
 export function About() {
   return (
     <section id="about" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            About Me
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            My introduction
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About Me</h2>
+          <p className="text-xl text-muted-foreground">My introduction</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12 items-center">
@@ -24,9 +25,7 @@ export function About() {
                 {aboutDescription}
               </p>
 
-              <AnimatedButton variant="primary">
-                Download CV
-              </AnimatedButton>
+              <AnimatedButton variant="primary">Download CV</AnimatedButton>
             </AnimatedCard>
           </AnimatedContainer>
 
@@ -37,7 +36,9 @@ export function About() {
                 <AnimatedCounter to={12} />+
               </div>
               <div className="text-sm text-muted-foreground">
-                Years<br />Experience
+                Years
+                <br />
+                Experience
               </div>
             </AnimatedCard>
 
@@ -46,7 +47,9 @@ export function About() {
                 <AnimatedCounter to={20} />+
               </div>
               <div className="text-sm text-muted-foreground">
-                Projects<br />Done
+                Projects
+                <br />
+                Done
               </div>
             </AnimatedCard>
 
@@ -55,7 +58,9 @@ export function About() {
                 <AnimatedCounter to={5} />+
               </div>
               <div className="text-sm text-muted-foreground">
-                Companies<br />Worked
+                Companies
+                <br />
+                Worked
               </div>
             </AnimatedCard>
           </AnimatedContainer>

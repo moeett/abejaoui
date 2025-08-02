@@ -2,7 +2,7 @@
 const nextConfig = {
   // Enable static export for Netlify
   output: 'export',
-  
+
   // Disable image optimization for static export
   images: {
     unoptimized: true,
@@ -10,28 +10,28 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  
+
   // Trailing slash for better static hosting
   trailingSlash: true,
-  
+
   // Disable server-side features for static export
-  
+
   // Optimize for production
   swcMinify: true,
-  
+
   // Compiler options
   compiler: {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  
+
   // Environment variables
   env: {
     SITE_URL: process.env.SITE_URL || 'https://portfolio.abejaoui.com',
     SITE_NAME: 'Ahmed Khalil Bejaoui - Portfolio',
     SITE_DESCRIPTION: 'Tech Lead & Software Engineer specializing in modern web technologies',
   },
-  
+
   // Headers for security and performance
   async headers() {
     return [
@@ -56,9 +56,9 @@ const nextConfig = {
           },
         ],
       },
-    ];
+    ]
   },
-  
+
   // Webpack configuration
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     // Optimize bundle size
@@ -71,20 +71,20 @@ const nextConfig = {
           chunks: 'all',
         },
       },
-    };
-    
-    return config;
+    }
+
+    return config
   },
-  
+
   // Redirects (handled by Netlify)
   async redirects() {
-    return [];
+    return []
   },
-  
+
   // Rewrites (handled by Netlify)
   async rewrites() {
-    return [];
+    return []
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

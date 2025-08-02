@@ -47,14 +47,16 @@ export const AnimatedContainer = forwardRef<HTMLDivElement, AnimatedContainerPro
     }
 
     const variants = getVariants()
-    
+
     // Override transition timing if provided
     const customVariants = {
       ...variants,
       visible: {
         ...variants.visible,
         transition: {
-          ...(typeof variants.visible === 'object' && 'transition' in variants.visible ? variants.visible.transition : {}),
+          ...(typeof variants.visible === 'object' && 'transition' in variants.visible
+            ? variants.visible.transition
+            : {}),
           delay,
           duration,
         },
@@ -138,15 +140,18 @@ interface AnimatedButtonProps extends HTMLMotionProps<'button'> {
 
 export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>(
   ({ children, variant = 'primary', size = 'md', className, disabled, ...props }, ref) => {
-    const baseClasses = 'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
-    
+    const baseClasses =
+      'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
+
     const variantClasses = {
-      primary: 'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:shadow-primary/25',
+      primary:
+        'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:shadow-lg hover:shadow-primary/25',
       secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-      glass: 'bg-white/10 backdrop-blur-md border border-white/20 text-foreground hover:bg-white/20',
+      glass:
+        'bg-white/10 backdrop-blur-md border border-white/20 text-foreground hover:bg-white/20',
       neo: 'bg-neutral-100 shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.8)] text-foreground hover:shadow-[4px_4px_8px_rgba(0,0,0,0.15),-4px_-4px_8px_rgba(255,255,255,0.9)]',
     }
-    
+
     const sizeClasses = {
       sm: 'h-9 px-3 text-sm',
       md: 'h-10 px-4 py-2',
@@ -183,7 +188,7 @@ interface AnimatedCardProps extends HTMLMotionProps<'div'> {
 export const AnimatedCard = forwardRef<HTMLDivElement, AnimatedCardProps>(
   ({ children, variant = 'glass', hover = true, className, ...props }, ref) => {
     const baseClasses = 'rounded-2xl p-6 transition-all duration-300'
-    
+
     const variantClasses = {
       glass: 'bg-white/10 backdrop-blur-md border border-white/20',
       neo: 'bg-neutral-100 shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.8)]',
@@ -233,17 +238,16 @@ export const AnimatedProgressBar = forwardRef<HTMLDivElement, AnimatedProgressBa
       <div ref={ref} className={cn('space-y-2', className)}>
         {(label || showPercentage) && (
           <div className="flex justify-between items-center">
-            {label && (
-              <span className="text-sm font-medium text-foreground">{label}</span>
-            )}
-            {showPercentage && (
-              <span className="text-sm text-muted-foreground">{percentage}%</span>
-            )}
+            {label && <span className="text-sm font-medium text-foreground">{label}</span>}
+            {showPercentage && <span className="text-sm text-muted-foreground">{percentage}%</span>}
           </div>
         )}
         <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
           <motion.div
-            className={cn('h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full', barClassName)}
+            className={cn(
+              'h-full bg-gradient-to-r from-primary-500 to-primary-600 rounded-full',
+              barClassName
+            )}
             variants={progressBarVariants}
             initial="hidden"
             whileInView="visible"
@@ -332,12 +336,7 @@ interface AnimatedListItemProps extends HTMLMotionProps<'div'> {
 export const AnimatedListItem = forwardRef<HTMLDivElement, AnimatedListItemProps>(
   ({ children, className, ...props }, ref) => {
     return (
-      <motion.div
-        ref={ref}
-        variants={staggerItemVariants}
-        className={className}
-        {...props}
-      >
+      <motion.div ref={ref} variants={staggerItemVariants} className={className} {...props}>
         {children}
       </motion.div>
     )

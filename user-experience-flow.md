@@ -1,4 +1,5 @@
 # 🎯 USER EXPERIENCE FLOW 2025
+
 ## Optimized User Journeys & Interaction Patterns
 
 ---
@@ -6,12 +7,14 @@
 ## 🚀 PRIMARY USER JOURNEYS
 
 ### Journey 1: First-Time Visitor (Potential Client)
+
 ```
-Landing → Hero Impact → About Credibility → Skills Assessment → 
+Landing → Hero Impact → About Credibility → Skills Assessment →
 Portfolio Review → Testimonials Trust → Contact Action
 ```
 
 **Detailed Flow:**
+
 1. **Landing (Hero Section)**
    - Immediate visual impact with 3D elements
    - Clear value proposition in 3 seconds
@@ -49,12 +52,14 @@ Portfolio Review → Testimonials Trust → Contact Action
    - Social links provide alternative connections
 
 ### Journey 2: Returning Visitor (Recruiter/HR)
+
 ```
-Direct Navigation → Portfolio Deep Dive → Skills Verification → 
+Direct Navigation → Portfolio Deep Dive → Skills Verification →
 Contact Information → CV Download
 ```
 
 **Optimized Flow:**
+
 1. **Quick Navigation**
    - Sticky header with direct section links
    - Skip to content for accessibility
@@ -80,12 +85,14 @@ Contact Information → CV Download
    - Direct email/phone options
 
 ### Journey 3: Mobile User (Quick Browse)
+
 ```
-Mobile Hero → Swipe Navigation → Key Projects → 
+Mobile Hero → Swipe Navigation → Key Projects →
 Quick Contact → Social Follow
 ```
 
 **Mobile-Optimized Flow:**
+
 1. **Immediate Impact**
    - Simplified hero with key information
    - Touch-friendly navigation
@@ -111,6 +118,7 @@ Quick Contact → Social Follow
 ### Micro-Interactions Catalog
 
 #### 1. Navigation Interactions
+
 ```
 Hover State:
 - Link underline slides in from left (200ms)
@@ -129,6 +137,7 @@ Mobile Tap:
 ```
 
 #### 2. Button Interactions
+
 ```
 Primary Button:
 Hover: Lift (-4px) + Glow effect (300ms)
@@ -147,6 +156,7 @@ Active: Maintained inset state
 ```
 
 #### 3. Card Interactions
+
 ```
 Project Card:
 Hover: Lift (-8px) + Shadow increase + Image scale (1.05x)
@@ -165,6 +175,7 @@ Tap: Navigate to LinkedIn profile
 ```
 
 #### 4. Form Interactions
+
 ```
 Input Field:
 Focus: Label float animation + Border glow
@@ -181,6 +192,7 @@ Error: Shake animation + Error state + Retry option
 ### Animation Timing & Easing
 
 #### Performance-Optimized Animations
+
 ```css
 /* Fast Micro-interactions */
 .micro-fast {
@@ -204,12 +216,15 @@ Error: Shake animation + Error state + Retry option
 ```
 
 #### Scroll-Based Animations
+
 ```css
 /* Fade In Up */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .fade-in-up.in-view {
@@ -218,10 +233,18 @@ Error: Shake animation + Error state + Retry option
 }
 
 /* Stagger Animation */
-.stagger-item:nth-child(1) { transition-delay: 0ms; }
-.stagger-item:nth-child(2) { transition-delay: 100ms; }
-.stagger-item:nth-child(3) { transition-delay: 200ms; }
-.stagger-item:nth-child(4) { transition-delay: 300ms; }
+.stagger-item:nth-child(1) {
+  transition-delay: 0ms;
+}
+.stagger-item:nth-child(2) {
+  transition-delay: 100ms;
+}
+.stagger-item:nth-child(3) {
+  transition-delay: 200ms;
+}
+.stagger-item:nth-child(4) {
+  transition-delay: 300ms;
+}
 ```
 
 ---
@@ -231,6 +254,7 @@ Error: Shake animation + Error state + Retry option
 ### Breakpoint-Specific Interactions
 
 #### Desktop (1024px+)
+
 ```
 - Hover states active
 - Complex animations enabled
@@ -241,6 +265,7 @@ Error: Shake animation + Error state + Retry option
 ```
 
 #### Tablet (768px - 1024px)
+
 ```
 - Touch-optimized hover states
 - Simplified animations
@@ -251,6 +276,7 @@ Error: Shake animation + Error state + Retry option
 ```
 
 #### Mobile (< 768px)
+
 ```
 - Touch-only interactions
 - Minimal animations for performance
@@ -261,6 +287,7 @@ Error: Shake animation + Error state + Retry option
 ```
 
 ### Adaptive Content Strategy
+
 ```
 Desktop: Full content with rich interactions
 Tablet: Condensed content with touch optimization
@@ -272,6 +299,7 @@ Mobile: Essential content with progressive disclosure
 ## ♿ ACCESSIBILITY INTERACTION PATTERNS
 
 ### Keyboard Navigation Flow
+
 ```
 Tab Order:
 1. Skip to content link
@@ -293,6 +321,7 @@ Keyboard Shortcuts:
 ```
 
 ### Screen Reader Optimization
+
 ```
 Semantic Structure:
 - Proper heading hierarchy (h1 → h6)
@@ -310,6 +339,7 @@ ARIA Implementation:
 ```
 
 ### Focus Management
+
 ```
 Focus Indicators:
 - High contrast outline (3px solid)
@@ -333,6 +363,7 @@ Visual Feedback:
 ### Primary Conversion Goals
 
 #### 1. Contact Form Submission
+
 ```
 Optimization Strategy:
 - Minimal required fields (Name, Email, Message)
@@ -350,6 +381,7 @@ Friction Reduction:
 ```
 
 #### 2. CV Download
+
 ```
 Optimization Strategy:
 - Prominent placement in About section
@@ -367,6 +399,7 @@ Trust Building:
 ```
 
 #### 3. Portfolio Engagement
+
 ```
 Optimization Strategy:
 - Featured projects in larger cards
@@ -384,6 +417,7 @@ Engagement Tactics:
 ```
 
 ### Trust Building Elements
+
 ```
 Social Proof:
 - Professional testimonials with photos
@@ -405,6 +439,7 @@ Credibility Indicators:
 ## 📊 PERFORMANCE OPTIMIZATION PATTERNS
 
 ### Loading Strategies
+
 ```
 Critical Path:
 1. HTML structure and critical CSS
@@ -421,6 +456,7 @@ Lazy Loading:
 ```
 
 ### Animation Performance
+
 ```
 GPU-Accelerated Properties:
 - transform (translate, scale, rotate)
@@ -441,6 +477,7 @@ Performance Monitoring:
 ```
 
 ### Bundle Optimization
+
 ```
 Code Splitting:
 - Route-based splitting
@@ -461,6 +498,7 @@ Asset Optimization:
 ## 🔄 FEEDBACK LOOPS & ITERATIONS
 
 ### User Testing Integration
+
 ```
 A/B Testing Opportunities:
 - Hero section CTA placement
@@ -478,6 +516,7 @@ Analytics Tracking:
 ```
 
 ### Continuous Improvement
+
 ```
 Performance Monitoring:
 - Core Web Vitals tracking

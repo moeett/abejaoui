@@ -1,10 +1,9 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
-import { cn } from '@/lib/utils'
 import { navigation } from '@/data/content'
-import { smoothScrollTo } from '@/lib/utils'
+import { cn, smoothScrollTo } from '@/lib/utils'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -14,7 +13,7 @@ export function Header() {
 
   useEffect(() => {
     setMounted(true)
-    
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
@@ -37,10 +36,12 @@ export function Header() {
   }
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      isScrolled ? "glass-nav shadow-lg" : "bg-transparent"
-    )}>
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        isScrolled ? 'glass-nav shadow-lg' : 'bg-transparent'
+      )}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -52,7 +53,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
+            {navigation.map(item => (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
@@ -81,18 +82,24 @@ export function Header() {
               aria-label="Toggle mobile menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={cn(
-                  "block w-5 h-0.5 bg-foreground transition-all duration-200",
-                  isMobileMenuOpen ? "rotate-45 translate-y-1" : ""
-                )} />
-                <span className={cn(
-                  "block w-5 h-0.5 bg-foreground transition-all duration-200 mt-1",
-                  isMobileMenuOpen ? "opacity-0" : ""
-                )} />
-                <span className={cn(
-                  "block w-5 h-0.5 bg-foreground transition-all duration-200 mt-1",
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-1" : ""
-                )} />
+                <span
+                  className={cn(
+                    'block w-5 h-0.5 bg-foreground transition-all duration-200',
+                    isMobileMenuOpen ? 'rotate-45 translate-y-1' : ''
+                  )}
+                />
+                <span
+                  className={cn(
+                    'block w-5 h-0.5 bg-foreground transition-all duration-200 mt-1',
+                    isMobileMenuOpen ? 'opacity-0' : ''
+                  )}
+                />
+                <span
+                  className={cn(
+                    'block w-5 h-0.5 bg-foreground transition-all duration-200 mt-1',
+                    isMobileMenuOpen ? '-rotate-45 -translate-y-1' : ''
+                  )}
+                />
               </div>
             </button>
           </div>
@@ -102,7 +109,7 @@ export function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 glass-nav border-t border-white/20">
             <nav className="container mx-auto px-4 py-4 space-y-4">
-              {navigation.map((item) => (
+              {navigation.map(item => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}

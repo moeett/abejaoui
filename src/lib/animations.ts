@@ -38,14 +38,14 @@ export const fadeInUp = (element: string | Element, options: any = {}) => {
     opacity: 0,
     delay: 0,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.fromTo(
     element,
-    { 
-      opacity: 0, 
-      y: config.y 
+    {
+      opacity: 0,
+      y: config.y,
     },
     {
       opacity: 1,
@@ -66,14 +66,14 @@ export const fadeInLeft = (element: string | Element, options: any = {}) => {
     opacity: 0,
     delay: 0,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.fromTo(
     element,
-    { 
-      opacity: 0, 
-      x: config.x 
+    {
+      opacity: 0,
+      x: config.x,
     },
     {
       opacity: 1,
@@ -94,14 +94,14 @@ export const fadeInRight = (element: string | Element, options: any = {}) => {
     opacity: 0,
     delay: 0,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.fromTo(
     element,
-    { 
-      opacity: 0, 
-      x: config.x 
+    {
+      opacity: 0,
+      x: config.x,
     },
     {
       opacity: 1,
@@ -122,14 +122,14 @@ export const scaleIn = (element: string | Element, options: any = {}) => {
     opacity: 0,
     delay: 0,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.fromTo(
     element,
-    { 
-      opacity: 0, 
-      scale: config.scale 
+    {
+      opacity: 0,
+      scale: config.scale,
     },
     {
       opacity: 1,
@@ -150,14 +150,14 @@ export const staggerAnimation = (elements: string | Element[], options: any = {}
     opacity: 0,
     stagger: animationConfig.stagger.normal,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.fromTo(
     elements,
-    { 
-      opacity: 0, 
-      y: config.y 
+    {
+      opacity: 0,
+      y: config.y,
     },
     {
       opacity: 1,
@@ -170,19 +170,23 @@ export const staggerAnimation = (elements: string | Element[], options: any = {}
 }
 
 // Progress bar animation
-export const animateProgressBar = (element: string | Element, percentage: number, options: any = {}) => {
+export const animateProgressBar = (
+  element: string | Element,
+  percentage: number,
+  options: any = {}
+) => {
   const defaults = {
     duration: animationConfig.duration.slow,
     ease: animationConfig.ease.power2,
     delay: 0,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.fromTo(
     element,
-    { 
-      width: '0%' 
+    {
+      width: '0%',
     },
     {
       width: `${percentage}%`,
@@ -200,11 +204,11 @@ export const animateCounter = (element: string | Element, endValue: number, opti
     ease: animationConfig.ease.power2,
     delay: 0,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   const obj = { value: 0 }
-  
+
   return gsap.to(obj, {
     value: endValue,
     duration: config.duration,
@@ -222,7 +226,11 @@ export const animateCounter = (element: string | Element, endValue: number, opti
 }
 
 // Scroll-triggered animation
-export const scrollTriggerAnimation = (element: string | Element, animation: any, options: any = {}) => {
+export const scrollTriggerAnimation = (
+  element: string | Element,
+  animation: any,
+  options: any = {}
+) => {
   const defaults = {
     trigger: element,
     start: 'top 80%',
@@ -230,9 +238,9 @@ export const scrollTriggerAnimation = (element: string | Element, animation: any
     toggleActions: 'play none none reverse',
     once: true,
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return ScrollTrigger.create({
     ...config,
     animation: animation,
@@ -245,9 +253,9 @@ export const parallaxEffect = (element: string | Element, options: any = {}) => 
     yPercent: -50,
     ease: 'none',
   }
-  
+
   const config = { ...defaults, ...options }
-  
+
   return gsap.to(element, {
     yPercent: config.yPercent,
     ease: config.ease,
@@ -264,7 +272,7 @@ export const parallaxEffect = (element: string | Element, options: any = {}) => 
 export const hoverLift = (element: string | Element) => {
   const el = typeof element === 'string' ? document.querySelector(element) : element
   if (!el) return
-  
+
   el.addEventListener('mouseenter', () => {
     gsap.to(el, {
       y: -8,
@@ -272,7 +280,7 @@ export const hoverLift = (element: string | Element) => {
       ease: animationConfig.ease.power2,
     })
   })
-  
+
   el.addEventListener('mouseleave', () => {
     gsap.to(el, {
       y: 0,
@@ -286,7 +294,7 @@ export const hoverLift = (element: string | Element) => {
 export const clickScale = (element: string | Element) => {
   const el = typeof element === 'string' ? document.querySelector(element) : element
   if (!el) return
-  
+
   el.addEventListener('mousedown', () => {
     gsap.to(el, {
       scale: 0.95,
@@ -294,7 +302,7 @@ export const clickScale = (element: string | Element) => {
       ease: animationConfig.ease.power2,
     })
   })
-  
+
   el.addEventListener('mouseup', () => {
     gsap.to(el, {
       scale: 1,
@@ -302,7 +310,7 @@ export const clickScale = (element: string | Element) => {
       ease: animationConfig.ease.back,
     })
   })
-  
+
   el.addEventListener('mouseleave', () => {
     gsap.to(el, {
       scale: 1,

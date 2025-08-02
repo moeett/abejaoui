@@ -1,4 +1,5 @@
 # 🧩 COMPONENT LIBRARY MOCKUPS 2025
+
 ## Reusable UI Components with Visual Specifications
 
 ---
@@ -6,6 +7,7 @@
 ## 🎨 BUTTON COMPONENTS
 
 ### Primary Button
+
 ```
 ┌─────────────────────────────────┐
 │        Contact Me               │
@@ -22,6 +24,7 @@
 ```
 
 ### Glass Button
+
 ```
 ┌─────────────────────────────────┐
 │      View Portfolio             │
@@ -38,6 +41,7 @@
 ```
 
 ### Neomorphism Button
+
 ```
 ┌─────────────────────────────────┐
 │      Download CV                │
@@ -57,6 +61,7 @@
 ## 🃏 CARD COMPONENTS
 
 ### Glass Card
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Project Title                               │
@@ -85,6 +90,7 @@
 ```
 
 ### Skill Card
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Frontend Developer                          │
@@ -109,6 +115,7 @@
 ```
 
 ### Testimonial Card
+
 ```
 ┌─────────────────────────────────────────────┐
 │ "Ahmed is an exceptional senior software    │
@@ -136,6 +143,7 @@
 ## 📝 FORM COMPONENTS
 
 ### Input Field with Floating Label
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Name                                        │
@@ -158,6 +166,7 @@
 ```
 
 ### Textarea with Floating Label
+
 ```
 ┌─────────────────────────────────────────────┐
 │ Message                                     │
@@ -182,6 +191,7 @@
 ## 🎛️ NAVIGATION COMPONENTS
 
 ### Header Navigation
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │ [🏠 LOGO]    Home  About  Skills  Experience  Portfolio  Contact │
@@ -200,6 +210,7 @@
 ```
 
 ### Mobile Navigation Overlay
+
 ```
 ┌─────────────────────────────────┐
 │                            [✕] │
@@ -225,6 +236,7 @@
 ```
 
 ### Floating Social Sidebar
+
 ```
 ┌─────────────┐
 │ [LinkedIn]  │
@@ -249,6 +261,7 @@
 ## 📊 DATA VISUALIZATION COMPONENTS
 
 ### Progress Bar
+
 ```
 ┌─────────────────────────────────────────────┐
 │ React                                   95% │
@@ -266,6 +279,7 @@
 ```
 
 ### Statistics Card
+
 ```
 ┌─────────────────────┐
 │        12+          │
@@ -288,6 +302,7 @@
 ## 🎪 INTERACTIVE COMPONENTS
 
 ### Theme Toggle
+
 ```
 ┌─────────────┐
 │     🌙☀️    │
@@ -305,6 +320,7 @@
 ```
 
 ### Carousel Dots
+
 ```
 ● ○ ○ ○ ○ ○ ○ ○ ○ ○ ○ ○
 
@@ -317,6 +333,7 @@ Glassmorphism background
 ```
 
 ### Back to Top Button
+
 ```
 ┌─────────────┐
 │      ↑      │
@@ -338,10 +355,11 @@ Glassmorphism background
 ## 🎨 LOADING COMPONENTS
 
 ### Skeleton Loader
+
 ```
 ┌─────────────────────────────────────────────┐
 │ ████████████████████████████████████████    │ Title
-│ ████████████████████████████████████████    │ 
+│ ████████████████████████████████████████    │
 │                                             │
 │ ████████████████████████████████████████    │ Line 1
 │ ████████████████████████████████████████    │ Line 2
@@ -358,6 +376,7 @@ Glassmorphism background
 ```
 
 ### Loading Spinner
+
 ```
 ┌─────────────┐
 │      ⟳      │
@@ -380,18 +399,21 @@ Glassmorphism background
 ### Breakpoint Adaptations
 
 #### Desktop (1024px+)
+
 - Full hover effects active
 - Complex animations enabled
 - Multi-column layouts
 - Glassmorphism at full opacity
 
 #### Tablet (768px-1024px)
+
 - Touch-optimized hover states
 - Simplified animations
 - Condensed layouts
 - Reduced glassmorphism complexity
 
 #### Mobile (<768px)
+
 - Touch-only interactions
 - Minimal animations for performance
 - Single-column layouts
@@ -402,6 +424,7 @@ Glassmorphism background
 ## 🎨 ANIMATION SPECIFICATIONS
 
 ### Micro-interactions
+
 ```css
 /* Hover Effects */
 .hover-lift {
@@ -429,12 +452,15 @@ Glassmorphism background
 ```
 
 ### Page Transitions
+
 ```css
 /* Fade In Up */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 .fade-in-up.in-view {
   opacity: 1;
@@ -442,9 +468,15 @@ Glassmorphism background
 }
 
 /* Stagger Animation */
-.stagger-item:nth-child(1) { transition-delay: 0ms; }
-.stagger-item:nth-child(2) { transition-delay: 100ms; }
-.stagger-item:nth-child(3) { transition-delay: 200ms; }
+.stagger-item:nth-child(1) {
+  transition-delay: 0ms;
+}
+.stagger-item:nth-child(2) {
+  transition-delay: 100ms;
+}
+.stagger-item:nth-child(3) {
+  transition-delay: 200ms;
+}
 ```
 
 This component library provides comprehensive visual specifications for all reusable UI components in the modern 2025 portfolio design.

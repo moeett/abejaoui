@@ -1,28 +1,27 @@
-"use client"
+'use client'
 
-import { useState } from 'react'
 import { personalInfo, socialLinks } from '@/data/content'
-import { isValidEmail } from '@/lib/utils'
+import { useState } from 'react'
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    console.log('Form submitted:', formData)
+
+    // Form submitted successfully
     setIsSubmitting(false)
-    
+
     // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' })
   }
@@ -30,7 +29,7 @@ export function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
@@ -38,21 +37,15 @@ export function Contact() {
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Contact Me
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Get in touch
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact Me</h2>
+          <p className="text-xl text-muted-foreground">Get in touch</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="card-glass">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
-              Contact Form
-            </h3>
-            
+            <h3 className="text-2xl font-semibold text-foreground mb-6">Contact Form</h3>
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
@@ -65,7 +58,7 @@ export function Contact() {
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                 />
               </div>
-              
+
               <div>
                 <input
                   type="email"
@@ -77,7 +70,7 @@ export function Contact() {
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                 />
               </div>
-              
+
               <div>
                 <input
                   type="text"
@@ -89,7 +82,7 @@ export function Contact() {
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
                 />
               </div>
-              
+
               <div>
                 <textarea
                   name="message"
@@ -101,7 +94,7 @@ export function Contact() {
                   className="w-full px-4 py-3 bg-muted/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors resize-vertical"
                 />
               </div>
-              
+
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -114,39 +107,29 @@ export function Contact() {
 
           {/* Contact Information */}
           <div className="card-glass">
-            <h3 className="text-2xl font-semibold text-foreground mb-6">
-              Contact Information
-            </h3>
-            
+            <h3 className="text-2xl font-semibold text-foreground mb-6">Contact Information</h3>
+
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
                   📧
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">
-                    {personalInfo.email}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Primary email address
-                  </div>
+                  <div className="font-medium text-foreground">{personalInfo.email}</div>
+                  <div className="text-sm text-muted-foreground">Primary email address</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
                   📍
                 </div>
                 <div>
-                  <div className="font-medium text-foreground">
-                    {personalInfo.location}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    Current location
-                  </div>
+                  <div className="font-medium text-foreground">{personalInfo.location}</div>
+                  <div className="text-sm text-muted-foreground">Current location</div>
                 </div>
               </div>
-              
+
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
                   📅
@@ -160,19 +143,15 @@ export function Contact() {
                   >
                     calendly.com/akbejaoui
                   </a>
-                  <div className="text-sm text-muted-foreground">
-                    Schedule a meeting
-                  </div>
+                  <div className="text-sm text-muted-foreground">Schedule a meeting</div>
                 </div>
               </div>
             </div>
 
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-foreground mb-4">
-                Social Media:
-              </h4>
+              <h4 className="text-lg font-semibold text-foreground mb-4">Social Media:</h4>
               <div className="grid grid-cols-3 gap-4">
-                {socialLinks.map((social) => (
+                {socialLinks.map(social => (
                   <a
                     key={social.name}
                     href={social.url}
@@ -181,12 +160,8 @@ export function Contact() {
                     className="glass p-3 rounded-lg hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 text-center"
                     aria-label={social.name}
                   >
-                    <div className="text-2xl mb-1">
-                      {getSocialIcon(social.icon)}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {social.name}
-                    </div>
+                    <div className="text-2xl mb-1">{getSocialIcon(social.icon)}</div>
+                    <div className="text-xs text-muted-foreground">{social.name}</div>
                   </a>
                 ))}
               </div>
@@ -205,7 +180,7 @@ function getSocialIcon(icon: string): string {
     youtube: '📺',
     instagram: '📸',
     spotify: '🎵',
-    medium: '📝'
+    medium: '📝',
   }
   return icons[icon] || '🔗'
 }

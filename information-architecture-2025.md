@@ -1,4 +1,5 @@
 # 🏗️ INFORMATION ARCHITECTURE 2025
+
 ## Modern Site Structure & Navigation Design
 
 ---
@@ -6,6 +7,7 @@
 ## 🎯 DESIGN PHILOSOPHY
 
 ### Core Principles
+
 1. **Story-Driven Navigation** - Guide users through Ahmed's professional journey
 2. **Bento Grid Aesthetics** - Modular, visually engaging layout
 3. **Progressive Disclosure** - Reveal information at the right moment
@@ -18,6 +20,7 @@
 ## 🗺️ SITE STRUCTURE OVERVIEW
 
 ### Primary Navigation Flow
+
 ```
 Home (Hero) → About → Skills → Experience → Portfolio → Contact
      ↓
@@ -25,6 +28,7 @@ Home (Hero) → About → Skills → Experience → Portfolio → Contact
 ```
 
 ### Secondary Navigation
+
 ```
 - Social Media Links (Floating Sidebar)
 - Theme Toggle (Header)
@@ -37,6 +41,7 @@ Home (Hero) → About → Skills → Experience → Portfolio → Contact
 ## 📱 RESPONSIVE LAYOUT STRATEGY
 
 ### Desktop Layout (1024px+)
+
 ```
 ┌─────────────────────────────────────────┐
 │ Header: Logo | Nav | Theme Toggle       │
@@ -60,6 +65,7 @@ Home (Hero) → About → Skills → Experience → Portfolio → Contact
 ```
 
 ### Mobile Layout (< 768px)
+
 ```
 ┌─────────────────┐
 │ Header: Compact │
@@ -89,26 +95,32 @@ Home (Hero) → About → Skills → Experience → Portfolio → Contact
 ## 🎨 SECTION-BY-SECTION ARCHITECTURE
 
 ### 1. HEADER COMPONENT
+
 **Layout:** Glassmorphism sticky header
 **Elements:**
+
 - Logo (left) - Animated on hover
 - Navigation menu (center) - Smooth scroll links
 - Theme toggle (right) - Sun/moon animation
 - Mobile hamburger menu - Slide-in overlay
 
 **Navigation Items:**
+
 ```
 Home | About | Skills | Experience | Portfolio | Contact
 ```
 
 **Responsive Behavior:**
+
 - Desktop: Horizontal navigation
 - Tablet: Condensed navigation
 - Mobile: Hamburger menu with slide-in
 
 ### 2. HERO SECTION
+
 **Layout:** Full-screen immersive experience
 **Elements:**
+
 - Animated greeting text
 - Typewriter effect title
 - Professional description
@@ -118,6 +130,7 @@ Home | About | Skills | Experience | Portfolio | Contact
 - Scroll indicator with bounce animation
 
 **Bento Grid Elements:**
+
 ```
 ┌─────────────┬─────────────┐
 │ Profile     │ Greeting &  │
@@ -128,8 +141,10 @@ Home | About | Skills | Experience | Portfolio | Contact
 ```
 
 ### 3. ABOUT SECTION
+
 **Layout:** Two-column with statistics cards
 **Elements:**
+
 - Professional summary
 - Statistics cards (Years, Projects, Companies)
 - Download CV button
@@ -137,6 +152,7 @@ Home | About | Skills | Experience | Portfolio | Contact
 - Personal touch elements
 
 **Bento Grid Layout:**
+
 ```
 ┌─────────────┬─────┬─────┬─────┐
 │ About Text  │ 12+ │ 20+ │ 05+ │
@@ -146,8 +162,10 @@ Home | About | Skills | Experience | Portfolio | Contact
 ```
 
 ### 4. SKILLS SECTION
+
 **Layout:** Bento grid with expandable skill categories
 **Elements:**
+
 - 8 skill category cards
 - Interactive progress bars
 - Hover effects with details
@@ -155,6 +173,7 @@ Home | About | Skills | Experience | Portfolio | Contact
 - Technology icons
 
 **Bento Grid Layout:**
+
 ```
 ┌─────────┬─────────┬─────────┐
 │ Agile & │Frontend │Backend  │
@@ -169,8 +188,10 @@ Home | About | Skills | Experience | Portfolio | Contact
 ```
 
 ### 5. EXPERIENCE SECTION (Enhanced Qualification)
+
 **Layout:** Interactive timeline with glassmorphism cards
 **Elements:**
+
 - Education timeline
 - Work experience (if added)
 - Awards and certifications
@@ -178,6 +199,7 @@ Home | About | Skills | Experience | Portfolio | Contact
 - Smooth scroll animations
 
 **Timeline Layout:**
+
 ```
 Education ←→ Awards
     │         │
@@ -195,8 +217,10 @@ Education ←→ Awards
 ```
 
 ### 6. PORTFOLIO SECTION
+
 **Layout:** Bento grid with project showcases
 **Elements:**
+
 - 9 project cards with different sizes
 - Hover effects with project details
 - Technology tags
@@ -205,6 +229,7 @@ Education ←→ Awards
 - "View All" link to detailed portfolio page
 
 **Bento Grid Layout:**
+
 ```
 ┌─────────────┬─────┬─────┐
 │ Oilfox      │Twaice│Finway│
@@ -219,8 +244,10 @@ Education ←→ Awards
 ```
 
 ### 7. TESTIMONIALS SECTION
+
 **Layout:** Glassmorphism carousel
 **Elements:**
+
 - 12 professional recommendations
 - Auto-play carousel with pause on hover
 - Glassmorphism cards
@@ -229,8 +256,10 @@ Education ←→ Awards
 - "View All on LinkedIn" link
 
 ### 8. CONTACT SECTION
+
 **Layout:** Split layout with form and information
 **Elements:**
+
 - Contact form with validation
 - Contact information cards
 - Social media links
@@ -239,6 +268,7 @@ Education ←→ Awards
 - Success/error states
 
 **Split Layout:**
+
 ```
 ┌─────────────────┬─────────────────┐
 │ Contact Form    │ Contact Info    │
@@ -252,8 +282,10 @@ Education ←→ Awards
 ```
 
 ### 9. FOOTER
+
 **Layout:** Minimal glassmorphism footer
 **Elements:**
+
 - Logo and tagline
 - Quick navigation links
 - Social media icons
@@ -265,6 +297,7 @@ Education ←→ Awards
 ## 🎯 USER EXPERIENCE IMPROVEMENTS
 
 ### Navigation Enhancements
+
 1. **Smooth Scroll Navigation** - Animated scrolling between sections
 2. **Active Section Highlighting** - Visual indicator of current section
 3. **Breadcrumb Trail** - Subtle progress indicator
@@ -272,6 +305,7 @@ Education ←→ Awards
 5. **Keyboard Navigation** - Full keyboard accessibility
 
 ### Interactive Elements
+
 1. **Hover States** - Micro-interactions on all interactive elements
 2. **Loading States** - Skeleton screens and progress indicators
 3. **Error States** - Friendly error messages with recovery options
@@ -279,6 +313,7 @@ Education ←→ Awards
 5. **Empty States** - Engaging placeholders when content is loading
 
 ### Performance Optimizations
+
 1. **Lazy Loading** - Images and components load as needed
 2. **Progressive Enhancement** - Core functionality works without JavaScript
 3. **Critical CSS** - Above-the-fold styles load first
@@ -290,6 +325,7 @@ Education ←→ Awards
 ## 📐 BENTO GRID SPECIFICATIONS
 
 ### Grid System Rules
+
 ```css
 /* Desktop Grid */
 .bento-container {
@@ -300,22 +336,42 @@ Education ←→ Awards
 }
 
 /* Item Sizes */
-.bento-small { grid-column: span 1; grid-row: span 1; }
-.bento-wide { grid-column: span 2; grid-row: span 1; }
-.bento-tall { grid-column: span 1; grid-row: span 2; }
-.bento-large { grid-column: span 2; grid-row: span 2; }
-.bento-full { grid-column: span 4; grid-row: span 1; }
+.bento-small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.bento-wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.bento-tall {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.bento-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.bento-full {
+  grid-column: span 4;
+  grid-row: span 1;
+}
 ```
 
 ### Responsive Grid Behavior
+
 ```css
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .bento-container {
     grid-template-columns: repeat(3, 1fr);
   }
-  .bento-large { grid-column: span 3; }
-  .bento-full { grid-column: span 3; }
+  .bento-large {
+    grid-column: span 3;
+  }
+  .bento-full {
+    grid-column: span 3;
+  }
 }
 
 /* Mobile (< 768px) */
@@ -334,6 +390,7 @@ Education ←→ Awards
 ```
 
 ### Content Prioritization
+
 1. **Hero Content** - Always visible and prominent
 2. **Key Skills** - Featured in larger bento items
 3. **Featured Projects** - Larger cards for important work
@@ -345,6 +402,7 @@ Education ←→ Awards
 ## 🎨 VISUAL HIERARCHY
 
 ### Typography Hierarchy
+
 ```
 H1: Hero title (text-6xl) - Main impact
 H2: Section titles (text-4xl) - Section breaks
@@ -355,6 +413,7 @@ Small: Meta information (text-sm) - Supporting details
 ```
 
 ### Color Hierarchy
+
 ```
 Primary: Main CTAs and key elements
 Secondary: Supporting actions and highlights
@@ -364,6 +423,7 @@ Glass: Overlay elements and cards
 ```
 
 ### Spacing Hierarchy
+
 ```
 Section gaps: 6rem (96px)
 Card gaps: 1.5rem (24px)
@@ -377,6 +437,7 @@ Text spacing: 0.5rem (8px)
 ## 🔄 INTERACTION PATTERNS
 
 ### Scroll Behaviors
+
 1. **Smooth Scrolling** - Animated navigation between sections
 2. **Parallax Effects** - Subtle depth on background elements
 3. **Scroll Reveals** - Content animates in as user scrolls
@@ -384,6 +445,7 @@ Text spacing: 0.5rem (8px)
 5. **Sticky Elements** - Header and quick actions remain accessible
 
 ### Hover Interactions
+
 1. **Card Lift** - Cards lift on hover with shadow increase
 2. **Image Zoom** - Project images scale slightly on hover
 3. **Button Glow** - CTAs glow on hover
@@ -391,6 +453,7 @@ Text spacing: 0.5rem (8px)
 5. **Icon Animations** - Social icons animate on hover
 
 ### Click Interactions
+
 1. **Ripple Effects** - Material design ripples on buttons
 2. **Scale Feedback** - Elements scale down then up on click
 3. **Loading States** - Immediate feedback for form submissions
@@ -402,6 +465,7 @@ Text spacing: 0.5rem (8px)
 ## 📱 MOBILE-SPECIFIC CONSIDERATIONS
 
 ### Touch Optimizations
+
 1. **44px Minimum** - All touch targets meet accessibility standards
 2. **Swipe Gestures** - Carousel and navigation support swipes
 3. **Pull to Refresh** - Optional refresh gesture
@@ -409,6 +473,7 @@ Text spacing: 0.5rem (8px)
 5. **Thumb-Friendly** - Important actions within thumb reach
 
 ### Mobile Navigation
+
 1. **Hamburger Menu** - Slide-in navigation overlay
 2. **Bottom Navigation** - Optional quick actions at bottom
 3. **Floating Actions** - Key CTAs always accessible
@@ -416,6 +481,7 @@ Text spacing: 0.5rem (8px)
 5. **Back Button** - Browser back button support
 
 ### Performance on Mobile
+
 1. **Reduced Animations** - Simpler animations for performance
 2. **Optimized Images** - Smaller images for mobile screens
 3. **Lazy Loading** - Aggressive lazy loading on mobile
@@ -427,6 +493,7 @@ Text spacing: 0.5rem (8px)
 ## ♿ ACCESSIBILITY ARCHITECTURE
 
 ### Keyboard Navigation
+
 1. **Tab Order** - Logical tab sequence through all interactive elements
 2. **Focus Indicators** - Clear visual focus states with glassmorphism
 3. **Skip Links** - Jump to main content and navigation
@@ -434,6 +501,7 @@ Text spacing: 0.5rem (8px)
 5. **Arrow Navigation** - Navigate carousels with arrow keys
 
 ### Screen Reader Support
+
 1. **Semantic HTML** - Proper heading hierarchy and landmarks
 2. **ARIA Labels** - Descriptive labels for interactive elements
 3. **Live Regions** - Announce dynamic content changes
@@ -441,6 +509,7 @@ Text spacing: 0.5rem (8px)
 5. **Form Labels** - Clear labels and error messages
 
 ### Visual Accessibility
+
 1. **Color Contrast** - WCAG AA compliance for all text
 2. **Focus Indicators** - High contrast focus outlines
 3. **Text Scaling** - Support for 200% text zoom
@@ -452,6 +521,7 @@ Text spacing: 0.5rem (8px)
 ## 🎯 CONVERSION OPTIMIZATION
 
 ### Primary Goals
+
 1. **Contact Form Submissions** - Main conversion goal
 2. **CV Downloads** - Secondary conversion
 3. **Portfolio Engagement** - Project detail views
@@ -459,6 +529,7 @@ Text spacing: 0.5rem (8px)
 5. **Calendly Bookings** - Direct meeting scheduling
 
 ### CTA Placement Strategy
+
 1. **Hero Section** - Primary CTA above the fold
 2. **About Section** - CV download after introduction
 3. **Portfolio Section** - Project detail CTAs
@@ -466,6 +537,7 @@ Text spacing: 0.5rem (8px)
 5. **Floating Actions** - Always-visible quick actions
 
 ### Trust Building Elements
+
 1. **Professional Testimonials** - Social proof from colleagues
 2. **Company Logos** - Visual credibility indicators
 3. **Certification Badges** - Professional qualifications

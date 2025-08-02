@@ -4,7 +4,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { cn } from '@/lib/utils'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
@@ -13,9 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: 'Ahmed Khalil Bejaoui - Portfolio',
-    template: '%s | Ahmed Khalil Bejaoui'
+    template: '%s | Ahmed Khalil Bejaoui',
   },
-  description: 'Tech Lead & Software Engineer specializing in modern web technologies, mobile development, and UI/UX design. 12+ years of experience delivering quality solutions.',
+  description:
+    'Tech Lead & Software Engineer specializing in modern web technologies, mobile development, and UI/UX design. 12+ years of experience delivering quality solutions.',
   keywords: [
     'Ahmed Khalil Bejaoui',
     'Software Engineer',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     'Node.js',
     'AWS',
     'Munich',
-    'Germany'
+    'Germany',
   ],
   authors: [{ name: 'Ahmed Khalil Bejaoui', url: 'https://portfolio.abejaoui.com' }],
   creator: 'Ahmed Khalil Bejaoui',
@@ -79,17 +80,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-        inter.variable,
-        'min-h-screen bg-background font-sans antialiased'
-      )}>
+      <body className={cn(inter.variable, 'min-h-screen bg-background font-sans antialiased')}>
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="light"

@@ -5,16 +5,16 @@ exports.handler = async (event, context) => {
     return {
       statusCode: 405,
       headers: {
-        'Allow': 'POST',
+        Allow: 'POST',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ error: 'Method Not Allowed' }),
-    };
+    }
   }
 
   try {
     // Parse the request body
-    const { name, email, subject, message } = JSON.parse(event.body);
+    const { name, email, subject, message } = JSON.parse(event.body)
 
     // Basic validation
     if (!name || !email || !subject || !message) {
@@ -23,15 +23,15 @@ exports.handler = async (event, context) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           error: 'Missing required fields',
-          required: ['name', 'email', 'subject', 'message']
+          required: ['name', 'email', 'subject', 'message'],
         }),
-      };
+      }
     }
 
     // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       return {
         statusCode: 400,
@@ -39,7 +39,7 @@ exports.handler = async (event, context) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ error: 'Invalid email format' }),
-      };
+      }
     }
 
     // Here you can integrate with email services like:
@@ -56,7 +56,7 @@ exports.handler = async (event, context) => {
       timestamp: new Date().toISOString(),
       ip: event.headers['x-forwarded-for'] || event.headers['x-real-ip'],
       userAgent: event.headers['user-agent'],
-    });
+    })
 
     // For now, we'll just return success
     // In production, you'd want to actually send the email
@@ -68,27 +68,26 @@ exports.handler = async (event, context) => {
         'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         success: true,
         message: 'Thank you for your message! I will get back to you soon.',
       }),
-    };
-
+    }
   } catch (error) {
-    console.error('Contact form error:', error);
-    
+    console.error('Contact form error:', error)
+
     return {
       statusCode: 500,
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         error: 'Internal server error',
         message: 'Something went wrong. Please try again later.',
       }),
-    };
+    }
   }
-};
+}
 
 // Handle CORS preflight requests
 exports.handler = async (event, context) => {
@@ -101,8 +100,8 @@ exports.handler = async (event, context) => {
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
       },
       body: '',
-    };
+    }
   }
 
-  return exports.handler(event, context);
-};
+  return exports.handler(event, context)
+}
