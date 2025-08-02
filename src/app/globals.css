@@ -50,6 +50,26 @@
     --ring: 14 165 233; /* primary-500 */
   }
 
+  /* System theme support */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --background: 24 24 27;
+      --foreground: 250 250 250;
+      --card: 39 39 42;
+      --card-foreground: 250 250 250;
+      --popover: 39 39 42;
+      --popover-foreground: 250 250 250;
+      --secondary: 63 63 70;
+      --secondary-foreground: 250 250 250;
+      --muted: 63 63 70;
+      --muted-foreground: 161 161 170;
+      --accent: 63 63 70;
+      --accent-foreground: 250 250 250;
+      --border: 63 63 70;
+      --input: 63 63 70;
+    }
+  }
+
   * {
     @apply border-border;
   }
@@ -290,6 +310,38 @@
 
   .card-neo {
     @apply neo rounded-2xl p-8 transition-all duration-300 hover:shadow-[6px_6px_12px_rgba(0,0,0,0.15),-6px_-6px_12px_rgba(255,255,255,0.9)];
+  }
+
+  /* Theme-aware utilities */
+  .theme-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .theme-bg {
+    @apply bg-background text-foreground;
+  }
+
+  .theme-card {
+    @apply bg-card text-card-foreground border border-border;
+  }
+
+  .theme-muted {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .theme-accent {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .glass {
+      @apply bg-background/90 border-2 border-foreground/20;
+    }
+
+    .glass-nav {
+      @apply bg-background/95 border-b-2 border-foreground/20;
+    }
   }
 
   /* Bento grid */

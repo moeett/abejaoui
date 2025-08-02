@@ -1,15 +1,14 @@
 'use client'
 
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { navigation } from '@/data/content'
 import { cn, smoothScrollTo } from '@/lib/utils'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -26,10 +25,6 @@ export function Header() {
   const handleNavClick = (id: string) => {
     smoothScrollTo(id)
     setIsMobileMenuOpen(false)
-  }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   if (!mounted) {
@@ -92,26 +87,7 @@ export function Header() {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-3">
-            <motion.button
-              onClick={toggleTheme}
-              className="relative p-3 rounded-xl glass hover:bg-white/20 transition-all duration-300 group overflow-hidden"
-              aria-label="Toggle theme"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <motion.div
-                key={theme}
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 180, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="text-xl"
-              >
-                {theme === 'dark' ? '☀️' : '🌙'}
-              </motion.div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.button>
+            <ThemeToggle size="md" variant="glass" />
 
             {/* Mobile Menu Button */}
             <motion.button
