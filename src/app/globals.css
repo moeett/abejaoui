@@ -211,25 +211,46 @@
 }
 
 @layer components {
-  /* Glass morphism utilities */
+  /* Enhanced Glass morphism utilities for 2025 */
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg shadow-white/5;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
   }
 
-  .glass-dark {
-    @apply bg-black/10 backdrop-blur-md border border-black/20;
+  .glass-strong {
+    @apply bg-white/20 backdrop-blur-xl border border-white/30 shadow-xl shadow-white/10;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+  }
+
+  .glass-subtle {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md shadow-white/5;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
   }
 
   .glass-nav {
-    @apply bg-white/80 backdrop-blur-xl border-b border-white/20;
+    @apply bg-white/90 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/5;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
   }
 
+  /* Dark theme glass effects */
   [data-theme='dark'] .glass {
-    @apply bg-black/10 border-black/20;
+    @apply bg-black/20 border-white/10 shadow-lg shadow-black/20;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+  }
+
+  [data-theme='dark'] .glass-strong {
+    @apply bg-black/30 border-white/20 shadow-xl shadow-black/30;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  }
+
+  [data-theme='dark'] .glass-subtle {
+    @apply bg-black/10 border-white/5 shadow-md shadow-black/10;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
   }
 
   [data-theme='dark'] .glass-nav {
-    @apply bg-black/80 border-black/20;
+    @apply bg-black/90 border-white/10 shadow-2xl shadow-black/20;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
   }
 
   /* Neomorphism utilities */
