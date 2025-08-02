@@ -16,7 +16,7 @@
     "check": "npm run type-check && npm run lint && npm run prettier",
     "export": "next export",
     "deploy": "npm run build && npm run export",
-    "prepare": "husky"
+    "prepare": "is-ci || husky"
   },
   "dependencies": {
     "@types/node": "^20.0.0",
@@ -42,7 +42,13 @@
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.0",
     "eslint": "^8.0.0",
-    "eslint-config-next": "^14.0.0"
+    "eslint-config-next": "^14.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2"
   },
   "engines": {
     "node": ">=18.0.0",
