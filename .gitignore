@@ -11,6 +11,10 @@ out/
 build/
 dist/
 
+# Netlify
+.netlify/
+netlify/functions/node_modules/
+
 # Environment variables
 .env
 .env.local
