@@ -1640,14 +1640,12 @@
             background: #000;
             border: 2px solid #4ade80;
             position: relative;
-            transform: scale(0.8);
-            opacity: 0;
+            transform: scale(0.9);
             transition: all 0.3s ease;
         }
 
         #portfolioModal.active .portfolio-modal-content {
             transform: scale(1);
-            opacity: 1;
         }
 
         .portfolio-modal-header {
@@ -3120,8 +3118,8 @@
 
             <!-- Portfolio Modal -->
             <div id="portfolioModal" class="modal">
-                <div class="modal-content portfolio-modal-content">
-                    <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+                <div class="portfolio-modal-content">
+                    <button class="modal-close" id="portfolioModalClose">&times;</button>
                     <div id="portfolioModalContent">
                         <!-- Content will be dynamically loaded here -->
                     </div>
@@ -3996,10 +3994,28 @@
             }
         });
 
+        // Add touch event support for mobile
+        document.getElementById('portfolioModal').addEventListener('touchstart', function(e) {
+            if (e.target === this) {
+                closePortfolioModal();
+            }
+        });
+
+        // Portfolio modal close button event listeners
+        const portfolioCloseBtn = document.getElementById('portfolioModalClose');
+        if (portfolioCloseBtn) {
+            portfolioCloseBtn.addEventListener('click', closePortfolioModal);
+            portfolioCloseBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                closePortfolioModal();
+            });
+        }
+
         // Close modal with Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+                closePortfolioModal();
             }
         });
 
