@@ -102,6 +102,11 @@
             overflow-x: hidden;
         }
 
+        /* Prevent browser scroll restoration */
+        html {
+            scroll-behavior: auto;
+        }
+
         /* Navigation Menu */
         .nav-menu {
             position: fixed;
@@ -2567,6 +2572,17 @@
             }
         }
     </style>
+
+    <!-- Prevent scroll restoration on page refresh -->
+    <script>
+        // Disable browser scroll restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Force scroll to top immediately
+        window.scrollTo(0, 0);
+    </script>
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -3451,8 +3467,23 @@
     </section>
 
     <script>
+        // Scroll to top on page load/refresh
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
+        });
+
+        // Force scroll to top on page load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 0);
+        });
+
         // Add typing effect to the main title
         document.addEventListener('DOMContentLoaded', function() {
+            // Ensure we start at the top
+            window.scrollTo(0, 0);
+
             const title = document.querySelector('.main-title');
             const originalText = title.textContent;
             title.textContent = '';
