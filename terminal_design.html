@@ -18,13 +18,90 @@
             overflow-x: hidden;
         }
 
+        /* Navigation Menu */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #4ade80;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu.hidden {
+            transform: translateY(-100%);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: #4ade80;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #6ee7b7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: './';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+
+        .nav-link:hover {
+            color: #4ade80;
+            transform: translateX(10px);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            padding: 0.5rem;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+
+        .nav-toggle:hover {
+            background: #4ade80;
+            color: #000;
+        }
+
         .terminal-hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 6rem 2rem 2rem;
             position: relative;
         }
 
@@ -50,6 +127,58 @@
             text-align: center;
             max-width: 800px;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Hero Profile Image */
+        .hero-profile {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .hero-profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #4ade80;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .hero-profile-image:hover {
+            transform: scale(1.05);
+            border-color: #6ee7b7;
+        }
+
+        .hero-profile::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1px solid #4ade80;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .hero-text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
         }
 
         .command-line {
@@ -214,19 +343,48 @@
 
         /* Responsive design */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #4ade80;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .terminal-hero {
+                padding: 8rem 1rem 2rem;
+            }
+
+            .hero-profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
             .main-title {
                 font-size: 2.5rem;
             }
-            
+
             .subtitle {
                 font-size: 1.2rem;
             }
-            
+
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .terminal-button {
                 width: 200px;
             }
@@ -1947,42 +2105,152 @@
                 text-align: center;
             }
         }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            border-top: 1px solid #4ade80;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: #6ee7b7;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-link {
+            color: #4ade80;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-link::before {
+            content: './';
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-link:hover::before {
+            opacity: 1;
+        }
+
+        .footer-link:hover {
+            color: #6ee7b7;
+            transform: translateX(10px);
+        }
+
+        .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4ade80, transparent);
+            margin: 1.5rem 0;
+        }
+
+        .footer-copyright {
+            color: #4ade80;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive footer */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 1.5rem 1rem;
+            }
+
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="terminal-hero">
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="navMenu">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">ahmed@terminal:~$</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">home</a></li>
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#skills" class="nav-link">skills</a></li>
+                <li><a href="#qualification" class="nav-link">experience</a></li>
+                <li><a href="#awards" class="nav-link">awards</a></li>
+                <li><a href="#portfolio" class="nav-link">portfolio</a></li>
+                <li><a href="#recommendations" class="nav-link">testimonials</a></li>
+                <li><a href="#contact" class="nav-link">contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">[menu]</button>
+        </div>
+    </nav>
+
+    <div class="terminal-hero" id="home">
         <!-- Scanline effect -->
         <div class="scanline"></div>
         
         <div class="terminal-content">
-            <!-- Terminal commands -->
-            <div class="command-line">
-                <span class="command">$ whoami</span>
+            <!-- Profile Image -->
+            <div class="hero-profile">
+                <img src="bejaoui.jpeg" alt="Ahmed Bejaoui" class="hero-profile-image">
             </div>
-            <div class="command-line">
-                <span class="output">ahmed-bejaoui</span>
-            </div>
-            
-            <div class="command-line" style="margin-top: 1rem;">
-                <span class="command">$ cat about.txt</span>
-            </div>
-            
-            <!-- Main content -->
-            <h1 class="main-title">Ahmed Bejaoui</h1>
-            <h2 class="subtitle">Full-Stack Developer</h2>
-            
-            <!-- Skills section -->
-            <div class="skills-line">
-                <span class="command">$ ls skills/</span>
-            </div>
-            <div class="skills-line">
-                <span class="skills-output">React TypeScript Node.js Python</span>
-            </div>
-            
-            <!-- Action buttons -->
-            <div class="buttons-container">
-                <a href="#about" class="terminal-button">./about.sh</a>
-                <a href="#contact" class="terminal-button">./contact.sh</a>
+
+            <!-- Hero Text Content -->
+            <div class="hero-text-content">
+                <!-- Terminal commands -->
+                <div class="command-line">
+                    <span class="command">$ whoami</span>
+                </div>
+                <div class="command-line">
+                    <span class="output">ahmed-bejaoui</span>
+                </div>
+
+                <div class="command-line" style="margin-top: 1rem;">
+                    <span class="command">$ cat about.txt</span>
+                </div>
+
+                <!-- Main content -->
+                <h1 class="main-title">Ahmed Bejaoui</h1>
+                <h2 class="subtitle">Full-Stack Developer</h2>
+
+                <!-- Skills section -->
+                <div class="skills-line">
+                    <span class="command">$ ls skills/</span>
+                </div>
+                <div class="skills-line">
+                    <span class="skills-output">React TypeScript Node.js Python</span>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="buttons-container">
+                    <a href="#about" class="terminal-button">./about.sh</a>
+                    <a href="#contact" class="terminal-button">./contact.sh</a>
+                </div>
             </div>
         </div>
 
@@ -3444,6 +3712,69 @@ Sent from your portfolio website`;
 
             contactObserver.observe(contactSection);
         }
+
+        // Navigation Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navMenu = document.getElementById('navMenu');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            navLinks.addEventListener('click', function(e) {
+                if (e.target.classList.contains('nav-link')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+
+        // Hide/show navigation on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                navMenu.classList.add('hidden');
+            } else {
+                // Scrolling up
+                navMenu.classList.remove('hidden');
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                Need a portfolio like this? Contact
+                <a href="https://webcraftdev.com" target="_blank" class="footer-link">WebCraftDev</a>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-copyright">
+                © 2024 Ahmed Bejaoui. Built with terminal aesthetics.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
