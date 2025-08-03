@@ -887,6 +887,218 @@
                 left: 15px;
             }
         }
+
+        /* Awards Section */
+        .awards-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background-color: #000;
+            position: relative;
+        }
+
+        .awards-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .awards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .awards-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .awards-command {
+            color: #4ade80;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .awards-title {
+            font-size: 2.5rem;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .awards-subtitle {
+            color: #6ee7b7;
+            font-size: 1.2rem;
+        }
+
+        /* Awards Grid */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.02);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-card:hover {
+            background: rgba(74, 222, 128, 0.05);
+            transform: translateY(-10px);
+            border-color: #6ee7b7;
+        }
+
+        .award-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .award-card:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .award-image {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            border: 2px solid #4ade80;
+            padding: 10px;
+            background: rgba(74, 222, 128, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .award-title {
+            color: #4ade80;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-issuer {
+            color: #6ee7b7;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-button {
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-button:hover {
+            background: #4ade80;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Terminal-style award display */
+        .award-terminal {
+            font-family: 'Courier New', monospace;
+            color: #6ee7b7;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .award-terminal::before {
+            content: '> ';
+            color: #4ade80;
+        }
+
+        /* Responsive design for awards */
+        @media (max-width: 768px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .awards-title {
+                font-size: 2rem;
+            }
+
+            .award-card {
+                padding: 1.5rem;
+            }
+
+            .award-image {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .awards-section {
+                padding: 2rem 1rem;
+            }
+
+            .award-card {
+                padding: 1rem;
+            }
+
+            .award-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .award-title {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -922,7 +1134,7 @@
             <!-- Action buttons -->
             <div class="buttons-container">
                 <a href="#about" class="terminal-button">./about.sh</a>
-                <a href="#qualification" class="terminal-button">./qualification.sh</a>
+                <a href="#awards" class="terminal-button">./awards.sh</a>
             </div>
         </div>
         
@@ -1261,12 +1473,12 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="qualification-title-item">Tech Lead & Full-Stack Developer</h3>
-                            <p class="qualification-location">Current Position</p>
-                            <p class="qualification-date">2016 - Present</p>
+                            <h3 class="qualification-title-item">Senior Full Stack Software Engineer</h3>
+                            <p class="qualification-location">Munich, Germany - Twaice Technologies GmbH</p>
+                            <p class="qualification-date">February 2023 - Now</p>
                             <p class="qualification-description">
-                                Leading development teams and architecting scalable solutions using modern web technologies.
-                                Expertise in React, Node.js, cloud platforms, and agile methodologies.
+                                Leading development of battery analytics solutions using cutting-edge technologies.
+                                Working on scalable systems for electric vehicle and energy storage applications.
                             </p>
                         </div>
                         <div class="timeline-dot"></div>
@@ -1274,16 +1486,149 @@
 
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3 class="qualification-title-item">Software Engineer</h3>
-                            <p class="qualification-location">Various Companies</p>
-                            <p class="qualification-date">2013 - 2016</p>
+                            <h3 class="qualification-title-item">Team Lead</h3>
+                            <p class="qualification-location">Munich, Germany - finway GmbH</p>
+                            <p class="qualification-date">May 2020 - February 2023</p>
                             <p class="qualification-description">
-                                Developed and maintained web applications, gained experience in multiple programming languages
-                                and frameworks, and contributed to various software projects.
+                                Led cross-functional development teams in building fintech solutions.
+                                Managed product development lifecycle and implemented agile methodologies.
                             </p>
                         </div>
                         <div class="timeline-dot"></div>
                     </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Senior Full Stack Software Engineer</h3>
+                            <p class="qualification-location">Munich, Germany - Holiday Extras GmbH</p>
+                            <p class="qualification-date">November 2019 - May 2020</p>
+                            <p class="qualification-description">
+                                Developed travel booking platforms and integrated payment systems.
+                                Built scalable microservices architecture for high-traffic applications.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Senior Full Stack Software Engineer</h3>
+                            <p class="qualification-location">Munich, Germany - innosabi GmbH</p>
+                            <p class="qualification-date">April 2018 - November 2019</p>
+                            <p class="qualification-description">
+                                Built innovation management platforms and collaborative tools.
+                                Implemented modern web technologies and cloud-based solutions.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Consultant - Full Stack Software Engineer</h3>
+                            <p class="qualification-location">Munich, Germany - LIV-T GmbH</p>
+                            <p class="qualification-date">September 2017 - April 2018</p>
+                            <p class="qualification-description">
+                                Provided technical consulting and developed custom software solutions.
+                                Specialized in full-stack development and system architecture.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Consultant - Full Stack Software Engineer</h3>
+                            <p class="qualification-location">Tunis, Tunisia - TS Consulting SARL</p>
+                            <p class="qualification-date">March 2017 - September 2017</p>
+                            <p class="qualification-description">
+                                Delivered consulting services for software development projects.
+                                Focused on web application development and technical architecture.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">CTO and CO-Founder</h3>
+                            <p class="qualification-location">Madrid, Spain - WatsomApp Ltd</p>
+                            <p class="qualification-date">November 2016 - June 2017</p>
+                            <p class="qualification-description">
+                                Co-founded and led technical development of innovative mobile applications.
+                                Managed technical strategy and product development from concept to launch.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">CEO</h3>
+                            <p class="qualification-location">Tunis, Tunisia - Stellarin SARL</p>
+                            <p class="qualification-date">August 2013 - June 2017</p>
+                            <p class="qualification-description">
+                                Founded and managed software development company.
+                                Led business operations, client relationships, and technical project delivery.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards-section" id="awards">
+        <div class="awards-container">
+            <!-- Section Header -->
+            <div class="awards-header">
+                <div class="awards-command">$ ls -la achievements/</div>
+                <h2 class="awards-title">Awards</h2>
+                <p class="awards-subtitle">Achievements</p>
+            </div>
+
+            <!-- Awards Grid -->
+            <div class="awards-grid">
+                <!-- NASA Certification -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="nasa.jpg" alt="NASA Certification">
+                    </div>
+                    <h3 class="award-title">Certified Galactic Problem Solver</h3>
+                    <p class="award-issuer">National Aeronautics and Space Administration - Certification authority NASA</p>
+                    <a href="#" class="award-button">./view_more.sh</a>
+                </div>
+
+                <!-- Microsoft Certification -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="microsoft.png" alt="Microsoft Certification">
+                    </div>
+                    <h3 class="award-title">Certified Microsoft Specialist</h3>
+                    <p class="award-issuer">Microsoft - Exam 70-480 - HTML5, CSS3 and JavaScript</p>
+                    <a href="#" class="award-button">./view_more.sh</a>
+                </div>
+
+                <!-- Software Architecture -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="architecture.png" alt="Software Architecture Certification">
+                    </div>
+                    <h3 class="award-title">Software Architecture & Design</h3>
+                    <p class="award-issuer">Software architecture & design of Modern large scale systems</p>
+                    <a href="#" class="award-button">./view_more.sh</a>
+                </div>
+
+                <!-- Arduino Certification -->
+                <div class="award-card">
+                    <div class="award-image">
+                        <img src="thebest.jpg" alt="Arduino Certification">
+                    </div>
+                    <h3 class="award-title">Certified Arduino Specialist</h3>
+                    <p class="award-issuer">TheBest training center - arduino architecture and development</p>
+                    <a href="#" class="award-button">./view_more.sh</a>
                 </div>
             </div>
         </div>
@@ -1523,6 +1868,61 @@
             item.style.transition = 'all 0.6s ease';
             timelineObserver.observe(item);
         });
+
+        // Add terminal typing effect to awards command
+        const awardsCommand = document.querySelector('.awards-command');
+        if (awardsCommand) {
+            const originalText = awardsCommand.textContent;
+            awardsCommand.textContent = '';
+
+            const awardsCommandObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let i = 0;
+                        function typeAwardsCommand() {
+                            if (i < originalText.length) {
+                                awardsCommand.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeAwardsCommand, 50);
+                            }
+                        }
+                        typeAwardsCommand();
+                        awardsCommandObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            awardsCommandObserver.observe(awardsCommand);
+        }
+
+        // Animate award cards on scroll
+        const awardsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const awardCards = entry.target.querySelectorAll('.award-card');
+                    awardCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    });
+                    awardsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const awardsSection = document.querySelector('.awards-section');
+        if (awardsSection) {
+            // Initially hide award cards
+            const awardCards = awardsSection.querySelectorAll('.award-card');
+            awardCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+
+            awardsObserver.observe(awardsSection);
+        }
     </script>
 </body>
 </html>
