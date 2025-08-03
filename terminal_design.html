@@ -985,26 +985,20 @@
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
-        .award-image {
-            width: 80px;
-            height: 80px;
+        .award-icon {
+            width: 60px;
+            height: 60px;
             margin: 0 auto 1.5rem;
             border-radius: 50%;
             border: 2px solid #4ade80;
-            padding: 10px;
             background: rgba(74, 222, 128, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             z-index: 2;
-        }
-
-        .award-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #4ade80;
         }
 
         .award-title {
@@ -1099,6 +1093,243 @@
                 font-size: 1.1rem;
             }
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #000;
+            border: 2px solid #4ade80;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #4ade80;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'Courier New', monospace;
+        }
+
+        .modal-close:hover {
+            color: #6ee7b7;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border: 2px solid #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            color: #4ade80;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            color: #6ee7b7;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background-color: #000;
+            position: relative;
+        }
+
+        .portfolio-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .portfolio-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-command {
+            color: #4ade80;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            font-size: 2.5rem;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-quote {
+            color: #6ee7b7;
+            font-size: 1.1rem;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.02);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item:hover {
+            background: rgba(74, 222, 128, 0.05);
+            transform: translateY(-5px);
+            border-color: #6ee7b7;
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .portfolio-item:hover::before {
+            left: 100%;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #4ade80;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            border-color: #6ee7b7;
+        }
+
+        .portfolio-item-title {
+            color: #4ade80;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-description {
+            color: #6ee7b7;
+            font-size: 1rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive design for portfolio */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .portfolio-title {
+                font-size: 2rem;
+            }
+
+            .portfolio-item {
+                padding: 1.5rem;
+            }
+
+            .portfolio-image {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-section {
+                padding: 2rem 1rem;
+            }
+
+            .portfolio-item {
+                padding: 1rem;
+            }
+
+            .portfolio-image {
+                height: 150px;
+            }
+
+            .portfolio-quote {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1134,7 +1365,7 @@
             <!-- Action buttons -->
             <div class="buttons-container">
                 <a href="#about" class="terminal-button">./about.sh</a>
-                <a href="#awards" class="terminal-button">./awards.sh</a>
+                <a href="#portfolio" class="terminal-button">./portfolio.sh</a>
             </div>
         </div>
         
@@ -1593,42 +1824,140 @@
             <div class="awards-grid">
                 <!-- NASA Certification -->
                 <div class="award-card">
-                    <div class="award-image">
-                        <img src="nasa.jpg" alt="NASA Certification">
-                    </div>
+                    <div class="award-icon">🚀</div>
                     <h3 class="award-title">Certified Galactic Problem Solver</h3>
                     <p class="award-issuer">National Aeronautics and Space Administration - Certification authority NASA</p>
-                    <a href="#" class="award-button">./view_more.sh</a>
+                    <button class="award-button" onclick="openModal('nasa.jpg', 'NASA Certification', 'Certified Galactic Problem Solver by NASA - National Aeronautics and Space Administration')">./view_more.sh</button>
                 </div>
 
                 <!-- Microsoft Certification -->
                 <div class="award-card">
-                    <div class="award-image">
-                        <img src="microsoft.png" alt="Microsoft Certification">
-                    </div>
+                    <div class="award-icon">💻</div>
                     <h3 class="award-title">Certified Microsoft Specialist</h3>
                     <p class="award-issuer">Microsoft - Exam 70-480 - HTML5, CSS3 and JavaScript</p>
-                    <a href="#" class="award-button">./view_more.sh</a>
+                    <button class="award-button" onclick="openModal('microsoft.png', 'Microsoft Certification', 'Microsoft Specialist certification for HTML5, CSS3 and JavaScript development')">./view_more.sh</button>
                 </div>
 
                 <!-- Software Architecture -->
                 <div class="award-card">
-                    <div class="award-image">
-                        <img src="architecture.png" alt="Software Architecture Certification">
-                    </div>
+                    <div class="award-icon">🏗️</div>
                     <h3 class="award-title">Software Architecture & Design</h3>
                     <p class="award-issuer">Software architecture & design of Modern large scale systems</p>
-                    <a href="#" class="award-button">./view_more.sh</a>
+                    <button class="award-button" onclick="openModal('architecture.png', 'Software Architecture Certification', 'Expert certification in software architecture and design of modern large scale systems')">./view_more.sh</button>
                 </div>
 
                 <!-- Arduino Certification -->
                 <div class="award-card">
-                    <div class="award-image">
-                        <img src="thebest.jpg" alt="Arduino Certification">
-                    </div>
+                    <div class="award-icon">🔧</div>
                     <h3 class="award-title">Certified Arduino Specialist</h3>
                     <p class="award-issuer">TheBest training center - arduino architecture and development</p>
-                    <a href="#" class="award-button">./view_more.sh</a>
+                    <button class="award-button" onclick="openModal('thebest.jpg', 'Arduino Certification', 'Arduino specialist certification covering architecture and development from TheBest training center')">./view_more.sh</button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="certificateModal" class="modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                    <img id="modalImage" class="modal-image" src="" alt="">
+                    <h3 id="modalTitle" class="modal-title"></h3>
+                    <p id="modalDescription" class="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-container">
+            <!-- Section Header -->
+            <div class="portfolio-header">
+                <div class="portfolio-command">$ cat portfolio.md</div>
+                <h2 class="portfolio-title">Portfolio</h2>
+                <p class="portfolio-quote">"The only way to discover the limits of the possible is to go beyond them into the impossible." – Arthur C. Clarke</p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Twaice Technologies -->
+                <div class="portfolio-item">
+                    <img src="portfolio/twaice.png" alt="Twaice Technologies" class="portfolio-image">
+                    <h3 class="portfolio-item-title">Twaice Technologies GmbH</h3>
+                    <p class="portfolio-description">
+                        Optimise and maintain a dashboard for Battery KPI analytics and Safety/Performance management
+                    </p>
+                </div>
+
+                <!-- finway -->
+                <div class="portfolio-item">
+                    <img src="portfolio/finway.png" alt="finway GmbH" class="portfolio-image">
+                    <h3 class="portfolio-item-title">finway GmbH</h3>
+                    <p class="portfolio-description">
+                        Building and maintaining a dashboard for invoice processing and expense management.
+                    </p>
+                </div>
+
+                <!-- innosabi -->
+                <div class="portfolio-item">
+                    <img src="portfolio/innosabi.png" alt="innosabi GmbH" class="portfolio-image">
+                    <h3 class="portfolio-item-title">innosabi GmbH</h3>
+                    <p class="portfolio-description">
+                        Developing and maintaining a complex yet big innovation and idea management platform for domestic and international clients.
+                    </p>
+                </div>
+
+                <!-- Holiday Extras -->
+                <div class="portfolio-item">
+                    <img src="portfolio/holidayextras.png" alt="Holiday Extras GmbH" class="portfolio-image">
+                    <h3 class="portfolio-item-title">Holiday Extras GmbH</h3>
+                    <p class="portfolio-description">
+                        Developing and maintaining a complex platform of 480 micro services for booking holidays, airport parkings and lounges, hotels and other services
+                    </p>
+                </div>
+
+                <!-- WatsomApp -->
+                <div class="portfolio-item">
+                    <img src="portfolio/watsomapp.png" alt="WatsomApp Ltd" class="portfolio-image">
+                    <h3 class="portfolio-item-title">WatsomApp Ltd</h3>
+                    <p class="portfolio-description">
+                        Co-founded as a CTO the one and only AI in the world that helps prevent bullying at schools.
+                    </p>
+                </div>
+
+                <!-- Flash To Cloud -->
+                <div class="portfolio-item">
+                    <img src="portfolio/flashtocloud.jpg" alt="Flash To Cloud" class="portfolio-image">
+                    <h3 class="portfolio-item-title">Flash To Cloud</h3>
+                    <p class="portfolio-description">
+                        Microsoft Imagine Cup Tunisia winner. A concept of a smart & conected USB drive.
+                    </p>
+                </div>
+
+                <!-- Real fight Gloves -->
+                <div class="portfolio-item">
+                    <img src="portfolio/realfight.png" alt="Real fight Gloves" class="portfolio-image">
+                    <h3 class="portfolio-item-title">Real fight Gloves</h3>
+                    <p class="portfolio-description">
+                        Smart and connected glove, helps with AR/VR games control.
+                    </p>
+                </div>
+
+                <!-- Painting Scanner -->
+                <div class="portfolio-item">
+                    <img src="portfolio/paintingscanner.png" alt="Painting Scanner" class="portfolio-image">
+                    <h3 class="portfolio-item-title">Painting Scanner</h3>
+                    <p class="portfolio-description">
+                        With AI and Augmented reality technology we provide information for every famous painting in the world.
+                    </p>
+                </div>
+
+                <!-- Oilfox Insights -->
+                <div class="portfolio-item">
+                    <img src="portfolio/oilfoxinsights.png" alt="Oilfox Insights" class="portfolio-image">
+                    <h3 class="portfolio-item-title">Oilfox Insights</h3>
+                    <p class="portfolio-description">
+                        Oilfox - A smart and connected iOT device, helps with measurement and tracking different types of tank liquids remotely.
+                    </p>
                 </div>
             </div>
         </div>
@@ -1922,6 +2251,99 @@
             });
 
             awardsObserver.observe(awardsSection);
+        }
+
+        // Modal functionality
+        function openModal(imageSrc, title, description) {
+            const modal = document.getElementById('certificateModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+
+            modalImage.src = imageSrc;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modal.classList.add('active');
+
+            // Prevent body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('certificateModal');
+            modal.classList.remove('active');
+
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('certificateModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add terminal typing effect to portfolio command
+        const portfolioCommand = document.querySelector('.portfolio-command');
+        if (portfolioCommand) {
+            const originalText = portfolioCommand.textContent;
+            portfolioCommand.textContent = '';
+
+            const portfolioCommandObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let i = 0;
+                        function typePortfolioCommand() {
+                            if (i < originalText.length) {
+                                portfolioCommand.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typePortfolioCommand, 50);
+                            }
+                        }
+                        typePortfolioCommand();
+                        portfolioCommandObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            portfolioCommandObserver.observe(portfolioCommand);
+        }
+
+        // Animate portfolio items on scroll
+        const portfolioObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const portfolioItems = entry.target.querySelectorAll('.portfolio-item');
+                    portfolioItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                    portfolioObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const portfolioSection = document.querySelector('.portfolio-section');
+        if (portfolioSection) {
+            // Initially hide portfolio items
+            const portfolioItems = portfolioSection.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease';
+            });
+
+            portfolioObserver.observe(portfolioSection);
         }
     </script>
 </body>
