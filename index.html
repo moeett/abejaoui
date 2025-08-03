@@ -251,13 +251,78 @@
         .terminal-content {
             position: relative;
             z-index: 2;
-            max-width: 1200px;
+            max-width: 1000px;
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            text-align: left;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        /* Desktop horizontal layout */
+        @media (min-width: 1024px) {
+            .terminal-content {
+                max-width: 1200px;
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                gap: 2rem 4rem;
+                text-align: left;
+                align-items: start;
+            }
+
+            .hero-profile {
+                grid-column: 1;
+                grid-row: 1 / 4;
+                justify-self: center;
+                align-self: center;
+            }
+
+            .command-line:nth-of-type(1) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .command-line:nth-of-type(2) {
+                grid-column: 2;
+                grid-row: 1;
+                margin-top: 1.5rem;
+            }
+
+            .command-line:nth-of-type(3) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .main-title {
+                grid-column: 2;
+                grid-row: 3;
+                margin: 0;
+            }
+
+            .subtitle {
+                grid-column: 2;
+                grid-row: 3;
+                margin-top: 0.5rem;
+            }
+
+            .skills-line:nth-of-type(1) {
+                grid-column: 2;
+                grid-row: 4;
+            }
+
+            .skills-line:nth-of-type(2) {
+                grid-column: 2;
+                grid-row: 4;
+                margin-top: 1.5rem;
+            }
+
+            .buttons-container {
+                grid-column: 2;
+                grid-row: 5;
+                justify-content: flex-start;
+            }
         }
 
         /* Hero Profile Image */
@@ -269,46 +334,25 @@
         }
 
         .hero-profile-image {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 4px solid #4ade80;
+            border: 3px solid #4ade80;
             object-fit: cover;
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
         }
 
         .hero-profile-image:hover {
             transform: scale(1.05);
             border-color: #6ee7b7;
-            box-shadow: 0 0 40px rgba(74, 222, 128, 0.5);
-        }
-
-        .hero-profile::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            border: 2px solid #4ade80;
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: pulse-border 3s infinite;
-        }
-
-        @keyframes pulse-border {
-            0% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.1; }
-            100% { transform: scale(1); opacity: 0.3; }
         }
 
         .hero-text-content {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         .command-line {
@@ -508,18 +552,13 @@
             }
 
             .terminal-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
+                gap: 1.5rem;
+                padding: 0 1rem;
             }
 
             .hero-profile-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            .hero-text-content {
-                align-items: center;
+                width: 120px;
+                height: 120px;
             }
 
             .main-title {
@@ -2371,37 +2410,34 @@
                 <img src="bejaoui.jpeg" alt="Ahmed Bejaoui" class="hero-profile-image">
             </div>
 
-            <!-- Hero Text Content -->
-            <div class="hero-text-content">
-                <!-- Terminal commands -->
-                <div class="command-line">
-                    <span class="command">$ whoami</span>
-                </div>
-                <div class="command-line">
-                    <span class="output">ahmed-bejaoui</span>
-                </div>
+            <!-- Terminal commands -->
+            <div class="command-line">
+                <span class="command">$ whoami</span>
+            </div>
+            <div class="command-line">
+                <span class="output">ahmed-bejaoui</span>
+            </div>
 
-                <div class="command-line" style="margin-top: 1rem;">
-                    <span class="command">$ cat about.txt</span>
-                </div>
+            <div class="command-line" style="margin-top: 1rem;">
+                <span class="command">$ cat about.txt</span>
+            </div>
 
-                <!-- Main content -->
-                <h1 class="main-title">Ahmed Bejaoui</h1>
-                <h2 class="subtitle">Full-Stack Developer</h2>
+            <!-- Main content -->
+            <h1 class="main-title">Ahmed Bejaoui</h1>
+            <h2 class="subtitle">Full-Stack Developer</h2>
 
-                <!-- Skills section -->
-                <div class="skills-line">
-                    <span class="command">$ ls skills/</span>
-                </div>
-                <div class="skills-line">
-                    <span class="skills-output">React TypeScript Node.js Python</span>
-                </div>
+            <!-- Skills section -->
+            <div class="skills-line">
+                <span class="command">$ ls skills/</span>
+            </div>
+            <div class="skills-line">
+                <span class="skills-output">React TypeScript Node.js Python</span>
+            </div>
 
-                <!-- Action buttons -->
-                <div class="buttons-container">
-                    <a href="#about" class="terminal-button">./about.sh</a>
-                    <a href="#contact" class="terminal-button">./contact.sh</a>
-                </div>
+            <!-- Action buttons -->
+            <div class="buttons-container">
+                <a href="#about" class="terminal-button">./about.sh</a>
+                <a href="#contact" class="terminal-button">./contact.sh</a>
             </div>
         </div>
 
@@ -3982,7 +4018,7 @@ Sent from your portfolio website`;
             </div>
             <div class="footer-divider"></div>
             <div class="footer-copyright">
-                © 2024 Ahmed Bejaoui. Built with terminal aesthetics.
+                © 2025 Ahmed Bejaoui. Built with terminal aesthetics.
             </div>
         </div>
     </footer>
