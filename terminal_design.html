@@ -589,13 +589,35 @@
         /* Responsive design for skills */
         @media (max-width: 768px) {
             .skills-tabs {
-                flex-direction: column;
-                align-items: center;
+                justify-content: flex-start;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+                padding: 0 1rem;
+                margin-bottom: 2rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: thin;
+                scrollbar-color: #4ade80 transparent;
+            }
+
+            .skills-tabs::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .skills-tabs::-webkit-scrollbar-track {
+                background: rgba(74, 222, 128, 0.1);
+            }
+
+            .skills-tabs::-webkit-scrollbar-thumb {
+                background: #4ade80;
+                border-radius: 2px;
             }
 
             .tab-button {
-                width: 200px;
+                flex-shrink: 0;
+                min-width: 120px;
                 text-align: center;
+                white-space: nowrap;
             }
 
             .skills-grid {
