@@ -167,6 +167,51 @@
             51%, 100% { border-color: transparent; }
         }
 
+        /* Hero Social Links */
+        .hero-social-links {
+            position: absolute;
+            bottom: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .hero-social-link {
+            padding: 0.3rem 0.6rem;
+            background: transparent;
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .hero-social-link:hover::before {
+            left: 100%;
+        }
+
+        .hero-social-link:hover {
+            background: #4ade80;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             .main-title {
@@ -184,6 +229,16 @@
             
             .terminal-button {
                 width: 200px;
+            }
+
+            .hero-social-links {
+                bottom: 4rem;
+                gap: 0.5rem;
+            }
+
+            .hero-social-link {
+                padding: 0.2rem 0.4rem;
+                font-size: 0.7rem;
             }
         }
 
@@ -1282,6 +1337,11 @@
             display: none;
         }
 
+        /* Hidden recommendation cards */
+        .recommendation-card.hidden {
+            display: none;
+        }
+
         /* Load More Button */
         .portfolio-load-more {
             text-align: center;
@@ -1591,6 +1651,302 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            background-color: #000;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-command {
+            color: #4ade80;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            color: #6ee7b7;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.02);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .contact-info:hover::before {
+            left: 100%;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-label {
+            color: #4ade80;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .contact-value {
+            color: #6ee7b7;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.02);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .contact-form:hover::before {
+            left: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-label {
+            color: #4ade80;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 2px solid #4ade80;
+            color: #6ee7b7;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #6ee7b7;
+            background: rgba(74, 222, 128, 0.05);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(110, 231, 183, 0.5);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+        }
+
+        .form-submit {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid #4ade80;
+            color: #4ade80;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .form-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .form-submit:hover::before {
+            left: 100%;
+        }
+
+        .form-submit:hover {
+            background: #4ade80;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-link:hover {
+            background: #4ade80;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design for contact */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                gap: 0.5rem;
+            }
+
+            .social-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 1rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 200px;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1626,10 +1982,20 @@
             <!-- Action buttons -->
             <div class="buttons-container">
                 <a href="#about" class="terminal-button">./about.sh</a>
-                <a href="#recommendations" class="terminal-button">./testimonials.sh</a>
+                <a href="#contact" class="terminal-button">./contact.sh</a>
             </div>
         </div>
-        
+
+        <!-- Social Links in Hero -->
+        <div class="hero-social-links">
+            <a href="https://www.linkedin.com/in/ahmed-khalil-bejaoui-122a1769/" target="_blank" class="hero-social-link">[LI]</a>
+            <a href="https://github.com/akbejaoui" target="_blank" class="hero-social-link">[GH]</a>
+            <a href="https://www.youtube.com/channel/UCWt9G4UUzHtKqVoeUxWNaGg" target="_blank" class="hero-social-link">[YT]</a>
+            <a href="https://www.instagram.com/akbejaoui/" target="_blank" class="hero-social-link">[IG]</a>
+            <a href="https://open.spotify.com/playlist/7vrzSWmC0z2XS6w5BY7WJN?si=2bd271fdca5844df&nd=1&dlsi=cf27460cbb9a4d0b" target="_blank" class="hero-social-link">[SP]</a>
+            <a href="https://ahmedbejaoui.medium.com/" target="_blank" class="hero-social-link">[MD]</a>
+        </div>
+
         <!-- Scroll indicator -->
         <div class="scroll-indicator">
             <span>scroll_down</span>
@@ -2383,6 +2749,78 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <!-- Section Header -->
+            <div class="contact-header">
+                <div class="contact-command">$ ./contact_me.sh</div>
+                <h2 class="contact-title">Contact Me</h2>
+                <p class="contact-subtitle">Get in touch</p>
+            </div>
+
+            <!-- Contact Content -->
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <div class="contact-value">ahmed@abejaoui.com</div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Location</span>
+                        <div class="contact-value">Munich, Germany</div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Calendly</span>
+                        <div class="contact-value">
+                            <a href="https://calendly.com/akbejaoui" target="_blank" style="color: #6ee7b7; text-decoration: underline;">calendly.com/akbejaoui</a>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ahmed-khalil-bejaoui-122a1769/" target="_blank" class="social-link">./linkedin.sh</a>
+                        <a href="https://github.com/akbejaoui" target="_blank" class="social-link">./github.sh</a>
+                        <a href="https://www.youtube.com/channel/UCWt9G4UUzHtKqVoeUxWNaGg" target="_blank" class="social-link">./youtube.sh</a>
+                        <a href="https://www.instagram.com/akbejaoui/" target="_blank" class="social-link">./instagram.sh</a>
+                        <a href="https://open.spotify.com/playlist/7vrzSWmC0z2XS6w5BY7WJN?si=2bd271fdca5844df&nd=1&dlsi=cf27460cbb9a4d0b" target="_blank" class="social-link">./spotify.sh</a>
+                        <a href="https://ahmedbejaoui.medium.com/" target="_blank" class="social-link">./medium.sh</a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Enter subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Enter your message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">./send_message.sh</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Add typing effect to the main title
         document.addEventListener('DOMContentLoaded', function() {
@@ -2889,6 +3327,122 @@
             });
 
             recommendationsObserver.observe(recommendationsSection);
+        }
+
+        // Contact Form WhatsApp Integration
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Create WhatsApp message
+                const whatsappMessage = `Hello Ahmed! 👋
+
+*New Contact Form Submission*
+
+*Name:* ${name}
+*Email:* ${email}
+*Subject:* ${subject}
+
+*Message:*
+${message}
+
+---
+Sent from your portfolio website`;
+
+                // Encode the message for URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+
+                // WhatsApp URL with your number
+                const whatsappURL = `https://wa.me/4915207500462?text=${encodedMessage}`;
+
+                // Open WhatsApp
+                window.open(whatsappURL, '_blank');
+
+                // Reset form
+                contactForm.reset();
+
+                // Show success message (optional)
+                alert('Redirecting to WhatsApp...');
+            });
+        }
+
+        // Add terminal typing effect to contact command
+        const contactCommand = document.querySelector('.contact-command');
+        if (contactCommand) {
+            const originalText = contactCommand.textContent;
+            contactCommand.textContent = '';
+
+            const contactCommandObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let i = 0;
+                        function typeContactCommand() {
+                            if (i < originalText.length) {
+                                contactCommand.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeContactCommand, 50);
+                            }
+                        }
+                        typeContactCommand();
+                        contactCommandObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            contactCommandObserver.observe(contactCommand);
+        }
+
+        // Animate contact section on scroll
+        const contactObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const contactInfo = entry.target.querySelector('.contact-info');
+                    const contactForm = entry.target.querySelector('.contact-form');
+
+                    setTimeout(() => {
+                        if (contactInfo) {
+                            contactInfo.style.opacity = '1';
+                            contactInfo.style.transform = 'translateY(0)';
+                        }
+                    }, 200);
+
+                    setTimeout(() => {
+                        if (contactForm) {
+                            contactForm.style.opacity = '1';
+                            contactForm.style.transform = 'translateY(0)';
+                        }
+                    }, 400);
+
+                    contactObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const contactSection = document.querySelector('.contact-section');
+        if (contactSection) {
+            // Initially hide contact elements
+            const contactInfo = contactSection.querySelector('.contact-info');
+            const contactForm = contactSection.querySelector('.contact-form');
+
+            if (contactInfo) {
+                contactInfo.style.opacity = '0';
+                contactInfo.style.transform = 'translateY(30px)';
+                contactInfo.style.transition = 'all 0.6s ease';
+            }
+
+            if (contactForm) {
+                contactForm.style.opacity = '0';
+                contactForm.style.transform = 'translateY(30px)';
+                contactForm.style.transition = 'all 0.6s ease';
+            }
+
+            contactObserver.observe(contactSection);
         }
     </script>
 </body>
