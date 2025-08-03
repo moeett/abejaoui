@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Abejaoui | Tech Lead - Software Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fallback CSS link -->
+    <link href="https://unpkg.com/tailwindcss@^3/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'fade-in-delay-1': 'fadeIn 0.8s ease-out 0.2s forwards',
+                        'fade-in-delay-2': 'fadeIn 0.8s ease-out 0.4s forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .fade-in-delay-1 {
+            animation: fadeIn 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .fade-in-delay-2 {
+            animation: fadeIn 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* Ensure elements are visible when animations complete */
+        .fade-in.visible,
+        .fade-in-delay-1.visible,
+        .fade-in-delay-2.visible {
+            opacity: 1;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        /* Hover effects */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Skill progress animation */
+        .skill-progress {
+            transition: width 1.5s ease-out;
+        }
+        
+        /* Active navigation link */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Typing animation */
+        .typing {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">Abejaoui</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="nav-link text-gray-600 hover:text-blue-600 transition">Skills</a>
+                <a href="#qualification" class="nav-link text-gray-600 hover:text-blue-600 transition">Qualification</a>
+                <a href="#portfolio" class="nav-link text-gray-600 hover:text-blue-600 transition">Portfolio</a>
+                <a href="#recommendations" class="nav-link text-gray-600 hover:text-blue-600 transition">Recommendations</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-blue-600 transition">Home</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600 transition">About</a>
+            <a href="#skills" class="block py-2 text-gray-600 hover:text-blue-600 transition">Skills</a>
+            <a href="#qualification" class="block py-2 text-gray-600 hover:text-blue-600 transition">Qualification</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover:text-blue-600 transition">Portfolio</a>
+            <a href="#recommendations" class="block py-2 text-gray-600 hover:text-blue-600 transition">Recommendations</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600 transition">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="text-blue-600">Ahmed</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600">
+                    Tech Lead - Software Engineer
+                </h2>
+                <p class="text-lg mb-8 text-gray-600">High level experience in web design and development knowledge, producing quality work.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Contact Me</a>
+                    <a href="#about" class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">Scroll down</a>
+                </div>
+                <div class="flex space-x-4 mt-8">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-github text-2xl"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-dribbble text-2xl"></i></a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center fade-in-delay-1">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <img src="https://picsum.photos/seed/ahmedabejaoui/400/400.jpg" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg">
+                        <p class="text-sm font-semibold">12+ Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <img src="https://picsum.photos/seed/ahmedabout/300/300.jpg" alt="About Me" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">My introduction</h3>
+                    <p class="mb-6 text-gray-600">
+                        Tech Lead, with extensive knowledge and years of experience, working in web technologies, mobile, and Ui / Ux design, delivering quality work and a solution to every problem.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="bg-blue-50 p-4 rounded-lg text-center">
+                            <p class="text-3xl font-bold text-blue-600">12+</p>
+                            <p class="text-gray-600">Years of<br>experience</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg text-center">
+                            <p class="text-3xl font-bold text-blue-600">20+</p>
+                            <p class="text-gray-600">Completed<br>projects</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg text-center">
+                            <p class="text-3xl font-bold text-blue-600">05+</p>
+                            <p class="text-gray-600">Companies<br>worked</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My technical level</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Agile & Project Management</span>
+                                <span>8 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Frontend Developer</span>
+                                <span>More than 10 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>HTML</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>JavaScript / TypeScript</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>React</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Angular</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Backend & Other Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Backend developer</span>
+                                <span>More than 10 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Data Visualisation & Analysis</span>
+                                <span>2 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="40%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>DevOps & Infrastructure</span>
+                                <span>3 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="60%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Cloud</span>
+                                <span>4 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Database & Storage</span>
+                                <span>More than 10 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Hardware & Prototyping</span>
+                                <span>4 years</span>
+                            </div>
+                            <div class="w-full bg-gray-300 rounded-full h-2.5">
+                                <div class="skill-progress bg-blue-600 h-2.5 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification Section -->
+    <section id="qualification" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">My personal journey</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Education</h3>
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">Computer Software Engineer</h4>
+                            <p class="text-gray-600">Tunis, Tunisia - ESPRIT university</p>
+                            <p class="text-blue-600">2013 - 2016</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">License of Computer Science</h4>
+                            <p class="text-gray-600">Tunis, Tunisia - ENICAR university</p>
+                            <p class="text-blue-600">2010 - 2013</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">Bachelor of Computer Science</h4>
+                            <p class="text-gray-600">Tunis, Tunisia - Hannibal High School</p>
+                            <p class="text-blue-600">2006 - 2010</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Awards</h3>
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">Certified Galactic Problem Solver</h4>
+                            <p class="text-gray-600">National Aeronautics and Space Administration - Certification authority NASA</p>
+                            <a href="#" class="text-blue-600 hover:underline">View More</a>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">Certified Microsoft Specialist</h4>
+                            <p class="text-gray-600">Microsoft - Exam 70-480 - HTML5, CSS3 and JavaScript</p>
+                            <a href="#" class="text-blue-600 hover:underline">View More</a>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">Software Architecture & Design</h4>
+                            <p class="text-gray-600">Software architecture & design of Modern large scale systems</p>
+                            <a href="#" class="text-blue-600 hover:underline">View More</a>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h4 class="font-semibold text-lg">Certified Arduino Specialist</h4>
+                            <p class="text-gray-600">TheBest training center - arduino architecture and development</p>
+                            <a href="#" class="text-blue-600 hover:underline">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Portfolio</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">"The only way to discover the limits of the possible is to go beyond them into the impossible." – Arthur C. Clarke</p>
+            <div class="flex justify-center mb-8">
+                <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/oilfox/600/400.jpg" alt="Oilfox Insights" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Oilfox Insights</h3>
+                        <p class="text-gray-600 mb-4">Oilfox - A smart and connected iOT device, helps with measurement and tracking different types of tank liquids remotely.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/twaice/600/400.jpg" alt="Twaice Technologies GmbH" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Twaice Technologies GmbH</h3>
+                        <p class="text-gray-600 mb-4">Optimise and maintain a dashboard for Battery KPI analytics and Safety/Performance management.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/finway/600/400.jpg" alt="finway GmbH" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">finway GmbH</h3>
+                        <p class="text-gray-600 mb-4">Building and maintaining a dashboard for invoice processing and expense management.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/innosabi/600/400.jpg" alt="innosabi GmbH" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">innosabi GmbH</h3>
+                        <p class="text-gray-600 mb-4">Developing and maintaining a complex yet big innovation and idea management platform for domestic and international clients.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/holidayextras/600/400.jpg" alt="Holiday Extras GmbH" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Holiday Extras GmbH</h3>
+                        <p class="text-gray-600 mb-4">Developing and maintaining a complex platform of 480 micro services for booking holidays, airport parkings and lounges, hotels and other services.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/watsomapp/600/400.jpg" alt="WatsomApp Ltd" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">WatsomApp Ltd</h3>
+                        <p class="text-gray-600 mb-4">Co-founded as a CTO the one and only AI in the world that helps prevent bullying at schools.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/flashtocloud/600/400.jpg" alt="Flash To Cloud" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Flash To Cloud</h3>
+                        <p class="text-gray-600 mb-4">Microsoft Imagine Cup Tunisia winner. A concept of a smart & conected USB drive.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/realfightgloves/600/400.jpg" alt="Real fight Gloves" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Real fight Gloves</h3>
+                        <p class="text-gray-600 mb-4">Smart and connected glove, helps with AR/VR games control.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://picsum.photos/seed/paintingscanner/600/400.jpg" alt="Painting Scanner" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Painting Scanner</h3>
+                        <p class="text-gray-600 mb-4">With AI and Augmented reality technology we provide information for every famous painting in the world.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Recommendations</h2>
+            <div class="flex justify-center mb-8">
+                <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View All</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Recommendation 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/emilmanolov/100/100.jpg" alt="Emil Manolov" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold text-lg">Emil Manolov</h3>
+                            <p class="text-gray-600">Software developer</p>
+                            <p class="text-sm text-blue-600">Worked on the same team</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">It was great having Ahmed in our team at Holiday Extras. We were working together on several projects. His strong motivation and great technical knowledge was very beneficial for the team's productivity. Ahmed has a great personality and he would be a great asset to any team.</p>
+                </div>
+                <!-- Recommendation 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/cvetkoparandiev/100/100.jpg" alt="Cvetko Parandiev" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold text-lg">Cvetko Parandiev</h3>
+                            <p class="text-gray-600">Full Stack Web Developer at Holiday Extras</p>
+                            <p class="text-sm text-blue-600">Worked on the same team</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">We've worked together on several projects and Ahmed is one of the best people to have as a partner. No matter how tense a meeting, Ahmed made sure everyone left with a smile. He has an excellent knowledge of software and web development, great attitude and mind full of innovative ideas so I strongly recommend him.</p>
+                </div>
+                <!-- Recommendation 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/ahmedchoura/100/100.jpg" alt="Ahmed Choura" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold text-lg">Ahmed Choura</h3>
+                            <p class="text-gray-600">Software Engineer</p>
+                            <p class="text-sm text-blue-600">Reported directly to Ahmed Khalil</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">I'm incredibly grateful for the chance to work closely with Ahmed. He's hands down one of the most knowledgeable Senior Software Engineers I've met. His technical expertise is vast, but what really stands out is how generous he is with his help. No matter the challenge, Ahmed was always ready with a solution and took the time to explain things clearly. His innovative architectural ideas have greatly benefited the company, and he's taught me a lot about managing stress and handling multiple tasks. His positive attitude, problem-solving skills, and collaborative spirit make him truly invaluable. Words can hardly capture how remarkable he is—he's simply amazing!</p>
+                </div>
+                <!-- Recommendation 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/matthiassimolka/100/100.jpg" alt="Matthias Simolka" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold text-lg">Matthias Simolka</h3>
+                            <p class="text-gray-600">Product Manager @ TWAICE</p>
+                            <p class="text-sm text-blue-600">Worked with Ahmed but on different teams</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">Ahmed is an exceptional senior software engineer with a deep understanding of various different domains. He consistently demonstrated a strong work ethic and took great ownership of projects. Ahmed is a fantastic team player who is always willing to help and mentor junior engineers and teammates from other domains. Ahmed communicated clearly the advantages and drawbacks of different initiatives and ensured high speed and efficiency across the company. His ability to lead and align people across teams is invaluable. Ahmed is also incredibly dedicated and always willing to go the extra mile to ensure project success. His strong problem-solving abilities and attention to detail make him an incredibly valuable asset to any team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get in touch</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-600">ahmed@abejaoui.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-600">Munich, Germany</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-600">calendly.com/akbejaoui</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-4 mt-8">
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-github text-2xl"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-twitter text-2xl"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-blue-600 transition"><i class="fab fa-dribbble text-2xl"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">Name *</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 mb-1">Email *</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-700 mb-1">Subject *</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-1">Message *</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+                        </form>
+                        <div id="form-message" class="mt-4 hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>Team lead - Software Engineer</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#about" class="hover:text-blue-400 transition">About</a>
+                    <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+                    <a href="#qualification" class="hover:text-blue-400 transition">Awards</a>
+                    <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <p>&copy; abejaoui.com 2025 All right reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Active navigation link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        const skillsSection = document.getElementById('skills');
+        
+        const animateSkillBars = () => {
+            const sectionTop = skillsSection.offsetTop;
+            const sectionHeight = skillsSection.clientHeight;
+            
+            if (pageYOffset >= sectionTop - window.innerHeight / 2 && 
+                pageYOffset < sectionTop + sectionHeight) {
+                skillBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width;
+                });
+            }
+        };
+        
+        window.addEventListener('scroll', animateSkillBars);
+        window.addEventListener('load', animateSkillBars);
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the form data to a server
+            // For this example, we'll just show a success message
+            
+            // Show success message
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('bg-green-100', 'text-green-800', 'p-4', 'rounded-lg');
+            formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Add fade-in animation to elements when they come into view
+        const fadeElements = document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2');
+        
+        const checkFade = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight && elementBottom > 0) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+    </script>
+</body>
+</html>
