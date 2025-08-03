@@ -19,6 +19,9 @@
     "postinstall": "node -e \"if (process.env.NODE_ENV !== 'production' && !process.env.CI) { try { require('husky').install() } catch (e) { console.log('Husky not available, skipping...') } }\""
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -38,9 +41,6 @@
     "typescript": "^5.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.0",
-    "@tailwindcss/typography": "^0.5.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.0.0",
     "eslint-config-prettier": "^10.1.8",
