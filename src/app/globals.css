@@ -344,6 +344,30 @@
     }
   }
 
+  /* Custom animations */
+  @keyframes expand {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes float-3d {
+    0%,
+    100% {
+      transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    }
+  }
+
+  .animate-float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+  }
+
   /* Bento grid */
   .bento-grid {
     @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
