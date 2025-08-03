@@ -589,7 +589,7 @@
         /* Responsive design for skills */
         @media (max-width: 768px) {
             .skills-tabs {
-                justify-content: flex-start;
+                justify-content: center;
                 overflow-x: auto;
                 overflow-y: hidden;
                 white-space: nowrap;
@@ -648,6 +648,245 @@
                 gap: 0.5rem;
             }
         }
+
+        /* Qualification Section */
+        .qualification-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background-color: #000;
+            position: relative;
+        }
+
+        .qualification-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .qualification-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .qualification-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .qualification-command {
+            color: #4ade80;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .qualification-title {
+            font-size: 2.5rem;
+            color: #4ade80;
+            margin-bottom: 1rem;
+        }
+
+        .qualification-subtitle {
+            color: #6ee7b7;
+            font-size: 1.2rem;
+        }
+
+        /* Qualification Tabs */
+        .qualification-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            gap: 1rem;
+        }
+
+        .qualification-tab {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid #4ade80;
+            color: #6ee7b7;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .qualification-tab.active,
+        .qualification-tab:hover {
+            background: #4ade80;
+            color: #000;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #4ade80;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 2rem;
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background: rgba(74, 222, 128, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: #4ade80;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #4ade80;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        .qualification-title-item {
+            color: #4ade80;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .qualification-location {
+            color: #6ee7b7;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .qualification-date {
+            color: #4ade80;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .qualification-description {
+            color: #6ee7b7;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Tab Content */
+        .qualification-tab-content {
+            display: none;
+        }
+
+        .qualification-tab-content.active {
+            display: block;
+        }
+
+        /* Responsive design for qualification */
+        @media (max-width: 768px) {
+            .qualification-tabs {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .qualification-tab {
+                width: 200px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .qualification-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .qualification-section {
+                padding: 2rem 1rem;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 40px);
+                margin-left: 40px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-dot {
+                left: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -683,7 +922,7 @@
             <!-- Action buttons -->
             <div class="buttons-container">
                 <a href="#about" class="terminal-button">./about.sh</a>
-                <a href="#skills" class="terminal-button">./skills.sh</a>
+                <a href="#qualification" class="terminal-button">./qualification.sh</a>
             </div>
         </div>
         
@@ -957,6 +1196,99 @@
         </div>
     </section>
 
+    <!-- Qualification Section -->
+    <section class="qualification-section" id="qualification">
+        <div class="qualification-container">
+            <!-- Section Header -->
+            <div class="qualification-header">
+                <div class="qualification-command">$ cat qualification.log</div>
+                <h2 class="qualification-title">Qualification</h2>
+                <p class="qualification-subtitle">My personal journey</p>
+            </div>
+
+            <!-- Qualification Tabs -->
+            <div class="qualification-tabs">
+                <button class="qualification-tab active" data-tab="education">Education</button>
+                <button class="qualification-tab" data-tab="work">Work</button>
+            </div>
+
+            <!-- Education Tab Content -->
+            <div id="education" class="qualification-tab-content active">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Computer Software Engineer</h3>
+                            <p class="qualification-location">Tunis, Tunisia - ESPRIT university</p>
+                            <p class="qualification-date">2013 - 2016</p>
+                            <p class="qualification-description">
+                                Advanced degree in Computer Software Engineering with focus on software development,
+                                system architecture, and modern programming methodologies.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">License of Computer Science</h3>
+                            <p class="qualification-location">Tunis, Tunisia - ENICAR university</p>
+                            <p class="qualification-date">2010 - 2013</p>
+                            <p class="qualification-description">
+                                Bachelor's degree in Computer Science covering fundamentals of programming,
+                                algorithms, data structures, and computer systems.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Bachelor of Computer Science</h3>
+                            <p class="qualification-location">Tunis, Tunisia - Hannibal High School</p>
+                            <p class="qualification-date">2006 - 2010</p>
+                            <p class="qualification-description">
+                                High school diploma with specialization in Computer Science,
+                                building strong foundation in mathematics and basic programming concepts.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Tab Content -->
+            <div id="work" class="qualification-tab-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Tech Lead & Full-Stack Developer</h3>
+                            <p class="qualification-location">Current Position</p>
+                            <p class="qualification-date">2016 - Present</p>
+                            <p class="qualification-description">
+                                Leading development teams and architecting scalable solutions using modern web technologies.
+                                Expertise in React, Node.js, cloud platforms, and agile methodologies.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="qualification-title-item">Software Engineer</h3>
+                            <p class="qualification-location">Various Companies</p>
+                            <p class="qualification-date">2013 - 2016</p>
+                            <p class="qualification-description">
+                                Developed and maintained web applications, gained experience in multiple programming languages
+                                and frameworks, and contributed to various software projects.
+                            </p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Add typing effect to the main title
         document.addEventListener('DOMContentLoaded', function() {
@@ -1124,6 +1456,73 @@
 
             summaryObserver.observe(skillsSummary);
         }
+
+        // Qualification Tab Functionality
+        const qualificationTabs = document.querySelectorAll('.qualification-tab');
+        const qualificationContents = document.querySelectorAll('.qualification-tab-content');
+
+        qualificationTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                qualificationTabs.forEach(t => t.classList.remove('active'));
+                qualificationContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                const targetContent = document.getElementById(tabId);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            });
+        });
+
+        // Add terminal typing effect to qualification command
+        const qualificationCommand = document.querySelector('.qualification-command');
+        if (qualificationCommand) {
+            const originalText = qualificationCommand.textContent;
+            qualificationCommand.textContent = '';
+
+            const qualificationCommandObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let i = 0;
+                        function typeQualificationCommand() {
+                            if (i < originalText.length) {
+                                qualificationCommand.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeQualificationCommand, 50);
+                            }
+                        }
+                        typeQualificationCommand();
+                        qualificationCommandObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            qualificationCommandObserver.observe(qualificationCommand);
+        }
+
+        // Animate timeline items on scroll
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.3 });
+
+        // Initially hide timeline items and observe them
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'all 0.6s ease';
+            timelineObserver.observe(item);
+        });
     </script>
 </body>
 </html>
