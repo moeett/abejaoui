@@ -3,7 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Bejaoui | Terminal Design</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Ahmed Bejaoui | Full-Stack Developer & Tech Lead | Munich</title>
+    <meta name="title" content="Ahmed Bejaoui | Full-Stack Developer & Tech Lead | Munich">
+    <meta name="description" content="Experienced Full-Stack Developer & Tech Lead specializing in React, TypeScript, Node.js, Python. Based in Munich, Germany. Available for freelance projects and consulting.">
+    <meta name="keywords" content="Ahmed Bejaoui, Full-Stack Developer, Tech Lead, React Developer, TypeScript, Node.js, Python, Software Engineer, Munich, Germany, Freelance Developer, Web Development, Mobile Development">
+    <meta name="author" content="Ahmed Bejaoui">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abejaoui.com/">
+    <meta property="og:title" content="Ahmed Bejaoui | Full-Stack Developer & Tech Lead">
+    <meta property="og:description" content="Experienced Full-Stack Developer & Tech Lead specializing in React, TypeScript, Node.js, Python. Based in Munich, Germany.">
+    <meta property="og:image" content="https://abejaoui.com/bejaoui.jpeg">
+    <meta property="og:site_name" content="Ahmed Bejaoui Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abejaoui.com/">
+    <meta property="twitter:title" content="Ahmed Bejaoui | Full-Stack Developer & Tech Lead">
+    <meta property="twitter:description" content="Experienced Full-Stack Developer & Tech Lead specializing in React, TypeScript, Node.js, Python. Based in Munich, Germany.">
+    <meta property="twitter:image" content="https://abejaoui.com/bejaoui.jpeg">
+    <meta property="twitter:creator" content="@akbejaoui">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#4ade80">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/bejaoui.jpeg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abejaoui.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="/bejaoui.jpeg">
+    <link rel="apple-touch-icon" href="/bejaoui.jpeg">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ahmed Bejaoui",
+        "jobTitle": "Full-Stack Developer & Tech Lead",
+        "description": "Experienced Full-Stack Developer & Tech Lead specializing in React, TypeScript, Node.js, Python",
+        "url": "https://abejaoui.com",
+        "image": "https://abejaoui.com/bejaoui.jpeg",
+        "email": "ahmed@abejaoui.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Munich",
+            "addressCountry": "Germany"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/ahmed-khalil-bejaoui-122a1769/",
+            "https://github.com/akbejaoui",
+            "https://www.youtube.com/channel/UCWt9G4UUzHtKqVoeUxWNaGg",
+            "https://www.instagram.com/akbejaoui/",
+            "https://ahmedbejaoui.medium.com/"
+        ],
+        "knowsAbout": [
+            "React",
+            "TypeScript",
+            "Node.js",
+            "Python",
+            "Full-Stack Development",
+            "Software Architecture",
+            "Team Leadership",
+            "Mobile Development",
+            "Web Development"
+        ],
+        "alumniOf": "Technical University of Munich",
+        "workLocation": {
+            "@type": "Place",
+            "name": "Munich, Germany"
+        }
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -55,6 +139,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            transition: all 0.3s ease;
         }
 
         .nav-link {
@@ -95,6 +180,48 @@
             color: #000;
         }
 
+        /* Loading Animation */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+            position: relative;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid #4ade80;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Smooth content transitions */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-animation {
+            animation-delay: var(--delay, 0s);
+        }
+
         .terminal-hero {
             min-height: 100vh;
             display: flex;
@@ -124,61 +251,64 @@
         .terminal-content {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 800px;
+            max-width: 1200px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
             align-items: center;
-            gap: 2rem;
+            text-align: left;
         }
 
         /* Hero Profile Image */
         .hero-profile {
             position: relative;
-            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero-profile-image {
-            width: 120px;
-            height: 120px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            border: 3px solid #4ade80;
+            border: 4px solid #4ade80;
             object-fit: cover;
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(74, 222, 128, 0.3);
         }
 
         .hero-profile-image:hover {
             transform: scale(1.05);
             border-color: #6ee7b7;
+            box-shadow: 0 0 40px rgba(74, 222, 128, 0.5);
         }
 
         .hero-profile::before {
             content: '';
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 1px solid #4ade80;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid #4ade80;
             border-radius: 50%;
-            opacity: 0.5;
-            animation: pulse-border 2s infinite;
+            opacity: 0.3;
+            animation: pulse-border 3s infinite;
         }
 
         @keyframes pulse-border {
-            0% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.2; }
-            100% { transform: scale(1); opacity: 0.5; }
+            0% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.1; }
+            100% { transform: scale(1); opacity: 0.3; }
         }
 
         .hero-text-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .command-line {
@@ -353,23 +483,43 @@
                 flex-direction: column;
                 padding: 1rem 2rem;
                 border-bottom: 1px solid #4ade80;
+                transform: translateY(-10px);
+                opacity: 0;
+                transition: all 0.3s ease;
             }
 
             .nav-links.active {
                 display: flex;
+                transform: translateY(0);
+                opacity: 1;
             }
 
             .nav-toggle {
                 display: block;
+                transition: all 0.3s ease;
+            }
+
+            .nav-toggle.active {
+                transform: rotate(90deg);
             }
 
             .terminal-hero {
                 padding: 8rem 1rem 2rem;
             }
 
+            .terminal-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
             .hero-profile-image {
-                width: 100px;
-                height: 100px;
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero-text-content {
+                align-items: center;
             }
 
             .main-title {
@@ -383,6 +533,7 @@
             .buttons-container {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
 
             .terminal-button {
@@ -3479,24 +3630,43 @@
 
         if (loadMoreBtn) {
             loadMoreBtn.addEventListener('click', function() {
-                const itemsToShow = Math.min(portfolioItemsShown + 3, portfolioItems.length);
+                // Add loading state
+                loadMoreBtn.classList.add('loading');
+                loadMoreBtn.textContent = 'Loading...';
 
-                for (let i = portfolioItemsShown; i < itemsToShow; i++) {
-                    if (portfolioItems[i]) {
-                        portfolioItems[i].classList.remove('hidden');
-                        setTimeout(() => {
-                            portfolioItems[i].style.opacity = '1';
-                            portfolioItems[i].style.transform = 'translateY(0)';
-                        }, (i - portfolioItemsShown) * 100);
+                setTimeout(() => {
+                    const itemsToShow = Math.min(portfolioItemsShown + 3, portfolioItems.length);
+
+                    for (let i = portfolioItemsShown; i < itemsToShow; i++) {
+                        if (portfolioItems[i]) {
+                            portfolioItems[i].classList.remove('hidden');
+                            portfolioItems[i].classList.add('fade-in-up');
+
+                            setTimeout(() => {
+                                portfolioItems[i].classList.add('visible');
+                                portfolioItems[i].style.opacity = '1';
+                                portfolioItems[i].style.transform = 'translateY(0)';
+                            }, (i - portfolioItemsShown) * 150);
+                        }
                     }
-                }
 
-                portfolioItemsShown = itemsToShow;
+                    portfolioItemsShown = itemsToShow;
 
-                // Hide button if all items are shown
-                if (portfolioItemsShown >= portfolioItems.length) {
-                    loadMoreBtn.classList.add('hidden');
-                }
+                    // Remove loading state
+                    loadMoreBtn.classList.remove('loading');
+                    loadMoreBtn.textContent = './load_more_projects.sh';
+
+                    // Hide button if all items are shown
+                    if (portfolioItemsShown >= portfolioItems.length) {
+                        setTimeout(() => {
+                            loadMoreBtn.style.opacity = '0';
+                            loadMoreBtn.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                loadMoreBtn.classList.add('hidden');
+                            }, 300);
+                        }, 500);
+                    }
+                }, 800); // Simulate loading time
             });
         }
 
@@ -3507,24 +3677,43 @@
 
         if (loadMoreRecommendations) {
             loadMoreRecommendations.addEventListener('click', function() {
-                const itemsToShow = Math.min(recommendationsShown + 3, recommendationCards.length);
+                // Add loading state
+                loadMoreRecommendations.classList.add('loading');
+                loadMoreRecommendations.textContent = 'Loading...';
 
-                for (let i = recommendationsShown; i < itemsToShow; i++) {
-                    if (recommendationCards[i]) {
-                        recommendationCards[i].classList.remove('hidden');
-                        setTimeout(() => {
-                            recommendationCards[i].style.opacity = '1';
-                            recommendationCards[i].style.transform = 'translateY(0)';
-                        }, (i - recommendationsShown) * 150);
+                setTimeout(() => {
+                    const itemsToShow = Math.min(recommendationsShown + 3, recommendationCards.length);
+
+                    for (let i = recommendationsShown; i < itemsToShow; i++) {
+                        if (recommendationCards[i]) {
+                            recommendationCards[i].classList.remove('hidden');
+                            recommendationCards[i].classList.add('fade-in-up');
+
+                            setTimeout(() => {
+                                recommendationCards[i].classList.add('visible');
+                                recommendationCards[i].style.opacity = '1';
+                                recommendationCards[i].style.transform = 'translateY(0)';
+                            }, (i - recommendationsShown) * 200);
+                        }
                     }
-                }
 
-                recommendationsShown = itemsToShow;
+                    recommendationsShown = itemsToShow;
 
-                // Hide button if all recommendations are shown
-                if (recommendationsShown >= recommendationCards.length) {
-                    loadMoreRecommendations.classList.add('hidden');
-                }
+                    // Remove loading state
+                    loadMoreRecommendations.classList.remove('loading');
+                    loadMoreRecommendations.textContent = './load_more_testimonials.sh';
+
+                    // Hide button if all recommendations are shown
+                    if (recommendationsShown >= recommendationCards.length) {
+                        setTimeout(() => {
+                            loadMoreRecommendations.style.opacity = '0';
+                            loadMoreRecommendations.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                loadMoreRecommendations.classList.add('hidden');
+                            }, 300);
+                        }, 500);
+                    }
+                }, 800); // Simulate loading time
             });
         }
 
@@ -3713,7 +3902,7 @@ Sent from your portfolio website`;
             contactObserver.observe(contactSection);
         }
 
-        // Navigation Menu Toggle
+        // Navigation Menu Toggle with smooth animation
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         const navMenu = document.getElementById('navMenu');
@@ -3721,12 +3910,33 @@ Sent from your portfolio website`;
         if (navToggle && navLinks) {
             navToggle.addEventListener('click', function() {
                 navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active');
+
+                // Add stagger animation to nav links
+                const links = navLinks.querySelectorAll('.nav-link');
+                links.forEach((link, index) => {
+                    if (navLinks.classList.contains('active')) {
+                        link.style.animationDelay = `${index * 0.1}s`;
+                        link.classList.add('fade-in-up', 'visible');
+                    } else {
+                        link.classList.remove('fade-in-up', 'visible');
+                        link.style.animationDelay = '0s';
+                    }
+                });
             });
 
             // Close mobile menu when clicking on a link
             navLinks.addEventListener('click', function(e) {
                 if (e.target.classList.contains('nav-link')) {
                     navLinks.classList.remove('active');
+                    navToggle.classList.remove('active');
+
+                    // Reset animations
+                    const links = navLinks.querySelectorAll('.nav-link');
+                    links.forEach(link => {
+                        link.classList.remove('fade-in-up', 'visible');
+                        link.style.animationDelay = '0s';
+                    });
                 }
             });
         }
@@ -3768,7 +3978,7 @@ Sent from your portfolio website`;
         <div class="footer-content">
             <div class="footer-text">
                 Need a portfolio like this? Contact
-                <a href="https://webcraftdev.com" target="_blank" class="footer-link">WebCraftDev</a>
+                <a href="https://webcraftdev.com" target="_blank" rel="dofollow" class="footer-link">WebCraftDev</a>
             </div>
             <div class="footer-divider"></div>
             <div class="footer-copyright">
