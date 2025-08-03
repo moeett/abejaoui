@@ -411,6 +411,201 @@
                 padding: 2rem 1rem;
             }
         }
+
+        /* Skills Section */
+        .skills-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background-color: #000;
+            position: relative;
+        }
+
+        .skills-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .skills-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .skills-command {
+            color: #00ff00;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills-title {
+            font-size: 2.5rem;
+            color: #00ff00;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px #00ff00;
+        }
+
+        .skills-subtitle {
+            color: #00ff88;
+            font-size: 1.2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .skill-category {
+            border: 2px solid #00ff00;
+            background: rgba(0, 255, 0, 0.02);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            background: rgba(0, 255, 0, 0.05);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .category-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 1rem;
+        }
+
+        .category-title {
+            color: #00ff00;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .category-experience {
+            color: #00ff88;
+            font-size: 1rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .skill-name {
+            color: #00ff88;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-percentage {
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff00, #00ff88);
+            width: 0%;
+            transition: width 2s ease-out;
+            position: relative;
+        }
+
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Terminal-style skill display */
+        .terminal-skill {
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .terminal-skill::before {
+            content: '> ';
+            color: #00ff00;
+        }
+
+        /* Responsive design for skills */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .skill-category {
+                padding: 1.5rem;
+            }
+
+            .skills-title {
+                font-size: 2rem;
+            }
+
+            .category-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-section {
+                padding: 2rem 1rem;
+            }
+
+            .skills-grid {
+                gap: 1.5rem;
+            }
+
+            .skill-category {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -445,8 +640,8 @@
             
             <!-- Action buttons -->
             <div class="buttons-container">
-                <a href="#about" class="terminal-button">./view-portfolio.sh</a>
-                <a href="#contact" class="terminal-button">./contact.sh</a>
+                <a href="#about" class="terminal-button">./about.sh</a>
+                <a href="#skills" class="terminal-button">./skills.sh</a>
             </div>
         </div>
         
@@ -502,6 +697,371 @@
                 <div class="stat-item">
                     <div class="stat-number">05+</div>
                     <div class="stat-label">Companies<br>worked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="skills-container">
+            <!-- Section Header -->
+            <div class="skills-header">
+                <div class="skills-command">$ ls -la skills/</div>
+                <h2 class="skills-title">Skills</h2>
+                <p class="skills-subtitle">My technical level</p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid">
+                <!-- Agile & Project Management -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Agile & Project Management</h3>
+                        <p class="category-experience">8 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Agile</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Scrum</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Planning & estimations</span>
+                                <span class="skill-percentage">100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="100"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Requirement Analysis</span>
+                                <span class="skill-percentage">100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="100"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Problem solving</span>
+                                <span class="skill-percentage">100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="100"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frontend Developer -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Frontend Developer</h3>
+                        <p class="category-experience">More than 10 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>HTML</span>
+                                <span class="skill-percentage">100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="100"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>CSS</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript / TypeScript</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>React</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Angular</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Backend Developer -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Backend developer</h3>
+                        <p class="category-experience">More than 10 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>NodeJs</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Python</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Micro Services</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>REST / OpenAPI</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Data Visualisation & Analysis -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Data Visualisation & Analysis</h3>
+                        <p class="category-experience">2 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>E-Charts</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>D3</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>DataBricks</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DevOps & Infrastructure -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">DevOps & Infrastructure</h3>
+                        <p class="category-experience">3 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Docker</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Kubernetes</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Micro services</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>DevOps / CI/CD</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Cloud -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Cloud</h3>
+                        <p class="category-experience">4 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>AWS Services</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Google Cloud</span>
+                                <span class="skill-percentage">50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="50"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Serverless, Lambda</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Database & Storage -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Database & Storage</h3>
+                        <p class="category-experience">More than 10 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>SQL/NoSQL</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>PostgresSQL</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="98"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>DynamoDB</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Redis</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hardware & Prototyping -->
+                <div class="skill-category">
+                    <div class="category-header">
+                        <h3 class="category-title">Hardware & Prototyping</h3>
+                        <p class="category-experience">4 years</p>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Arduino</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </li>
+                        <li class="skill-item">
+                            <div class="skill-name">
+                                <span>Raspberry PI</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -596,6 +1156,57 @@
         const aboutSection = document.querySelector('.about-section');
         if (aboutSection) {
             observer.observe(aboutSection);
+        }
+
+        // Animate skill bars when they come into view
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            const width = bar.getAttribute('data-width');
+                            bar.style.width = width + '%';
+                        }, index * 100); // Stagger the animations
+                    });
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Observe each skill category
+        const skillCategories = document.querySelectorAll('.skill-category');
+        skillCategories.forEach(category => {
+            skillsObserver.observe(category);
+        });
+
+        // Add terminal typing effect to skills command
+        const skillsCommand = document.querySelector('.skills-command');
+        if (skillsCommand) {
+            const originalText = skillsCommand.textContent;
+            skillsCommand.textContent = '';
+
+            const skillsCommandObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let i = 0;
+                        function typeSkillsCommand() {
+                            if (i < originalText.length) {
+                                skillsCommand.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeSkillsCommand, 50);
+                            }
+                        }
+                        typeSkillsCommand();
+                        skillsCommandObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillsCommandObserver.observe(skillsCommand);
         }
     </script>
 </body>
