@@ -985,22 +985,6 @@
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
-        .award-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            border: 2px solid #4ade80;
-            background: rgba(74, 222, 128, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-            font-size: 1.5rem;
-            color: #4ade80;
-        }
-
         .award-title {
             color: #4ade80;
             font-size: 1.3rem;
@@ -1382,7 +1366,6 @@
 
         /* Recommendations Section */
         .recommendations-section {
-            min-height: 100vh;
             padding: 4rem 2rem;
             background-color: #000;
             position: relative;
@@ -2102,7 +2085,6 @@
             <div class="awards-grid">
                 <!-- NASA Certification -->
                 <div class="award-card">
-                    <div class="award-icon">🚀</div>
                     <h3 class="award-title">Certified Galactic Problem Solver</h3>
                     <p class="award-issuer">National Aeronautics and Space Administration - Certification authority NASA</p>
                     <button class="award-button" onclick="openModal('nasa.jpg', 'NASA Certification', 'Certified Galactic Problem Solver by NASA - National Aeronautics and Space Administration')">./view_more.sh</button>
@@ -2110,7 +2092,6 @@
 
                 <!-- Microsoft Certification -->
                 <div class="award-card">
-                    <div class="award-icon">💻</div>
                     <h3 class="award-title">Certified Microsoft Specialist</h3>
                     <p class="award-issuer">Microsoft - Exam 70-480 - HTML5, CSS3 and JavaScript</p>
                     <button class="award-button" onclick="openModal('microsoft.png', 'Microsoft Certification', 'Microsoft Specialist certification for HTML5, CSS3 and JavaScript development')">./view_more.sh</button>
@@ -2118,7 +2099,6 @@
 
                 <!-- Software Architecture -->
                 <div class="award-card">
-                    <div class="award-icon">🏗️</div>
                     <h3 class="award-title">Software Architecture & Design</h3>
                     <p class="award-issuer">Software architecture & design of Modern large scale systems</p>
                     <button class="award-button" onclick="openModal('architecture.png', 'Software Architecture Certification', 'Expert certification in software architecture and design of modern large scale systems')">./view_more.sh</button>
@@ -2126,7 +2106,6 @@
 
                 <!-- Arduino Certification -->
                 <div class="award-card">
-                    <div class="award-icon">🔧</div>
                     <h3 class="award-title">Certified Arduino Specialist</h3>
                     <p class="award-issuer">TheBest training center - arduino architecture and development</p>
                     <button class="award-button" onclick="openModal('thebest.jpg', 'Arduino Certification', 'Arduino specialist certification covering architecture and development from TheBest training center')">./view_more.sh</button>
@@ -2347,6 +2326,51 @@
                     </div>
                     <div class="recommendation-text collapsed">
                         Ahmed has extensive knowledge of a wide range of topics. He writes highly elegant as well as performant code and on that of that he fully pours his heart and soul into each project he starts. All in all Ahmed is an amazing person which whom working together is a pure pleasure. I wish you all the best for all your future endeavors :)
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <div class="recommendation-card hidden" data-index="6">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">VG</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Vittorio Gissara</div>
+                            <div class="recommendation-title">Software Engineer</div>
+                            <div class="recommendation-date">September 28, 2022 • Ahmed was senior to Vittorio</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        Ahmed is an incredible software engineer to work with. He has the trait of driving everyone forward, teaching and sharing his knowledge to empower junior developers and the company as a whole. Likewise, he has a broad computer science knowledge that allows him to be efficient in many diverse areas like system design, database architecture, cloud systems, mobile development, web development, orchestration & containerization, CI, testing, security, and even usually fully front end positions like design, UX, CEO optimization. A pleasure to work with such a knowledgeable colleague.
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <div class="recommendation-card hidden" data-index="7">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">KA</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Karim Abbes</div>
+                            <div class="recommendation-title">Senior Full Stack Engineer | Building AI‑powered EdTech products</div>
+                            <div class="recommendation-date">September 14, 2022 • Karim reported directly to Ahmed Khalil</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        I have the privilege to work closely with Ahmed in the same team at finway for more than 2 years. He has great expertise and knowledge in the software engineering field, and he has always shown the will to share it with his colleagues. He has earned everybody's respect through his skills and values. Ahmed will be a valuable asset to any company.
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <div class="recommendation-card hidden" data-index="8">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">DJ</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Daniel Jurkovic</div>
+                            <div class="recommendation-title">Developer bei innosabi GmbH</div>
+                            <div class="recommendation-date">April 10, 2020 • Daniel managed Ahmed Khalil directly</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        I've been closely working together with Ahmed for almost two years. Both on a personal and a professional level it was an amazing journey. What stood out to me was his passion and commitment for high quality results. We shared the joy on coming up with highly reusable technical abstractions with latest technology and bringing them to production in no time. He loves his job and always really cared about our output and the customer's perception. With all his inspiring approaches his work is still a key for the product's success today. I can deeply recommend Ahmed for every senior full stack web development position and would want to work with him together anytime again.
                     </div>
                     <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
                 </div>
