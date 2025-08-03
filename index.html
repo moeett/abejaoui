@@ -3116,15 +3116,6 @@
                 </div>
             </div>
 
-            <!-- Portfolio Modal -->
-            <div id="portfolioModal" class="modal">
-                <div class="portfolio-modal-content">
-                    <button class="modal-close" id="portfolioModalClose">&times;</button>
-                    <div id="portfolioModalContent">
-                        <!-- Content will be dynamically loaded here -->
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -3987,28 +3978,48 @@
             }
         });
 
-        // Close portfolio modal when clicking outside
-        document.getElementById('portfolioModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePortfolioModal();
-            }
-        });
+        // Portfolio modal event listeners (setup after DOM is loaded)
+        function setupPortfolioModalClickEvents() {
+            const portfolioModal = document.getElementById('portfolioModal');
+            if (portfolioModal) {
+                // Close portfolio modal when clicking outside
+                portfolioModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closePortfolioModal();
+                    }
+                });
 
-        // Add touch event support for mobile
-        document.getElementById('portfolioModal').addEventListener('touchstart', function(e) {
-            if (e.target === this) {
-                closePortfolioModal();
+                // Add touch event support for mobile
+                portfolioModal.addEventListener('touchstart', function(e) {
+                    if (e.target === this) {
+                        closePortfolioModal();
+                    }
+                });
             }
-        });
+        }
 
-        // Portfolio modal close button event listeners
-        const portfolioCloseBtn = document.getElementById('portfolioModalClose');
-        if (portfolioCloseBtn) {
-            portfolioCloseBtn.addEventListener('click', closePortfolioModal);
-            portfolioCloseBtn.addEventListener('touchstart', function(e) {
-                e.preventDefault();
-                closePortfolioModal();
-            });
+        // Portfolio modal close button event listeners (setup after DOM is loaded)
+        function setupPortfolioModalEvents() {
+            const portfolioCloseBtn = document.getElementById('portfolioModalClose');
+            if (portfolioCloseBtn) {
+                portfolioCloseBtn.addEventListener('click', closePortfolioModal);
+                portfolioCloseBtn.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    closePortfolioModal();
+                });
+            }
+        }
+
+        // Call setup functions when DOM is ready
+        function initPortfolioModal() {
+            setupPortfolioModalEvents();
+            setupPortfolioModalClickEvents();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPortfolioModal);
+        } else {
+            initPortfolioModal();
         }
 
         // Close modal with Escape key
@@ -4437,5 +4448,16 @@ Sent from your portfolio website`;
             </div>
         </div>
     </footer>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolioModal" class="modal">
+        <div class="portfolio-modal-content">
+            <button class="modal-close" id="portfolioModalClose">&times;</button>
+            <div id="portfolioModalContent">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
