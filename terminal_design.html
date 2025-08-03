@@ -1293,6 +1293,55 @@
             z-index: 2;
         }
 
+        /* Hidden portfolio items */
+        .portfolio-item.hidden {
+            display: none;
+        }
+
+        /* Load More Button */
+        .portfolio-load-more {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .load-more-button {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid #4ade80;
+            color: #4ade80;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .load-more-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .load-more-button:hover::before {
+            left: 100%;
+        }
+
+        .load-more-button:hover {
+            background: #4ade80;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .load-more-button.hidden {
+            display: none;
+        }
+
         /* Responsive design for portfolio */
         @media (max-width: 768px) {
             .portfolio-grid {
@@ -1330,6 +1379,235 @@
                 font-size: 1rem;
             }
         }
+
+        /* Recommendations Section */
+        .recommendations-section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background-color: #000;
+            position: relative;
+        }
+
+        .recommendations-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(74, 222, 128, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74, 222, 128, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            z-index: 1;
+        }
+
+        .recommendations-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recommendations-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .recommendations-command {
+            color: #4ade80;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .recommendations-title {
+            font-size: 2.5rem;
+            color: #4ade80;
+            margin-bottom: 2rem;
+        }
+
+        /* Recommendation Cards */
+        .recommendation-card {
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.02);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recommendation-card:hover {
+            background: rgba(74, 222, 128, 0.05);
+            transform: translateY(-3px);
+            border-color: #6ee7b7;
+        }
+
+        .recommendation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .recommendation-card:hover::before {
+            left: 100%;
+        }
+
+        .recommendation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recommendation-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #4ade80;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .recommendation-info {
+            flex: 1;
+        }
+
+        .recommendation-name {
+            color: #4ade80;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .recommendation-title {
+            color: #6ee7b7;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .recommendation-date {
+            color: #4ade80;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .recommendation-text {
+            color: #6ee7b7;
+            font-size: 1rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .recommendation-text.collapsed {
+            max-height: 4.8em;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .recommendation-text.collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1.2em;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #4ade80;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            padding: 0;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            color: #6ee7b7;
+        }
+
+        /* Load More Recommendations */
+        .recommendations-load-more {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .load-more-recommendations {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid #4ade80;
+            color: #4ade80;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .load-more-recommendations:hover {
+            background: #4ade80;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .load-more-recommendations.hidden {
+            display: none;
+        }
+
+        /* Responsive design for recommendations */
+        @media (max-width: 768px) {
+            .recommendation-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .recommendation-avatar {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .recommendations-title {
+                font-size: 2rem;
+            }
+
+            .recommendation-card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .recommendations-section {
+                padding: 2rem 1rem;
+            }
+
+            .recommendation-card {
+                padding: 1rem;
+            }
+
+            .recommendation-avatar {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1365,7 +1643,7 @@
             <!-- Action buttons -->
             <div class="buttons-container">
                 <a href="#about" class="terminal-button">./about.sh</a>
-                <a href="#portfolio" class="terminal-button">./portfolio.sh</a>
+                <a href="#recommendations" class="terminal-button">./testimonials.sh</a>
             </div>
         </div>
         
@@ -1880,7 +2158,7 @@
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
                 <!-- Twaice Technologies -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-index="0">
                     <img src="portfolio/twaice.png" alt="Twaice Technologies" class="portfolio-image">
                     <h3 class="portfolio-item-title">Twaice Technologies GmbH</h3>
                     <p class="portfolio-description">
@@ -1889,7 +2167,7 @@
                 </div>
 
                 <!-- finway -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-index="1">
                     <img src="portfolio/finway.png" alt="finway GmbH" class="portfolio-image">
                     <h3 class="portfolio-item-title">finway GmbH</h3>
                     <p class="portfolio-description">
@@ -1898,7 +2176,7 @@
                 </div>
 
                 <!-- innosabi -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-index="2">
                     <img src="portfolio/innosabi.png" alt="innosabi GmbH" class="portfolio-image">
                     <h3 class="portfolio-item-title">innosabi GmbH</h3>
                     <p class="portfolio-description">
@@ -1907,7 +2185,7 @@
                 </div>
 
                 <!-- Holiday Extras -->
-                <div class="portfolio-item">
+                <div class="portfolio-item hidden" data-index="3">
                     <img src="portfolio/holidayextras.png" alt="Holiday Extras GmbH" class="portfolio-image">
                     <h3 class="portfolio-item-title">Holiday Extras GmbH</h3>
                     <p class="portfolio-description">
@@ -1916,7 +2194,7 @@
                 </div>
 
                 <!-- WatsomApp -->
-                <div class="portfolio-item">
+                <div class="portfolio-item hidden" data-index="4">
                     <img src="portfolio/watsomapp.png" alt="WatsomApp Ltd" class="portfolio-image">
                     <h3 class="portfolio-item-title">WatsomApp Ltd</h3>
                     <p class="portfolio-description">
@@ -1925,7 +2203,7 @@
                 </div>
 
                 <!-- Flash To Cloud -->
-                <div class="portfolio-item">
+                <div class="portfolio-item hidden" data-index="5">
                     <img src="portfolio/flashtocloud.jpg" alt="Flash To Cloud" class="portfolio-image">
                     <h3 class="portfolio-item-title">Flash To Cloud</h3>
                     <p class="portfolio-description">
@@ -1934,7 +2212,7 @@
                 </div>
 
                 <!-- Real fight Gloves -->
-                <div class="portfolio-item">
+                <div class="portfolio-item hidden" data-index="6">
                     <img src="portfolio/realfight.png" alt="Real fight Gloves" class="portfolio-image">
                     <h3 class="portfolio-item-title">Real fight Gloves</h3>
                     <p class="portfolio-description">
@@ -1943,7 +2221,7 @@
                 </div>
 
                 <!-- Painting Scanner -->
-                <div class="portfolio-item">
+                <div class="portfolio-item hidden" data-index="7">
                     <img src="portfolio/paintingscanner.png" alt="Painting Scanner" class="portfolio-image">
                     <h3 class="portfolio-item-title">Painting Scanner</h3>
                     <p class="portfolio-description">
@@ -1952,13 +2230,131 @@
                 </div>
 
                 <!-- Oilfox Insights -->
-                <div class="portfolio-item">
+                <div class="portfolio-item hidden" data-index="8">
                     <img src="portfolio/oilfoxinsights.png" alt="Oilfox Insights" class="portfolio-image">
                     <h3 class="portfolio-item-title">Oilfox Insights</h3>
                     <p class="portfolio-description">
                         Oilfox - A smart and connected iOT device, helps with measurement and tracking different types of tank liquids remotely.
                     </p>
                 </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="portfolio-load-more">
+                <button id="loadMoreBtn" class="load-more-button">./load_more.sh</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="recommendations-section" id="recommendations">
+        <div class="recommendations-container">
+            <!-- Section Header -->
+            <div class="recommendations-header">
+                <div class="recommendations-command">$ cat testimonials.txt</div>
+                <h2 class="recommendations-title">Recommendations</h2>
+            </div>
+
+            <!-- Recommendations List -->
+            <div class="recommendations-list">
+                <!-- Recommendation 1 - Philipp Berg -->
+                <div class="recommendation-card" data-index="0">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">PB</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Philipp Berg</div>
+                            <div class="recommendation-title">Dr. Ing. | Engineering Manager @ TWAICE</div>
+                            <div class="recommendation-date">October 7, 2024 • Philipp managed Ahmed directly</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        I want to recommend Ahmed based on the rich and rewarding experience I gained while working with him at TWAICE on our Battery Analytics SaaS Software. Ahmed worked with me at TWAICE as a Senior Full Stack Software Engineer for 1.5 years and reported to me in my position as Engineering Manager. It was a great delight for me to work with Ahmed. He consistently delivers in outstanding quality, even under enormous time pressure. He stands out as an amazing team member and human being, supporting other team members and especially younger and less experienced team members on their growth journey. He also always brings in his own experience and recommendations and respectfully disagrees if he sees a better way of doing something, which is a rare, but very important aspect for me as a leader and my own growth both personally and technically. Additionally, it always amazed me how capable Ahmed is in switching contexts, being able to contribute on Frontend tasks, Backend tasks and Data Engineering tasks in a rapidly evoling and highly dynamic start-up environment. With these qualities, Ahmed contributed significantly to the growth of the SaaS product, we build together, in terms of feature richness, quality and scalability. I can confidently say that Ahmed has all the knowledge and checks all the boxes to build a scalable product for a large customer base as well as navigating the challenges coming with an early stage product. Ahmed is a delight to work with and I wouldn't hesitate to hire him again.
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <!-- Recommendation 2 - Ahmed CHOURA -->
+                <div class="recommendation-card" data-index="1">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">AC</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Ahmed CHOURA</div>
+                            <div class="recommendation-title">Currently looking for master thesis</div>
+                            <div class="recommendation-date">September 12, 2024 • Ahmed reported directly to Ahmed Khalil</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        I'm incredibly grateful for the chance to work closely with Ahmed. He's hands down one of the most knowledgeable Senior Software Engineers I've met. His technical expertise is vast, but what really stands out is how generous he is with his help. No matter the challenge, Ahmed was always ready with a solution and took the time to explain things clearly. His innovative architectural ideas have greatly benefited the company, and he's taught me a lot about managing stress and handling multiple tasks. His positive attitude, problem-solving skills, and collaborative spirit make him truly invaluable. Words can hardly capture how remarkable he is—he's simply amazing!
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <!-- Recommendation 3 - Matthias Simolka -->
+                <div class="recommendation-card" data-index="2">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">MS</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Matthias Simolka</div>
+                            <div class="recommendation-title">Sr. Product Manager @ TWAICE | Passionate about Batteries</div>
+                            <div class="recommendation-date">September 12, 2024 • Matthias worked with Ahmed on different teams</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        Ahmed is an exceptional senior software engineer with a deep understanding of various different domains. He consistently demonstrated a strong work ethic and took great ownership of projects. Ahmed is a fantastic team player who is always willing to help and mentor junior engineers and teammates from other domains. Ahmed communicated clearly the advantages and drawbacks of different initiatives and ensured high speed and efficiency across the company. His ability to lead and align people across teams is invaluable. Ahmed is also incredibly dedicated and always willing to go the extra mile to ensure project success. His strong problem-solving abilities and attention to detail make him an incredibly valuable asset to any team.
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <!-- Hidden Recommendations -->
+                <div class="recommendation-card hidden" data-index="3">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">AD</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Alina Dats</div>
+                            <div class="recommendation-title">M.Sc. Informatics @TUM | Technology Strategy Analyst @ Accenture</div>
+                            <div class="recommendation-date">February 19, 2023 • Alina reported directly to Ahmed Khalil</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        Ahmed is an outstanding software engineer with a strong skill set and a drive to produce high-quality products. Ahmed was able to apply his talents as our team lead to provide efficient leadership for our mobile development project. He continually displayed a dedication to quality and the capacity to masterfully manage challenging technological tasks. Whenever the team needed it, Ahmed was always willing to lend a helping hand, providing guidance and support. Furthermore, he was always proactive in identifying issues and proposing creative solutions that ultimately improved the overall quality of our product. I have no doubt that Ahmed will be a valuable addition to any team, and I highly recommend him for any software engineering role.
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <div class="recommendation-card hidden" data-index="4">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">YW</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">Yulius Wibisono</div>
+                            <div class="recommendation-title">Senior Software Engineer at ecoplanet</div>
+                            <div class="recommendation-date">January 31, 2023 • Yulius reported directly to Ahmed Khalil</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        I've worked with Ahmed since I started my job in finway and it's been a great experience working together with him. He's technically adept, able to think up a good and simple solution to problems, and able to maintain and enforce code cleanliness and conventions across our codebase. As a lead, he's able to communicate things clearly. He's able to take charge and break down a big problem into small solvable problems, keeping the team working efficiently. I wish Ahmed the best of luck for his future careers!
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+
+                <div class="recommendation-card hidden" data-index="5">
+                    <div class="recommendation-header">
+                        <div class="recommendation-avatar">JS</div>
+                        <div class="recommendation-info">
+                            <div class="recommendation-name">John Sachse</div>
+                            <div class="recommendation-title">Product Engineer | World Traveler | Vintage Car Enthusiast</div>
+                            <div class="recommendation-date">November 14, 2022 • John worked with Ahmed on the same team</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text collapsed">
+                        Ahmed has extensive knowledge of a wide range of topics. He writes highly elegant as well as performant code and on that of that he fully pours his heart and soul into each project he starts. All in all Ahmed is an amazing person which whom working together is a pure pleasure. I wish you all the best for all your future endeavors :)
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">./read_more.sh</button>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="recommendations-load-more">
+                <button id="loadMoreRecommendations" class="load-more-recommendations">./load_more_testimonials.sh</button>
             </div>
         </div>
     </section>
@@ -2344,6 +2740,131 @@
             });
 
             portfolioObserver.observe(portfolioSection);
+        }
+
+        // Portfolio Load More Functionality
+        let portfolioItemsShown = 3;
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function() {
+                const itemsToShow = Math.min(portfolioItemsShown + 3, portfolioItems.length);
+
+                for (let i = portfolioItemsShown; i < itemsToShow; i++) {
+                    if (portfolioItems[i]) {
+                        portfolioItems[i].classList.remove('hidden');
+                        setTimeout(() => {
+                            portfolioItems[i].style.opacity = '1';
+                            portfolioItems[i].style.transform = 'translateY(0)';
+                        }, (i - portfolioItemsShown) * 100);
+                    }
+                }
+
+                portfolioItemsShown = itemsToShow;
+
+                // Hide button if all items are shown
+                if (portfolioItemsShown >= portfolioItems.length) {
+                    loadMoreBtn.classList.add('hidden');
+                }
+            });
+        }
+
+        // Recommendations Load More Functionality
+        let recommendationsShown = 3;
+        const recommendationCards = document.querySelectorAll('.recommendation-card');
+        const loadMoreRecommendations = document.getElementById('loadMoreRecommendations');
+
+        if (loadMoreRecommendations) {
+            loadMoreRecommendations.addEventListener('click', function() {
+                const itemsToShow = Math.min(recommendationsShown + 3, recommendationCards.length);
+
+                for (let i = recommendationsShown; i < itemsToShow; i++) {
+                    if (recommendationCards[i]) {
+                        recommendationCards[i].classList.remove('hidden');
+                        setTimeout(() => {
+                            recommendationCards[i].style.opacity = '1';
+                            recommendationCards[i].style.transform = 'translateY(0)';
+                        }, (i - recommendationsShown) * 150);
+                    }
+                }
+
+                recommendationsShown = itemsToShow;
+
+                // Hide button if all recommendations are shown
+                if (recommendationsShown >= recommendationCards.length) {
+                    loadMoreRecommendations.classList.add('hidden');
+                }
+            });
+        }
+
+        // Toggle Read More functionality
+        function toggleReadMore(button) {
+            const textElement = button.previousElementSibling;
+            const isCollapsed = textElement.classList.contains('collapsed');
+
+            if (isCollapsed) {
+                textElement.classList.remove('collapsed');
+                button.textContent = './read_less.sh';
+            } else {
+                textElement.classList.add('collapsed');
+                button.textContent = './read_more.sh';
+            }
+        }
+
+        // Add terminal typing effect to recommendations command
+        const recommendationsCommand = document.querySelector('.recommendations-command');
+        if (recommendationsCommand) {
+            const originalText = recommendationsCommand.textContent;
+            recommendationsCommand.textContent = '';
+
+            const recommendationsCommandObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let i = 0;
+                        function typeRecommendationsCommand() {
+                            if (i < originalText.length) {
+                                recommendationsCommand.textContent += originalText.charAt(i);
+                                i++;
+                                setTimeout(typeRecommendationsCommand, 50);
+                            }
+                        }
+                        typeRecommendationsCommand();
+                        recommendationsCommandObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            recommendationsCommandObserver.observe(recommendationsCommand);
+        }
+
+        // Animate recommendation cards on scroll
+        const recommendationsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const visibleCards = entry.target.querySelectorAll('.recommendation-card:not(.hidden)');
+                    visibleCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    });
+                    recommendationsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const recommendationsSection = document.querySelector('.recommendations-section');
+        if (recommendationsSection) {
+            // Initially hide recommendation cards
+            const allRecommendationCards = recommendationsSection.querySelectorAll('.recommendation-card');
+            allRecommendationCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+
+            recommendationsObserver.observe(recommendationsSection);
         }
     </script>
 </body>
