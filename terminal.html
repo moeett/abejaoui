@@ -955,7 +955,6 @@
         transform: scale(1.05);
         box-shadow: 0 0 0 4px transparent, 0 0 50px rgba(74, 222, 128, 0.5),
           inset 0 0 0 4px rgba(255, 255, 255, 0.2);
-        animation-duration: 2s;
       }
 
       .about-image:hover::before {
@@ -969,7 +968,7 @@
       }
 
       .about-image::before {
-        /* Add floating symbols */
+        /* Static decorative background - no animation */
         background-image: radial-gradient(
             circle at 20% 20%,
             rgba(74, 222, 128, 0.3) 2px,
@@ -979,19 +978,7 @@
           radial-gradient(circle at 30% 80%, rgba(74, 222, 128, 0.25) 1.5px, transparent 1.5px),
           radial-gradient(circle at 70% 70%, rgba(34, 197, 94, 0.3) 2px, transparent 2px);
         background-size: 40px 40px, 60px 60px, 50px 50px, 45px 45px;
-        animation: floatingDots 8s ease-in-out infinite;
-      }
-
-      @keyframes floatingDots {
-        0%,
-        100% {
-          transform: rotate(0deg) scale(1);
-          opacity: 0.6;
-        }
-        50% {
-          transform: rotate(180deg) scale(1.1);
-          opacity: 0.8;
-        }
+        opacity: 0.6;
       }
 
       .about-text {
