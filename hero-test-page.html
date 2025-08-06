@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Hero Section Designs - Test Page</title>
+    <style>
+        /* ========================================
+           GLOBAL STYLES & MODERN COLOR PALETTE
+           ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: #0f172a;
+            scroll-behavior: smooth;
+        }
+
+        /* Modern Color Palette Variables */
+        :root {
+            /* Dark Backgrounds */
+            --bg-primary: #0f172a;      /* Slate 900 - Main background */
+            --bg-secondary: #1e293b;    /* Slate 800 - Cards/sections */
+            --bg-tertiary: #334155;     /* Slate 700 - Hover states */
+            
+            /* Text Colors */
+            --text-primary: #f8fafc;    /* Slate 50 - Main text */
+            --text-secondary: #e2e8f0;  /* Slate 200 - Secondary text */
+            --text-muted: #94a3b8;      /* Slate 400 - Muted text */
+            
+            /* Accent Colors */
+            --accent-blue: #3b82f6;     /* Blue 500 - Primary accent */
+            --accent-purple: #8b5cf6;   /* Violet 500 - Secondary accent */
+            --accent-green: #10b981;    /* Emerald 500 - Success/highlight */
+            --accent-orange: #f59e0b;   /* Amber 500 - Warning/attention */
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        /* Navigation for test page */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        /* Hero section base styles */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Section headers */
+        .section-header {
+            background: var(--bg-secondary);
+            padding: 1rem 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 4rem 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-title">Hero Section Test Page</div>
+            <ul class="nav-links">
+                <li><a href="#hero1" class="nav-link">1</a></li>
+                <li><a href="#hero2" class="nav-link">2</a></li>
+                <li><a href="#hero3" class="nav-link">3</a></li>
+                <li><a href="#hero4" class="nav-link">4</a></li>
+                <li><a href="#hero5" class="nav-link">5</a></li>
+                <li><a href="#hero6" class="nav-link">6</a></li>
+                <li><a href="#hero7" class="nav-link">7</a></li>
+                <li><a href="#hero8" class="nav-link">8</a></li>
+                <li><a href="#hero9" class="nav-link">9</a></li>
+                <li><a href="#hero10" class="nav-link">10</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Color Palette Information -->
+    <div class="section-header" style="margin-top: 6rem;">
+        <h2 class="section-title">Modern Dark Theme Color Palette</h2>
+        <p class="section-description">
+            Based on 2024/2025 design trends: Slate color system with blue, purple, green, and orange accents.
+            Professional, accessible, and HR-friendly design approach.
+        </p>
+    </div>
+
+    <!-- Hero Design 1: Clean Minimalist -->
+    <div class="section-header">
+        <h2 class="section-title">Design 1: Clean Minimalist</h2>
+        <p class="section-description">Simple, professional layout with clear hierarchy and subtle accents</p>
+    </div>
+
+    <section class="hero" id="hero1" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+        <div class="hero-content">
+            <div style="display: inline-block; padding: 0.5rem 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-blue); border-radius: 2rem; margin-bottom: 2rem; color: var(--accent-blue); font-size: 0.9rem; font-weight: 500;">
+                Available for new opportunities
+            </div>
+            <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-primary); line-height: 1.1;">
+                Ahmed Bejaoui
+            </h1>
+            <h2 style="font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; color: var(--accent-blue);">
+                Full-Stack Developer & Tech Lead
+            </h2>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Experienced developer specializing in React, TypeScript, Node.js, and Python.
+                Building scalable solutions and leading development teams in Munich, Germany.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact" style="background: var(--accent-blue); color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: all 0.3s ease; display: inline-block;">
+                    Get In Touch
+                </a>
+                <a href="#portfolio" style="background: transparent; color: var(--text-secondary); padding: 1rem 2rem; border: 1px solid var(--bg-tertiary); border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: all 0.3s ease; display: inline-block;">
+                    View Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 2: Card-Based Layout -->
+    <div class="section-header">
+        <h2 class="section-title">Design 2: Card-Based Layout</h2>
+        <p class="section-description">Modern card design with glassmorphism effects and structured information</p>
+    </div>
+
+    <section class="hero" id="hero2" style="background: var(--bg-primary);">
+        <div class="hero-content">
+            <div style="background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(10px); border: 1px solid var(--bg-tertiary); border-radius: 1rem; padding: 3rem; max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                    <div style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: bold; color: white;">
+                        AB
+                    </div>
+                    <div style="text-align: left;">
+                        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">
+                            Ahmed Bejaoui
+                        </h1>
+                        <p style="color: var(--accent-purple); font-size: 1.1rem; font-weight: 500;">
+                            Senior Full-Stack Developer
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="color: var(--accent-green); font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">12+</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Years Experience</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="color: var(--accent-orange); font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">50+</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Projects Completed</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="color: var(--accent-blue); font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">5+</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Companies</div>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
+                    Passionate about creating efficient, scalable web applications and leading development teams
+                    to deliver exceptional user experiences.
+                </p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button style="background: var(--gradient-primary); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                        Download CV
+                    </button>
+                    <button style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                        Contact Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 3: Split Layout -->
+    <div class="section-header">
+        <h2 class="section-title">Design 3: Split Layout</h2>
+        <p class="section-description">Two-column design with image and content separation</p>
+    </div>
+
+    <section class="hero" id="hero3" style="background: var(--bg-primary);">
+        <div class="hero-content">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: left;">
+                    <div style="color: var(--accent-green); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+                        Tech Lead & Developer
+                    </div>
+                    <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-primary); line-height: 1.1;">
+                        Building the<br>
+                        <span style="background: var(--gradient-tertiary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Future of Web
+                        </span>
+                    </h1>
+                    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6;">
+                        I'm Ahmed Bejaoui, a passionate full-stack developer with over 12 years of experience
+                        creating innovative web solutions and leading development teams.
+                    </p>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;">
+                        <span style="background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.8rem;">React</span>
+                        <span style="background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.8rem;">TypeScript</span>
+                        <span style="background: rgba(16, 185, 129, 0.1); color: var(--accent-green); padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.8rem;">Node.js</span>
+                        <span style="background: rgba(245, 158, 11, 0.1); color: var(--accent-orange); padding: 0.5rem 1rem; border-radius: 1rem; font-size: 0.8rem;">Python</span>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="background: var(--accent-blue); color: white; padding: 1rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;">
+                            Let's Work Together
+                        </a>
+                        <a href="#" style="color: var(--text-secondary); padding: 1rem 1.5rem; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            View Projects →
+                        </a>
+                    </div>
+                </div>
+
+                <div style="position: relative;">
+                    <div style="width: 300px; height: 300px; background: var(--gradient-primary); border-radius: 2rem; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; font-weight: bold; transform: rotate(-5deg);">
+                        AB
+                    </div>
+                    <div style="position: absolute; top: -1rem; right: -1rem; width: 100px; height: 100px; background: var(--accent-orange); border-radius: 50%; opacity: 0.2;"></div>
+                    <div style="position: absolute; bottom: -1rem; left: -1rem; width: 80px; height: 80px; background: var(--accent-green); border-radius: 50%; opacity: 0.3;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 4: Centered with Background Pattern -->
+    <div class="section-header">
+        <h2 class="section-title">Design 4: Centered with Background Pattern</h2>
+        <p class="section-description">Clean center-aligned design with subtle geometric background</p>
+    </div>
+
+    <section class="hero" id="hero4" style="background: var(--bg-primary); position: relative; overflow: hidden;">
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05;">
+            <div style="width: 100%; height: 100%; background-image: radial-gradient(circle at 25% 25%, var(--accent-blue) 2px, transparent 2px), radial-gradient(circle at 75% 75%, var(--accent-purple) 2px, transparent 2px); background-size: 50px 50px;"></div>
+        </div>
+
+        <div class="hero-content" style="position: relative; z-index: 2;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-blue); border-radius: 2rem; padding: 0.5rem 1rem; margin-bottom: 2rem;">
+                    <div style="width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%;"></div>
+                    <span style="color: var(--accent-blue); font-size: 0.9rem; font-weight: 500;">Available for hire</span>
+                </div>
+
+                <h1 style="font-size: 4rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--text-primary); line-height: 1;">
+                    Ahmed Bejaoui
+                </h1>
+
+                <div style="font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                    Full-Stack Developer &
+                    <span style="color: var(--accent-purple); font-weight: 600;">Tech Lead</span>
+                </div>
+
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.7;">
+                    Transforming ideas into powerful digital solutions. Specialized in modern web technologies
+                    with a passion for clean code and exceptional user experiences.
+                </p>
+
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem;">
+                    <button style="background: var(--gradient-primary); color: white; border: none; padding: 1.2rem 2rem; border-radius: 0.75rem; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.2s ease;">
+                        Start a Project
+                    </button>
+                    <button style="background: var(--bg-secondary); color: var(--text-primary); border: 1px solid var(--bg-tertiary); padding: 1.2rem 2rem; border-radius: 0.75rem; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s ease;">
+                        Download Resume
+                    </button>
+                </div>
+
+                <div style="display: flex; justify-content: center; gap: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+                    <div style="text-align: center;">
+                        <div style="font-weight: 600; color: var(--text-secondary); margin-bottom: 0.25rem;">Location</div>
+                        <div>Munich, Germany</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-weight: 600; color: var(--text-secondary); margin-bottom: 0.25rem;">Experience</div>
+                        <div>12+ Years</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-weight: 600; color: var(--text-secondary); margin-bottom: 0.25rem;">Specialization</div>
+                        <div>Full-Stack</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 5: Bento Grid Layout -->
+    <div class="section-header">
+        <h2 class="section-title">Design 5: Bento Grid Layout</h2>
+        <p class="section-description">Modern grid-based layout with information cards</p>
+    </div>
+
+    <section class="hero" id="hero5" style="background: var(--bg-primary);">
+        <div class="hero-content">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto auto; gap: 1.5rem; max-width: 1000px; margin: 0 auto;">
+                <!-- Main intro card -->
+                <div style="grid-column: 1 / 2; grid-row: 1 / 3; background: var(--bg-secondary); border-radius: 1rem; padding: 2rem; border: 1px solid var(--bg-tertiary);">
+                    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                        Ahmed Bejaoui
+                    </h1>
+                    <p style="color: var(--accent-blue); font-size: 1.1rem; font-weight: 500; margin-bottom: 1.5rem;">
+                        Full-Stack Developer & Tech Lead
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem;">
+                        Passionate about building scalable web applications and leading development teams.
+                        Specialized in React, TypeScript, and modern backend technologies.
+                    </p>
+                    <button style="background: var(--accent-blue); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer; width: 100%;">
+                        Get In Touch
+                    </button>
+                </div>
+
+                <!-- Experience card -->
+                <div style="grid-column: 2 / 3; grid-row: 1 / 2; background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary); text-align: center;">
+                    <div style="color: var(--accent-green); font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem;">12+</div>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem;">Years of Experience</div>
+                </div>
+
+                <!-- Location card -->
+                <div style="grid-column: 3 / 4; grid-row: 1 / 2; background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary); text-align: center;">
+                    <div style="color: var(--accent-orange); font-size: 1.5rem; margin-bottom: 0.5rem;">📍</div>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem;">Munich, Germany</div>
+                </div>
+
+                <!-- Skills card -->
+                <div style="grid-column: 2 / 4; grid-row: 2 / 3; background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                    <h3 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 1rem;">Core Technologies</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">React</span>
+                        <span style="background: rgba(139, 92, 246, 0.2); color: var(--accent-purple); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">TypeScript</span>
+                        <span style="background: rgba(16, 185, 129, 0.2); color: var(--accent-green); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Node.js</span>
+                        <span style="background: rgba(245, 158, 11, 0.2); color: var(--accent-orange); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Python</span>
+                    </div>
+                </div>
+
+                <!-- CTA card -->
+                <div style="grid-column: 1 / 4; grid-row: 3 / 4; background: var(--gradient-primary); border-radius: 1rem; padding: 2rem; text-align: center;">
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1rem;">Ready to start your next project?</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem;">Let's discuss how I can help bring your ideas to life</p>
+                    <button style="background: white; color: var(--accent-blue); border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">
+                        Schedule a Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 6: Timeline Style -->
+    <div class="section-header">
+        <h2 class="section-title">Design 6: Timeline Style</h2>
+        <p class="section-description">Professional timeline layout showcasing career progression</p>
+    </div>
+
+    <section class="hero" id="hero6" style="background: var(--bg-primary);">
+        <div class="hero-content">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary);">
+                        Ahmed Bejaoui
+                    </h1>
+                    <p style="color: var(--accent-blue); font-size: 1.2rem; font-weight: 500;">
+                        Full-Stack Developer & Tech Lead
+                    </p>
+                </div>
+
+                <div style="position: relative; padding-left: 2rem;">
+                    <!-- Timeline line -->
+                    <div style="position: absolute; left: 1rem; top: 0; bottom: 0; width: 2px; background: var(--accent-blue);"></div>
+
+                    <!-- Timeline items -->
+                    <div style="position: relative; margin-bottom: 2rem;">
+                        <div style="position: absolute; left: -2.5rem; top: 0.5rem; width: 1rem; height: 1rem; background: var(--accent-green); border-radius: 50%; border: 3px solid var(--bg-primary);"></div>
+                        <div style="background: var(--bg-secondary); border-radius: 0.5rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                            <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Current Position</h3>
+                            <p style="color: var(--accent-green); font-weight: 500; margin-bottom: 0.5rem;">Senior Full-Stack Developer</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Leading development teams and architecting scalable solutions</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 2rem;">
+                        <div style="position: absolute; left: -2.5rem; top: 0.5rem; width: 1rem; height: 1rem; background: var(--accent-blue); border-radius: 50%; border: 3px solid var(--bg-primary);"></div>
+                        <div style="background: var(--bg-secondary); border-radius: 0.5rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                            <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">12+ Years Experience</h3>
+                            <p style="color: var(--accent-blue); font-weight: 500; margin-bottom: 0.5rem;">Full-Stack Development</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">React, TypeScript, Node.js, Python, AWS</p>
+                        </div>
+                    </div>
+
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: -2.5rem; top: 0.5rem; width: 1rem; height: 1rem; background: var(--accent-purple); border-radius: 50%; border: 3px solid var(--bg-primary);"></div>
+                        <div style="background: var(--bg-secondary); border-radius: 0.5rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                            <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Based in Munich</h3>
+                            <p style="color: var(--accent-purple); font-weight: 500; margin-bottom: 0.5rem;">Available for Remote & On-site</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Open to new opportunities and collaborations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button style="background: var(--accent-blue); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer; margin-right: 1rem;">
+                        Contact Me
+                    </button>
+                    <button style="background: transparent; color: var(--text-secondary); border: 1px solid var(--bg-tertiary); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                        View Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 7: Feature Highlight -->
+    <div class="section-header">
+        <h2 class="section-title">Design 7: Feature Highlight</h2>
+        <p class="section-description">Emphasizing key skills and achievements with visual elements</p>
+    </div>
+
+    <section class="hero" id="hero7" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+        <div class="hero-content">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <div style="display: inline-block; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-blue); border-radius: 2rem; padding: 0.5rem 1rem; margin-bottom: 2rem;">
+                        <span style="color: var(--accent-blue); font-size: 0.9rem; font-weight: 500;">🚀 Available for new projects</span>
+                    </div>
+
+                    <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-primary);">
+                        Ahmed Bejaoui
+                    </h1>
+                    <h2 style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 2rem; font-weight: 500;">
+                        Full-Stack Developer & Tech Lead
+                    </h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid var(--bg-tertiary); transition: transform 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            💻
+                        </div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">Frontend Expert</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">React, TypeScript, Next.js, and modern CSS frameworks</p>
+                    </div>
+
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid var(--bg-tertiary); transition: transform 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            ⚡
+                        </div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">Backend Specialist</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Node.js, Python, databases, and cloud architecture</p>
+                    </div>
+
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 2rem; text-align: center; border: 1px solid var(--bg-tertiary); transition: transform 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: var(--gradient-tertiary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            👥
+                        </div>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem; font-size: 1.1rem;">Team Leadership</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Agile methodologies, mentoring, and project management</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Passionate about creating efficient, scalable solutions and leading teams to deliver exceptional results.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" style="background: var(--accent-blue); color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                            Start a Project
+                        </a>
+                        <a href="#" style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue); padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500; transition: all 0.3s ease;">
+                            View Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 8: Asymmetric Layout -->
+    <div class="section-header">
+        <h2 class="section-title">Design 8: Asymmetric Layout</h2>
+        <p class="section-description">Modern asymmetric design with dynamic visual elements</p>
+    </div>
+
+    <section class="hero" id="hero8" style="background: var(--bg-primary); position: relative; overflow: hidden;">
+        <!-- Background shapes -->
+        <div style="position: absolute; top: 10%; right: 10%; width: 200px; height: 200px; background: var(--gradient-primary); border-radius: 50%; opacity: 0.1; transform: rotate(45deg);"></div>
+        <div style="position: absolute; bottom: 20%; left: 5%; width: 150px; height: 150px; background: var(--accent-purple); border-radius: 30%; opacity: 0.1;"></div>
+
+        <div class="hero-content" style="position: relative; z-index: 2;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 4px; height: 60px; background: var(--accent-blue);"></div>
+                        <div>
+                            <h1 style="font-size: 3.5rem; font-weight: 900; color: var(--text-primary); line-height: 0.9; margin-bottom: 0.5rem;">
+                                Ahmed<br>Bejaoui
+                            </h1>
+                            <p style="color: var(--accent-blue); font-size: 1.1rem; font-weight: 500;">
+                                Full-Stack Developer & Tech Lead
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <p style="color: var(--text-secondary); font-size: 1.2rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Crafting digital experiences that matter. Specialized in building scalable web applications
+                            and leading development teams to success.
+                        </p>
+
+                        <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <div style="color: var(--accent-green); font-size: 2rem; font-weight: bold;">12+</div>
+                                <div style="color: var(--text-muted); font-size: 0.9rem;">Years Exp.</div>
+                            </div>
+                            <div>
+                                <div style="color: var(--accent-orange); font-size: 2rem; font-weight: bold;">50+</div>
+                                <div style="color: var(--text-muted); font-size: 0.9rem;">Projects</div>
+                            </div>
+                            <div>
+                                <div style="color: var(--accent-purple); font-size: 2rem; font-weight: bold;">5+</div>
+                                <div style="color: var(--text-muted); font-size: 0.9rem;">Companies</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <button style="background: var(--accent-blue); color: white; border: none; padding: 1.2rem 2rem; border-radius: 0.75rem; font-weight: 600; cursor: pointer;">
+                            Let's Connect
+                        </button>
+                        <a href="#" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem;">
+                            View Work <span style="font-size: 1.2rem;">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div style="position: relative;">
+                    <div style="background: var(--bg-secondary); border-radius: 2rem; padding: 2rem; border: 1px solid var(--bg-tertiary); transform: rotate(5deg);">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="width: 80px; height: 80px; background: var(--gradient-primary); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white; font-weight: bold;">
+                                AB
+                            </div>
+                            <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Available for hire</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Munich, Germany</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; gap: 1rem;">
+                            <div style="width: 40px; height: 40px; background: rgba(59, 130, 246, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-blue); font-size: 1.2rem;">
+                                💼
+                            </div>
+                            <div style="width: 40px; height: 40px; background: rgba(139, 92, 246, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-purple); font-size: 1.2rem;">
+                                🚀
+                            </div>
+                            <div style="width: 40px; height: 40px; background: rgba(16, 185, 129, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent-green); font-size: 1.2rem;">
+                                ⚡
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 9: Minimal Professional -->
+    <div class="section-header">
+        <h2 class="section-title">Design 9: Minimal Professional</h2>
+        <p class="section-description">Ultra-clean design focused on content and readability</p>
+    </div>
+
+    <section class="hero" id="hero9" style="background: var(--bg-primary);">
+        <div class="hero-content">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <div style="width: 120px; height: 120px; background: var(--bg-secondary); border: 3px solid var(--accent-blue); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--accent-blue); font-weight: bold;">
+                        AB
+                    </div>
+
+                    <h1 style="font-size: 2.5rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-primary);">
+                        Ahmed Bejaoui
+                    </h1>
+
+                    <p style="color: var(--accent-blue); font-size: 1.1rem; font-weight: 500; margin-bottom: 2rem;">
+                        Full-Stack Developer & Tech Lead
+                    </p>
+
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 3rem;">
+                        I help companies build exceptional web applications using modern technologies.
+                        With over 12 years of experience, I specialize in React, TypeScript, Node.js,
+                        and leading development teams to deliver outstanding results.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; text-align: center;">
+                    <div style="padding: 1rem;">
+                        <div style="color: var(--accent-blue); font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">12+</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Years Experience</div>
+                    </div>
+                    <div style="padding: 1rem;">
+                        <div style="color: var(--accent-green); font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">50+</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Projects Delivered</div>
+                    </div>
+                    <div style="padding: 1rem;">
+                        <div style="color: var(--accent-purple); font-size: 1.8rem; font-weight: bold; margin-bottom: 0.5rem;">5+</div>
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Companies</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+                        <button style="background: var(--accent-blue); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                            Contact Me
+                        </button>
+                        <button style="background: transparent; color: var(--text-secondary); border: 1px solid var(--bg-tertiary); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                            Download CV
+                        </button>
+                    </div>
+
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        📍 Based in Munich, Germany • Available for remote work
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Design 10: Interactive Dashboard Style -->
+    <div class="section-header">
+        <h2 class="section-title">Design 10: Interactive Dashboard Style</h2>
+        <p class="section-description">Modern dashboard-inspired layout with data visualization elements</p>
+    </div>
+
+    <section class="hero" id="hero10" style="background: var(--bg-primary);">
+        <div class="hero-content">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <!-- Header -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 1rem; border: 1px solid var(--bg-tertiary);">
+                    <div>
+                        <h1 style="font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
+                            Ahmed Bejaoui
+                        </h1>
+                        <p style="color: var(--accent-blue); font-weight: 500;">Full-Stack Developer & Tech Lead</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--accent-green); border-radius: 2rem; padding: 0.5rem 1rem;">
+                            <div style="width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%;"></div>
+                            <span style="color: var(--accent-green); font-size: 0.9rem; font-weight: 500;">Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                    <!-- Experience Card -->
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">EXPERIENCE</h3>
+                            <span style="color: var(--accent-green); font-size: 1.2rem;">📈</span>
+                        </div>
+                        <div style="color: var(--text-primary); font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">12+</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem;">Years in development</div>
+                    </div>
+
+                    <!-- Projects Card -->
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">PROJECTS</h3>
+                            <span style="color: var(--accent-blue); font-size: 1.2rem;">🚀</span>
+                        </div>
+                        <div style="color: var(--text-primary); font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">50+</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem;">Successfully delivered</div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">LOCATION</h3>
+                            <span style="color: var(--accent-purple); font-size: 1.2rem;">📍</span>
+                        </div>
+                        <div style="color: var(--text-primary); font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">Munich</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem;">Germany • Remote OK</div>
+                    </div>
+
+                    <!-- Skills Card -->
+                    <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 1.5rem; border: 1px solid var(--bg-tertiary);">
+                        <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;">STACK</h3>
+                            <span style="color: var(--accent-orange); font-size: 1.2rem;">⚡</span>
+                        </div>
+                        <div style="color: var(--text-primary); font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem;">Full-Stack</div>
+                        <div style="color: var(--text-muted); font-size: 0.8rem;">React • Node.js • Python</div>
+                    </div>
+                </div>
+
+                <!-- Description and CTA -->
+                <div style="background: var(--bg-secondary); border-radius: 1rem; padding: 2rem; border: 1px solid var(--bg-tertiary); text-align: center;">
+                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Passionate about building scalable web applications and leading development teams.
+                        Specialized in modern technologies with a focus on performance and user experience.
+                    </p>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button style="background: var(--gradient-primary); color: white; border: none; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer;">
+                            Start a Project
+                        </button>
+                        <button style="background: transparent; color: var(--accent-blue); border: 1px solid var(--accent-blue); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                            View Portfolio
+                        </button>
+                        <button style="background: transparent; color: var(--text-secondary); border: 1px solid var(--bg-tertiary); padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; cursor: pointer;">
+                            Download Resume
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-secondary); padding: 2rem; text-align: center; border-top: 1px solid var(--bg-tertiary); margin-top: 4rem;">
+        <p style="color: var(--text-muted); margin-bottom: 1rem;">
+            Choose your preferred hero section design for the new HR-friendly portfolio
+        </p>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            All designs use modern, accessible color schemes and professional layouts
+        </p>
+    </footer>
+</body>
+</html>

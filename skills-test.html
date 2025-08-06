@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Section - 10 Modern Minimalist Designs</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: #0f172a;
+            scroll-behavior: smooth;
+        }
+
+        /* Color Variables */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Section Container */
+        .section {
+            min-height: 60vh;
+            padding: 4rem 2rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .design-badge {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Skills Summary */
+        .skills-summary {
+            background: var(--bg-secondary);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .skills-summary h2 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-summary p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Design Container */
+        .design-container {
+            background: var(--bg-secondary);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        /* Design 1: Compact Grid */
+        .design1-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .design1-category {
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .design1-category-header {
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        .design1-category-title {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .design1-category-experience {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .design1-skills {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .design1-skill {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+
+        .design1-skill-name {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .design1-skill-percentage {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Design 2: Skill Badges */
+        .design2-categories {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .design2-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .design2-category-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .design2-category-experience {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .design2-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .design2-skill-badge {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .design2-skill-badge:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .design1-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo" style="color: var(--accent-blue); font-weight: 700;">Skills Test</div>
+            <ul class="nav-links">
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#design1">Design 1</a></li>
+                <li><a href="#design2">Design 2</a></li>
+                <li><a href="#design3">Design 3</a></li>
+                <li><a href="#design4">Design 4</a></li>
+                <li><a href="#design5">Design 5</a></li>
+                <li><a href="#design6">Design 6</a></li>
+                <li><a href="#design7">Design 7</a></li>
+                <li><a href="#design8">Design 8</a></li>
+                <li><a href="#design9">Design 9</a></li>
+                <li><a href="#design10">Design 10</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Skills Summary -->
+    <section class="section" id="summary">
+        <div class="container">
+            <div class="skills-summary">
+                <h2>Skills</h2>
+                <p>My technical level</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design 1: Compact Grid -->
+    <section class="section" id="design1">
+        <div class="container">
+            <div class="section-header">
+                <div class="design-badge">Design 1</div>
+                <h2 class="section-title">Compact Grid</h2>
+                <p class="section-subtitle">Clean grid layout with all skill categories</p>
+            </div>
+
+            <div class="design-container">
+                <div class="design1-grid">
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Agile & Project Management</h3>
+                            <p class="design1-category-experience">8 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Agile</span>
+                                <span class="design1-skill-percentage">98%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Scrum</span>
+                                <span class="design1-skill-percentage">98%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Planning & estimations</span>
+                                <span class="design1-skill-percentage">100%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Requirement Analysis</span>
+                                <span class="design1-skill-percentage">100%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Problem solving</span>
+                                <span class="design1-skill-percentage">100%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Frontend Developer</h3>
+                            <p class="design1-category-experience">More than 10 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">HTML</span>
+                                <span class="design1-skill-percentage">100%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">CSS</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">JavaScript / TypeScript</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">React</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Angular</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Backend developer</h3>
+                            <p class="design1-category-experience">More than 10 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">NodeJs</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Python</span>
+                                <span class="design1-skill-percentage">75%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Micro Services</span>
+                                <span class="design1-skill-percentage">80%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">REST / OpenAPI</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Data Visualisation & Analysis</h3>
+                            <p class="design1-category-experience">2 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">E-Charts</span>
+                                <span class="design1-skill-percentage">80%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">D3</span>
+                                <span class="design1-skill-percentage">80%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">DataBricks</span>
+                                <span class="design1-skill-percentage">70%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">DevOps & Infrastructure</h3>
+                            <p class="design1-category-experience">3 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Docker</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Kubernetes</span>
+                                <span class="design1-skill-percentage">75%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Micro services</span>
+                                <span class="design1-skill-percentage">80%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">DevOps / CI/CD</span>
+                                <span class="design1-skill-percentage">80%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Cloud</h3>
+                            <p class="design1-category-experience">4 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">AWS Services</span>
+                                <span class="design1-skill-percentage">90%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Google Cloud</span>
+                                <span class="design1-skill-percentage">50%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Serverless, Lambda</span>
+                                <span class="design1-skill-percentage">90%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Database & Storage</h3>
+                            <p class="design1-category-experience">More than 10 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">SQL/NoSQL</span>
+                                <span class="design1-skill-percentage">98%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">PostgresSQL</span>
+                                <span class="design1-skill-percentage">98%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">DynamoDB</span>
+                                <span class="design1-skill-percentage">90%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Redis</span>
+                                <span class="design1-skill-percentage">95%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="design1-category">
+                        <div class="design1-category-header">
+                            <h3 class="design1-category-title">Hardware & Prototyping</h3>
+                            <p class="design1-category-experience">4 years</p>
+                        </div>
+                        <div class="design1-skills">
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Arduino</span>
+                                <span class="design1-skill-percentage">80%</span>
+                            </div>
+                            <div class="design1-skill">
+                                <span class="design1-skill-name">Raspberry PI</span>
+                                <span class="design1-skill-percentage">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design 2: Skill Badges -->
+    <section class="section" id="design2">
+        <div class="container">
+            <div class="section-header">
+                <div class="design-badge">Design 2</div>
+                <h2 class="section-title">Skill Badges</h2>
+                <p class="section-subtitle">Tag-style skill representation with gradients</p>
+            </div>
+
+            <div class="design-container">
+                <div class="design2-categories">
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Agile & Project Management</h3>
+                        <p class="design2-category-experience">8 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">Agile 98%</span>
+                            <span class="design2-skill-badge">Scrum 98%</span>
+                            <span class="design2-skill-badge">Planning & estimations 100%</span>
+                            <span class="design2-skill-badge">Requirement Analysis 100%</span>
+                            <span class="design2-skill-badge">Problem solving 100%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Frontend Developer</h3>
+                        <p class="design2-category-experience">More than 10 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">HTML 100%</span>
+                            <span class="design2-skill-badge">CSS 95%</span>
+                            <span class="design2-skill-badge">JavaScript / TypeScript 95%</span>
+                            <span class="design2-skill-badge">React 95%</span>
+                            <span class="design2-skill-badge">Angular 95%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Backend developer</h3>
+                        <p class="design2-category-experience">More than 10 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">NodeJs 95%</span>
+                            <span class="design2-skill-badge">Python 75%</span>
+                            <span class="design2-skill-badge">Micro Services 80%</span>
+                            <span class="design2-skill-badge">REST / OpenAPI 95%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Data Visualisation & Analysis</h3>
+                        <p class="design2-category-experience">2 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">E-Charts 80%</span>
+                            <span class="design2-skill-badge">D3 80%</span>
+                            <span class="design2-skill-badge">DataBricks 70%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">DevOps & Infrastructure</h3>
+                        <p class="design2-category-experience">3 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">Docker 95%</span>
+                            <span class="design2-skill-badge">Kubernetes 75%</span>
+                            <span class="design2-skill-badge">Micro services 80%</span>
+                            <span class="design2-skill-badge">DevOps / CI/CD 80%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Cloud</h3>
+                        <p class="design2-category-experience">4 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">AWS Services 90%</span>
+                            <span class="design2-skill-badge">Google Cloud 50%</span>
+                            <span class="design2-skill-badge">Serverless, Lambda 90%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Database & Storage</h3>
+                        <p class="design2-category-experience">More than 10 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">SQL/NoSQL 98%</span>
+                            <span class="design2-skill-badge">PostgresSQL 98%</span>
+                            <span class="design2-skill-badge">DynamoDB 90%</span>
+                            <span class="design2-skill-badge">Redis 95%</span>
+                        </div>
+                    </div>
+
+                    <div class="design2-category">
+                        <h3 class="design2-category-title">Hardware & Prototyping</h3>
+                        <p class="design2-category-experience">4 years</p>
+                        <div class="design2-skills">
+                            <span class="design2-skill-badge">Arduino 80%</span>
+                            <span class="design2-skill-badge">Raspberry PI 75%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design 3: Progress Bars -->
+    <section class="section" id="design3">
+        <div class="container">
+            <div class="section-header">
+                <div class="design-badge">Design 3</div>
+                <h2 class="section-title">Progress Bars</h2>
+                <p class="section-subtitle">Clean horizontal progress indicators</p>
+            </div>
+
+            <div class="design-container">
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent-blue);">
+                            <h3 style="color: var(--text-primary); font-size: 1.2rem;">Agile & Project Management</h3>
+                            <span style="color: var(--accent-blue); font-weight: 600; font-size: 0.9rem;">8 years</span>
+                        </div>
+                        <div style="display: grid; gap: 1rem;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--text-secondary);">Agile</span>
+                                    <span style="color: var(--accent-blue); font-weight: 600;">98%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; background: var(--gradient-primary); border-radius: 3px; width: 98%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--text-secondary);">Planning & estimations</span>
+                                    <span style="color: var(--accent-blue); font-weight: 600;">100%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; background: var(--gradient-primary); border-radius: 3px; width: 100%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--text-secondary);">Problem solving</span>
+                                    <span style="color: var(--accent-blue); font-weight: 600;">100%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; background: var(--gradient-primary); border-radius: 3px; width: 100%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent-green);">
+                            <h3 style="color: var(--text-primary); font-size: 1.2rem;">Frontend Developer</h3>
+                            <span style="color: var(--accent-green); font-weight: 600; font-size: 0.9rem;">More than 10 years</span>
+                        </div>
+                        <div style="display: grid; gap: 1rem;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--text-secondary);">HTML</span>
+                                    <span style="color: var(--accent-green); font-weight: 600;">100%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; background: linear-gradient(135deg, var(--accent-green), var(--accent-blue)); border-radius: 3px; width: 100%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--text-secondary);">React</span>
+                                    <span style="color: var(--accent-green); font-weight: 600;">95%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; background: linear-gradient(135deg, var(--accent-green), var(--accent-blue)); border-radius: 3px; width: 95%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--text-secondary);">JavaScript / TypeScript</span>
+                                    <span style="color: var(--accent-green); font-weight: 600;">95%</span>
+                                </div>
+                                <div style="width: 100%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; background: linear-gradient(135deg, var(--accent-green), var(--accent-blue)); border-radius: 3px; width: 95%; transition: width 1s ease-in-out;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design 4: Terminal Style (Like Original) -->
+    <section class="section" id="design4">
+        <div class="container">
+            <div class="section-header">
+                <div class="design-badge">Design 4</div>
+                <h2 class="section-title">Terminal Style</h2>
+                <p class="section-subtitle">Modern version of your original design</p>
+            </div>
+
+            <div style="background: var(--bg-secondary); border-radius: 1.5rem; padding: 2.5rem; border: 1px solid rgba(255, 255, 255, 0.1); max-height: 600px; overflow-y: auto;">
+                <!-- Title Section -->
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="color: var(--accent-green); font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem;">Skills</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem;">My technical level</p>
+                </div>
+
+                <!-- Summary Cards -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <div style="background: var(--bg-primary); border: 2px solid var(--accent-green); border-radius: 0.75rem; padding: 1.5rem; text-align: center;">
+                        <h3 style="color: var(--accent-green); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Agile & PM</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">8 years</p>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; line-height: 1.4;">Agile, Scrum, Planning & estimations</p>
+                    </div>
+
+                    <div style="background: var(--bg-primary); border: 2px solid var(--accent-blue); border-radius: 0.75rem; padding: 1.5rem; text-align: center;">
+                        <h3 style="color: var(--accent-blue); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Frontend</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">10+ years</p>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; line-height: 1.4;">React, Angular, TypeScript</p>
+                    </div>
+
+                    <div style="background: var(--bg-primary); border: 2px solid var(--accent-purple); border-radius: 0.75rem; padding: 1.5rem; text-align: center;">
+                        <h3 style="color: var(--accent-purple); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Backend</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">10+ years</p>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; line-height: 1.4;">Node.js, Python, REST APIs</p>
+                    </div>
+
+                    <div style="background: var(--bg-primary); border: 2px solid var(--accent-orange); border-radius: 0.75rem; padding: 1.5rem; text-align: center;">
+                        <h3 style="color: var(--accent-orange); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Cloud & DevOps</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem;">4+ years</p>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; line-height: 1.4;">AWS, Docker, Kubernetes</p>
+                    </div>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center;">
+                    <button class="terminal-tab active" data-tab="agile" style="background: var(--accent-green); color: var(--bg-primary); border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Agile & PM</button>
+                    <button class="terminal-tab" data-tab="frontend" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-blue); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Frontend</button>
+                    <button class="terminal-tab" data-tab="backend" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-purple); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Backend</button>
+                    <button class="terminal-tab" data-tab="data" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-orange); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Data Viz</button>
+                    <button class="terminal-tab" data-tab="devops" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-green); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">DevOps</button>
+                    <button class="terminal-tab" data-tab="cloud" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-blue); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Cloud</button>
+                    <button class="terminal-tab" data-tab="database" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-purple); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Database</button>
+                    <button class="terminal-tab" data-tab="hardware" style="background: transparent; color: var(--text-muted); border: 2px solid var(--accent-orange); padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 0.9rem;">Hardware</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="terminal-content">
+                    <div id="terminal-agile" class="terminal-tab-content active" style="background: var(--bg-primary); border: 2px solid var(--accent-green); border-radius: 1rem; padding: 2rem;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-green); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Agile & Project Management</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">8 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Agile</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">98%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Scrum</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">98%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Planning & estimations</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">100%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Requirement Analysis</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">100%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Problem solving</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">100%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-frontend" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-blue); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-blue); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Frontend Developer</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">More than 10 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">HTML</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">100%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">CSS</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">JavaScript / TypeScript</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">React</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Angular</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-backend" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-purple); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-purple); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Backend developer</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">More than 10 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">NodeJs</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Python</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">75%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Micro Services</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">80%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">REST / OpenAPI</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-data" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-orange); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-orange); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Data Visualisation & Analysis</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">2 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-orange); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">E-Charts</div>
+                                <div style="color: var(--accent-orange); font-weight: 600; font-size: 1.1rem;">80%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-orange); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">D3</div>
+                                <div style="color: var(--accent-orange); font-weight: 600; font-size: 1.1rem;">80%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-orange); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">DataBricks</div>
+                                <div style="color: var(--accent-orange); font-weight: 600; font-size: 1.1rem;">70%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-devops" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-green); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-green); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">DevOps & Infrastructure</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">3 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Docker</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Kubernetes</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">75%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Micro services</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">80%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-green); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">DevOps / CI/CD</div>
+                                <div style="color: var(--accent-green); font-weight: 600; font-size: 1.1rem;">80%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-cloud" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-blue); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-blue); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Cloud</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">4 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">AWS Services</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">90%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Google Cloud</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">50%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-blue); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Serverless, Lambda</div>
+                                <div style="color: var(--accent-blue); font-weight: 600; font-size: 1.1rem;">90%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-database" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-purple); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-purple); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Database & Storage</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">More than 10 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">SQL/NoSQL</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">98%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">PostgresSQL</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">98%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">DynamoDB</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">90%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-purple); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Redis</div>
+                                <div style="color: var(--accent-purple); font-weight: 600; font-size: 1.1rem;">95%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="terminal-hardware" class="terminal-tab-content" style="background: var(--bg-primary); border: 2px solid var(--accent-orange); border-radius: 1rem; padding: 2rem; display: none;">
+                        <div style="text-align: center; margin-bottom: 2rem;">
+                            <h3 style="color: var(--accent-orange); font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">Hardware & Prototyping</h3>
+                            <p style="color: var(--text-muted); font-size: 1rem;">4 years</p>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-orange); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Arduino</div>
+                                <div style="color: var(--accent-orange); font-weight: 600; font-size: 1.1rem;">80%</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); border: 1px solid var(--accent-orange); border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                                <div style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.25rem;">Raspberry PI</div>
+                                <div style="color: var(--accent-orange); font-weight: 600; font-size: 1.1rem;">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Terminal tab functionality
+        document.querySelectorAll('.terminal-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.terminal-tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.style.background = 'transparent';
+                    t.style.color = 'var(--text-muted)';
+                });
+                document.querySelectorAll('.terminal-tab-content').forEach(content => {
+                    content.classList.remove('active');
+                    content.style.display = 'none';
+                });
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                const tabType = tab.getAttribute('data-tab');
+
+                // Set active tab style based on type
+                if (tabType === 'agile' || tabType === 'devops') {
+                    tab.style.background = 'var(--accent-green)';
+                    tab.style.color = 'var(--bg-primary)';
+                } else if (tabType === 'frontend' || tabType === 'cloud') {
+                    tab.style.background = 'var(--accent-blue)';
+                    tab.style.color = 'var(--bg-primary)';
+                } else if (tabType === 'backend' || tabType === 'database') {
+                    tab.style.background = 'var(--accent-purple)';
+                    tab.style.color = 'var(--bg-primary)';
+                } else if (tabType === 'data' || tabType === 'hardware') {
+                    tab.style.background = 'var(--accent-orange)';
+                    tab.style.color = 'var(--bg-primary)';
+                }
+
+                // Show corresponding content
+                const targetContent = document.getElementById(`terminal-${tabType}`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                    targetContent.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
