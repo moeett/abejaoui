@@ -872,36 +872,6 @@
         display: inline-block;
       }
 
-      /* Glassmorphism container for the profile image */
-      .about-image::before {
-        content: '';
-        position: absolute;
-        top: -40px;
-        left: -40px;
-        right: -40px;
-        bottom: -40px;
-        background: rgba(74, 222, 128, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 50%;
-        border: 1px solid rgba(74, 222, 128, 0.2);
-        z-index: 1;
-      }
-
-      /* Terminal bracket decorations */
-      .about-image::after {
-        content: '[ ]';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Courier New', monospace;
-        font-size: 24rem;
-        color: rgba(74, 222, 128, 0.1);
-        z-index: 1;
-        pointer-events: none;
-        letter-spacing: 18rem;
-      }
-
       .profile-image {
         width: 300px;
         height: 300px;
@@ -955,11 +925,6 @@
         transform: scale(1.05);
         box-shadow: 0 0 0 4px transparent, 0 0 50px rgba(74, 222, 128, 0.5),
           inset 0 0 0 4px rgba(255, 255, 255, 0.2);
-      }
-
-      .about-image:hover::before {
-        background: rgba(74, 222, 128, 0.15);
-        border-color: rgba(74, 222, 128, 0.3);
       }
 
       /* Floating terminal symbols */
@@ -1067,18 +1032,6 @@
           height: 250px;
         }
 
-        .about-image::after {
-          font-size: 20rem;
-          letter-spacing: 15rem;
-        }
-
-        .about-image::before {
-          top: -30px;
-          left: -30px;
-          right: -30px;
-          bottom: -30px;
-        }
-
         .stats-grid {
           grid-template-columns: 1fr;
           gap: 1rem;
@@ -1097,18 +1050,6 @@
         .profile-image {
           width: 200px;
           height: 200px;
-        }
-
-        .about-image::after {
-          font-size: 16rem;
-          letter-spacing: 12rem;
-        }
-
-        .about-image::before {
-          top: -20px;
-          left: -20px;
-          right: -20px;
-          bottom: -20px;
         }
 
         .about-section {
